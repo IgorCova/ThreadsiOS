@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C6B2CBC1BC1263700DB6A28"
+               BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
                BuildableName = "Threads.app"
                BlueprintName = "Threads"
                ReferencedContainer = "container:Threads.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C6B2CBC1BC1263700DB6A28"
+            BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
             BuildableName = "Threads.app"
             BlueprintName = "Threads"
             ReferencedContainer = "container:Threads.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C6B2CBC1BC1263700DB6A28"
+            BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
             BuildableName = "Threads.app"
             BlueprintName = "Threads"
             ReferencedContainer = "container:Threads.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C6B2CBC1BC1263700DB6A28"
+            BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
             BuildableName = "Threads.app"
             BlueprintName = "Threads"
             ReferencedContainer = "container:Threads.xcodeproj">

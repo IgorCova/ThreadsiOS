@@ -29,13 +29,13 @@ class CommunityCell: UITableViewCell {
         self.imgLogoCom.layer.borderWidth = 0.1
         self.imgInMyList.layer.cornerRadius = self.imgInMyList.frame.size.height/2
 
-        /*
+        
         //При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
-        self.plView.layer.shadowOffset = CGSizeMake(-2, 5)
-        self.plView.layer.shadowRadius = 5
-        self.plView.layer.shadowOpacity = 0.5
-        */
+        self.plView.layer.shadowOffset = CGSizeMake(-2, 2)
+        self.plView.layer.shadowRadius = 3
+        self.plView.layer.shadowOpacity = 0.2
+        
     }
     
     func setCell(com: Community) {
@@ -50,9 +50,9 @@ class CommunityCell: UITableViewCell {
         } else {
             self.joinButton.hidden = false
             self.joinButton.layer.cornerRadius = 2
-            self.joinButton.layer.borderWidth = 2
+            //self.joinButton.layer.borderWidth = 2
             self.joinButton.tag = com.id
-            self.joinButton.layer.borderColor = UIColor(red: 144/220.0, green: 144/220.0, blue: 144/220.0, alpha: 1.0).CGColor
+            //self.joinButton.layer.borderColor = UIColor(red: 144/220.0, green: 144/220.0, blue: 144/220.0, alpha: 1.0).CGColor
         }
     }
 }

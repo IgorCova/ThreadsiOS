@@ -87,14 +87,14 @@ class CommunityDir: UITableViewController {
             }
         }
     }
-    
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let entryDir = self.storyboard?.instantiateViewControllerWithIdentifier("EntryDir") as! EntryDir
         self.presentViewController(entryDir, animated: true, completion: nil)
         self.tvCommunity.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
+*/
   /*
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         code

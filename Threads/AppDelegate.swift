@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Threads
 //
-//  Created by Jin-Mac on 04.10.15.
+//  Created by Jin-Mac on 29.10.15.
 //  Copyright © 2015 Igor Cova. All rights reserved.
 //
 
