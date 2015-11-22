@@ -11,13 +11,13 @@
 		3CC2DA9E1BE2B7C000916FDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DA9C1BE2B7C000916FDD /* Main.storyboard */; };
 		3CC2DAA01BE2B7C000916FDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DA9F1BE2B7C000916FDD /* Assets.xcassets */; };
 		3CC2DAA31BE2B7C000916FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAA11BE2B7C000916FDD /* LaunchScreen.storyboard */; };
-		3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAAA1BE2B7F600916FDD /* Community.swift */; settings = {ASSET_TAGS = (); }; };
-		3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAAB1BE2B7F600916FDD /* CommunityCell.swift */; settings = {ASSET_TAGS = (); }; };
-		3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAAC1BE2B7F600916FDD /* CommunityDir.swift */; settings = {ASSET_TAGS = (); }; };
-		3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB11BE2B80E00916FDD /* Entry.swift */; settings = {ASSET_TAGS = (); }; };
-		3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB21BE2B80E00916FDD /* EntryCell.swift */; settings = {ASSET_TAGS = (); }; };
-		3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */; settings = {ASSET_TAGS = (); }; };
-		3CC2DAD71BE2C2C700916FDD /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; settings = {ASSET_TAGS = (); }; };
+		3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAAA1BE2B7F600916FDD /* Community.swift */; };
+		3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAAB1BE2B7F600916FDD /* CommunityCell.swift */; };
+		3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAAC1BE2B7F600916FDD /* CommunityDir.swift */; };
+		3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB11BE2B80E00916FDD /* Entry.swift */; };
+		3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB21BE2B80E00916FDD /* EntryCell.swift */; };
+		3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */; };
+		3CC2DAD71BE2C2C700916FDD /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -338,6 +338,7 @@
 				3CC2DAA91BE2B7C000916FDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

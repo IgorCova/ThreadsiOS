@@ -41,26 +41,17 @@ class CommunityDir: UITableViewController {
     
     func setCommunityDir() {
         let c1 = Community(id: 1, name: "Ubuntu Community", typeID: 1, categoryID: 2, linkToImage: "ComLogos/UbuntuCircuitrySilver.png", inMyList: true)
-        let c2 = Community(id: 2, name: "Major Mafia", typeID: 1, categoryID: 2, linkToImage: "ComLogos/mfK.png", inMyList: true)
-        let c3 = Community(id: 3, name: "mr Freeman", typeID: 2, categoryID: 1, linkToImage: "ComLogos/mfO.png", inMyList: true)
-        let c4 = Community(id: 4, name: "AppStore", typeID: 1, categoryID: 3, linkToImage: "ComLogos/app_store.png", inMyList: false)
+        let c2 = Community(id: 2, name: "Major Mafia", typeID: 1, categoryID: 2, linkToImage: "ComLogos/MajorMafia.png", inMyList: true)
+        let c3 = Community(id: 3, name: "mr Freeman", typeID: 2, categoryID: 1, linkToImage: "ComLogos/mF.png", inMyList: true)
+        let c4 = Community(id: 4, name: "Run Foundation", typeID: 1, categoryID: 3, linkToImage: "ComLogos/RunFoundation.png", inMyList: false)
         let c5 = Community(id: 5, name: "Health", typeID: 1, categoryID: 1, linkToImage: "ComLogos/heart.png", inMyList: false)
-        let c6 = Community(id: 6, name: "Freedom", typeID: 1, categoryID: 1, linkToImage: "ComLogos/MFG.png", inMyList: false)
-        let c7 = Community(id: 7, name: "SpitFire", typeID: 1, categoryID: 1, linkToImage: "ComLogos/mfS.png", inMyList: false)
-        let c8 = Community(id: 8, name: "Show", typeID: 2, categoryID: 2, linkToImage: "ComLogos/mF.png", inMyList: false)
-        let c9 = Community(id: 9, name: "Associated", typeID: 1, categoryID: 1, linkToImage: "ComLogos/mfas.png", inMyList: false)
-        let c0 = Community(id: 0, name: "Your flag", typeID: 1, categoryID: 1, linkToImage: "ComLogos/mer.png", inMyList: false)
+        
         
         dirCommunity.append(c1)
         dirCommunity.append(c2)
         dirCommunity.append(c3)
         dirCommunity.append(c4)
         dirCommunity.append(c5)
-        dirCommunity.append(c6)
-        dirCommunity.append(c7)
-        dirCommunity.append(c8)
-        dirCommunity.append(c9)
-        dirCommunity.append(c0)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -87,8 +78,8 @@ class CommunityDir: UITableViewController {
             }
         }
     }
-    /*
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+  /*  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let entryDir = self.storyboard?.instantiateViewControllerWithIdentifier("EntryDir") as! EntryDir
         self.presentViewController(entryDir, animated: true, completion: nil)

@@ -15,6 +15,7 @@ class Entry {
     //var columnID : Int
     var columnName : String
     //var redactorID : Int
+    var redactorImg : String
     var redactorName : String
     var date : String
     var title : String
@@ -28,6 +29,7 @@ class Entry {
             ,columnName : String
           //,redactorID : Int
             ,redactorName : String
+            ,redactorImg : String
             ,date : String
             ,title : String
           //,likeLogo : String
@@ -37,6 +39,7 @@ class Entry {
         self.communityName = communityName
         self.columnName = columnName
         self.redactorName = redactorName
+        self.redactorImg = redactorImg
         self.date = date
         self.title = title
         self.likeText = likeText
