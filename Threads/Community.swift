@@ -12,28 +12,28 @@ import Foundation
 class Community {
     var id : Int
     var name : String
-    var typeID : Int8
+    /*var typeID : Int8
     var typeName : String {
         return getCommunityTypeNameByID(typeID)
     }
     var categoryID : Int8
     var categoryName : String {
         return getCommunityCategoryNameByID(categoryID)
-    }
+    }*/
     var linkToImage : String
     var inMyList : Bool
     
-    init (id: Int, name : String, typeID : Int8, categoryID : Int8, linkToImage : String, inMyList : Bool) {
+    init (id: Int, name : String, linkToImage : String, inMyList : Bool) {
         self.id = id
         self.name = name
-        self.typeID = typeID
-        self.categoryID = categoryID
+       /* self.typeID = typeID
+        self.categoryID = categoryID*/
         self.linkToImage = linkToImage
         self.inMyList = inMyList
     }
 }
 
-class CommunityType {
+/*class CommunityType {
     var name : String
     var id: Int8
     
@@ -94,4 +94,4 @@ func getCommunityCategoryNameByID(id: Int8) -> String {
     }
     
     return "Non"
-}
+}*/

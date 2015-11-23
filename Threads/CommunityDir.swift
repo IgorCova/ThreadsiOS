@@ -21,8 +21,7 @@ class CommunityDir: UITableViewController {
         self.setCommunityDir()
         self.tvCommunity.delegate = self
         self.tvCommunity.dataSource = self
-        self.tvCommunity.separatorStyle = .None
-        //self.tvCommunity.backgroundColor = UIColor(red: 0, green: 100, blue: 255.0, alpha: 1.0)        
+        self.tvCommunity.separatorStyle = .None        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,11 +39,11 @@ class CommunityDir: UITableViewController {
     }
     
     func setCommunityDir() {
-        let c1 = Community(id: 1, name: "Ubuntu Community", typeID: 1, categoryID: 2, linkToImage: "ComLogos/UbuntuCircuitrySilver.png", inMyList: true)
-        let c2 = Community(id: 2, name: "Major Mafia", typeID: 1, categoryID: 2, linkToImage: "ComLogos/MajorMafia.png", inMyList: true)
-        let c3 = Community(id: 3, name: "mr Freeman", typeID: 2, categoryID: 1, linkToImage: "ComLogos/mF.png", inMyList: true)
-        let c4 = Community(id: 4, name: "Run Foundation", typeID: 1, categoryID: 3, linkToImage: "ComLogos/RunFoundation.png", inMyList: false)
-        let c5 = Community(id: 5, name: "Health", typeID: 1, categoryID: 1, linkToImage: "ComLogos/heart.png", inMyList: false)
+        let c1 = Community(id: 1, name: "Digital Tectonics", linkToImage: "ComLogos/DigTec.jpg", inMyList: true)
+        let c2 = Community(id: 2, name: "Major Mafia", linkToImage: "ComLogos/MajorMafia.png", inMyList: true)
+        let c3 = Community(id: 3, name: "mr Freeman", linkToImage: "ComLogos/mF.png", inMyList: true)
+        let c4 = Community(id: 4, name: "Run Foundation", linkToImage: "ComLogos/RunFoundation.png", inMyList: false)
+        let c5 = Community(id: 5, name: "Threads", linkToImage: "ComLogos/thread.png", inMyList: false)
         
         
         dirCommunity.append(c1)
@@ -64,10 +63,10 @@ class CommunityDir: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if dirCommunity[indexPath.row].inMyList == false {
-            return 155.0
+            return 123.0
         }
         
-        return 115.0
+        return 83.0
     }
         
     func joinToCommunityByID(btn: UIButton) {

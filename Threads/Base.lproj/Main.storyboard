@@ -8,65 +8,54 @@
         <scene sceneID="W4d-3M-ZbH">
             <objects>
                 <tableViewController storyboardIdentifier="CommunityDir" title="Communities" id="agI-VV-7cr" customClass="CommunityDir" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVz-ZX-LMx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVz-ZX-LMx">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.83862605721059469" green="0.83862605721059469" blue="0.83862605721059469" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityCell" rowHeight="155" id="KYJ-jV-tOS" customClass="CommunityCell" customModule="Threads" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="155"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityCell" rowHeight="123" id="KYJ-jV-tOS" customClass="CommunityCell" customModule="Threads" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="123"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KYJ-jV-tOS" id="fZg-2R-Bol">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ap-xa-ujU">
-                                            <rect key="frame" x="5" y="5" width="310" height="144"/>
+                                            <rect key="frame" x="5" y="5" width="310" height="112"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxP-v6-xkz">
-                                                    <rect key="frame" x="109" y="12" width="190" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxP-v6-xkz">
+                                                    <rect key="frame" x="73" y="14" width="226" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gce-ru-lez">
-                                                    <rect key="frame" x="5" y="7" width="90" height="90"/>
+                                                    <rect key="frame" x="5" y="7" width="60" height="60"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="90" id="1fs-x6-ktG"/>
-                                                        <constraint firstAttribute="width" constant="90" id="GqL-nt-aXo"/>
+                                                        <constraint firstAttribute="height" constant="60" id="1fs-x6-ktG"/>
+                                                        <constraint firstAttribute="width" constant="60" id="GqL-nt-aXo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i8-ps-JfG">
-                                                    <rect key="frame" x="8" y="110" width="287" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnV-DF-rDC">
+                                                    <rect key="frame" x="73" y="37" width="193" height="21"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.19029349598081757" green="0.55056195200927682" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i8-ps-JfG">
+                                                    <rect key="frame" x="12" y="72" width="287" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                                     <state key="normal" title="Join">
                                                         <color key="titleColor" red="0.90929367080000001" green="0.90929367080000001" blue="0.90929367080000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-Gu-LZI">
-                                                    <rect key="frame" x="84" y="0.0" width="35" height="35"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2c-sA-Nsk">
-                                                    <rect key="frame" x="109" y="30" width="190" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTf-j8-yQd">
-                                                    <rect key="frame" x="109" y="48" width="190" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,14 +81,12 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.90929367084695834" green="0.90929367084695834" blue="0.90929367084695834" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="imgInMyList" destination="wgu-Gu-LZI" id="ebx-BY-bFP"/>
                                     <outlet property="imgLogoCom" destination="gce-ru-lez" id="c0c-T5-rkO"/>
                                     <outlet property="joinButton" destination="6i8-ps-JfG" id="310-k5-hKd"/>
-                                    <outlet property="lblCategory" destination="N2c-sA-Nsk" id="ee3-Rb-ICY"/>
                                     <outlet property="lblNameCom" destination="PxP-v6-xkz" id="qd9-Ez-UxE"/>
-                                    <outlet property="lblType" destination="CTf-j8-yQd" id="Clm-p2-Zqn"/>
-                                    <outlet property="plView" destination="0ap-xa-ujU" id="yCh-jN-210"/>
-                                    <segue destination="BWY-do-aGZ" kind="showDetail" id="MRd-ha-aQD"/>
+                                    <outlet property="lblRole" destination="LnV-DF-rDC" id="ZZh-RL-GJR"/>
+                                    <outlet property="plView" destination="0ap-xa-ujU" id="BPj-Jh-7gK"/>
+                                    <segue destination="euu-nD-9sg" kind="show" action="showDetailViewController:sender:" id="whS-x2-05c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -108,8 +95,12 @@
                             <outlet property="delegate" destination="agI-VV-7cr" id="O0c-ou-Jdg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Communities" id="JBG-zJ-tMe"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Threads" id="JBG-zJ-tMe">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="cwC-mV-qR0">
+                            <color key="tintColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tvCommunity" destination="LVz-ZX-LMx" id="CyZ-IM-9yF"/>
@@ -139,11 +130,11 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULi-5A-Zr9">
                                             <rect key="frame" x="5" y="5" width="310" height="94"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-vF-1v0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Column" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-vF-1v0">
                                                     <rect key="frame" x="4" y="0.0" width="300" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsU-UU-6Hr">
@@ -158,17 +149,10 @@
                                                     <rect key="frame" x="2" y="22" width="45" height="45"/>
                                                     <animations/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Redactor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUO-5w-ff2">
-                                                    <rect key="frame" x="53" y="26" width="249" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeU-ha-Zlw">
                                                     <rect key="frame" x="53" y="45" width="249" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                     <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -179,6 +163,13 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUO-5w-ff2">
+                                                    <rect key="frame" x="53" y="26" width="249" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,10 +191,11 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.90035994764397909" green="0.90035994764397909" blue="0.90035994764397909" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="imgRedactor" destination="0iq-Ly-byL" id="XLq-5b-tKh"/>
-                                    <outlet property="lblCommunityName" destination="mpd-vF-1v0" id="iyb-Uq-Hyo"/>
+                                    <outlet property="imgCommunity" destination="0iq-Ly-byL" id="wUj-e4-AeR"/>
+                                    <outlet property="lblColumnName" destination="mpd-vF-1v0" id="M4e-RY-wjf"/>
+                                    <outlet property="lblCommunityName" destination="ZUO-5w-ff2" id="gJ7-KM-1IJ"/>
                                     <outlet property="lblDate" destination="eeU-ha-Zlw" id="bfC-ST-HaY"/>
-                                    <outlet property="lblRedactorName" destination="ZUO-5w-ff2" id="BZQ-Pa-e1u"/>
+                                    <outlet property="plView" destination="ULi-5A-Zr9" id="JMo-UC-X8f"/>
                                     <outlet property="txTitle" destination="6Be-N1-xQL" id="9I3-5t-xH7"/>
                                 </connections>
                             </tableViewCell>
@@ -213,9 +205,9 @@
                             <outlet property="delegate" destination="lZs-qv-p3h" id="SKz-iw-1FL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tectonics" id="Kjo-8e-v7T">
+                    <navigationItem key="navigationItem" title="Digital Tectonics" id="Kjo-8e-v7T">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="ggk-Dj-3Fq">
-                            <color key="tintColor" red="0.26020201229960188" green="0.52568715599466209" blue="0.77495091623036649" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="S0K-sM-Wm2" kind="show" id="eLg-Yc-wvx"/>
                             </connections>
@@ -228,20 +220,30 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9o-8B-Jtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="418"/>
+            <point key="canvasLocation" x="2291" y="413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsOnTap="YES" hidesBarsWhenKeyboardAppears="YES" id="S0K-sM-Wm2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S0K-sM-Wm2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AHt-b7-eZd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="backgroundColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.93715232329999998" green="0.93715232329999998" blue="0.93715232329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TwO-9i-KZg">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
                     <connections>
                         <segue destination="agI-VV-7cr" kind="relationship" relationship="rootViewController" id="PP1-oh-vBL"/>
                     </connections>
@@ -251,24 +253,31 @@
             <point key="canvasLocation" x="930" y="413"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="UGx-xh-CDc">
+        <scene sceneID="mHj-K5-ctK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsOnTap="YES" id="BWY-do-aGZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="euu-nD-9sg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dao-R0-Ywv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jrC-Lk-Lkw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="backgroundColor" red="0.31997417661747857" green="0.52411439566932361" blue="0.96842277486910999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.99198132753372192" green="0.99604541063308716" blue="0.99596863985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.26009900823055054" green="0.5254790564660039" blue="0.77464414267015713" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99198132753372192" green="0.99604541063308716" blue="0.99596863985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lZs-qv-p3h" kind="relationship" relationship="rootViewController" id="4nc-we-2F5"/>
+                        <segue destination="lZs-qv-p3h" kind="relationship" relationship="rootViewController" id="tIH-e5-9GU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJC-AF-AcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKN-IH-ZdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="418"/>
+            <point key="canvasLocation" x="1845" y="421"/>
         </scene>
     </scenes>
 </document>
