@@ -9,13 +9,11 @@
 import UIKit
 
 class EntryDir: UITableViewController {
-    
-    var communityID: Int = Int()
-    
-    @IBOutlet weak var tvEntry: UITableView!
-    
+    var community = [Community]()
     var dirEntry = [Entry]()
     
+    @IBOutlet weak var tvEntry: UITableView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +21,7 @@ class EntryDir: UITableViewController {
         self.tvEntry.delegate = self
         self.tvEntry.dataSource = self
         self.tvEntry.separatorStyle = .None
+        self.title = community[0].name
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +29,8 @@ class EntryDir: UITableViewController {
     }
     
     func setEntryDir() {
+        let eFirstRow = Entry(id: 0, communityName: "Non", communityImg: "Non", columnName: "Non", date: "Non", title: "Non")
+        
         let e1 = Entry(id: 1, communityName: "Digital Tectonics", communityImg: "ComLogos/DigTec.jpg", columnName: "Post", date: "18.10.15 20:20", title: "Тестируем нормально")
         
         let e2 = Entry(id: 2, communityName: "Digital Tectonics", communityImg: "ComLogos/DigTec.jpg", columnName: "Post", date: "18.10.15 20:05", title: "Убу́нту (зулу ubuntu и коса ubuntu — человечность) — южноафриканское направление этики и гуманистической философии, особое внимание уделяющее понятиям верности и лояльности в отношениях между людьми. Убунту является одним из основополагающих принципов новой Южно-Африканской Республики. Его положения связываются с идеями Африканского Возрождения. Приблизительное толкование слова убунту — человечность по отношению к другим. Другой возможный вариант перевода — вера во вселенские узы общности, связывающие всё человечество")
@@ -48,6 +49,7 @@ class EntryDir: UITableViewController {
         
         let e9 = Entry(id: 9, communityName: "Ubuntu", communityImg: "ComLogos/DigTec.jpg", columnName: "News", date: "5.10.15 21:20", title: "Фишер бродит по лесным тропинкам (1985-1986). Жизнь чиновника Сергея Головкина представляла собой ежедневную рутину: работа с документами, важные, менее важные, совсем ненужные бумаги. Ежедневные поездки по одному и тому же маршруту дом — работа, работа – дом. Прошлое стало покрываться для него серой дымкой забвения. Какие могут быть такие опасные шалости с детьми? Он же серьезный взрослый человек. Летний отпуск 1985 года Сергей провел на Черном море в Пицунде. Валялся на пляже, даже поглядывал на загорающих женщин. На детей, впрочем, тоже поглядывал, но особенно не волновался. Вел себя паинькой, как иногда в школе. Его никто не ругал, и он чувствовал себя хорошо")
         
+        dirEntry.append(eFirstRow)
         dirEntry.append(e1)
         dirEntry.append(e2)
         dirEntry.append(e3)
@@ -68,20 +70,20 @@ class EntryDir: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("EntryCell") as? EntryCell)!
+        if indexPath.row == 0 {
+            let header = (tableView.dequeueReusableCellWithIdentifier("EntryHeaderCell") as? EntryHeaderCell)!
+            header.userInteractionEnabled = false
+            header.setCell(community[0])
+            
+            return header
+        }
         
+        let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("EntryCell") as? EntryCell)!        
         cell.setCell(dirEntry[indexPath.row])
         
         return cell
     }
-   /*
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let communityDir = self.storyboard?.instantiateViewControllerWithIdentifier("CommunityDir") as! CommunityDir
-        self.presentViewController(communityDir, animated: true, completion: nil)
-        self.tvEntry.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    */
+   
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let entry = dirEntry[indexPath.row]
         let height : CGFloat = self.calculateHeightForString(entry.title)///1.0

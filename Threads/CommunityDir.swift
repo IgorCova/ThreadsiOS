@@ -14,6 +14,7 @@ class CommunityDir: UITableViewController {
     @IBOutlet var tvCommunity: UITableView!
     
     var dirCommunity = [Community]()
+    var currentCommunityID : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,6 @@ class CommunityDir: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : CommunityCell = (tableView.dequeueReusableCellWithIdentifier("CommunityCell") as? CommunityCell)!
-                
         cell.setCell(dirCommunity[indexPath.row])
         
         return cell
@@ -78,11 +78,28 @@ class CommunityDir: UITableViewController {
         }
     }
     
-  /*  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "ShowCommunityEntrys") {
+            let nav = segue.destinationViewController as! UINavigationController
+            let entry = nav.topViewController as! EntryDir
+            entry.community.removeAll()
+            entry.community.append(dirCommunity[(tvCommunity.indexPathForSelectedRow?.row)!])
+            /*
+            for com in dirCommunity {
+                if com.id == currentCommunityID {
+                    entry.community.append(com)
+                }
+            }*/
+            
+        }
+    }
+    
+    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentCommunityID = dirCommunity[indexPath.row].id
         
-        let entryDir = self.storyboard?.instantiateViewControllerWithIdentifier("EntryDir") as! EntryDir
+        /*let entryDir = self.storyboard?.instantiateViewControllerWithIdentifier("EntryDir") as! EntryDir
         self.presentViewController(entryDir, animated: true, completion: nil)
-        self.tvCommunity.deselectRowAtIndexPath(indexPath, animated: true)
+        self.tvCommunity.deselectRowAtIndexPath(indexPath, animated: true)*/
     }
 */
   /*

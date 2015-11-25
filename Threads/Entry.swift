@@ -10,7 +10,7 @@ import Foundation
 
 class Entry {
     var id : Int
-  //var communityID : Int
+   // var communityID : Int
     var communityName : String
     var communityImg : String
     
@@ -21,7 +21,7 @@ class Entry {
     var date : String
     var title : String
     init (   id: Int
-          //,communityID : Int
+   //         ,communityID : Int
             ,communityName : String
             ,communityImg : String
         
@@ -33,6 +33,7 @@ class Entry {
             ,title : String
         ) {
         self.id = id
+    //    self.communityID = communityID
         self.communityName = communityName
         self.columnName = columnName
         self.communityImg = communityImg

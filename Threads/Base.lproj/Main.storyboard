@@ -86,7 +86,7 @@
                                     <outlet property="lblNameCom" destination="PxP-v6-xkz" id="qd9-Ez-UxE"/>
                                     <outlet property="lblRole" destination="LnV-DF-rDC" id="ZZh-RL-GJR"/>
                                     <outlet property="plView" destination="0ap-xa-ujU" id="BPj-Jh-7gK"/>
-                                    <segue destination="euu-nD-9sg" kind="show" action="showDetailViewController:sender:" id="whS-x2-05c"/>
+                                    <segue destination="euu-nD-9sg" kind="show" identifier="ShowCommunityEntrys" action="showDetailViewController:sender:" id="whS-x2-05c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,8 +120,55 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryHeaderCell" rowHeight="107" id="ku5-iF-DdE" customClass="EntryHeaderCell" customModule="Threads" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="107"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ku5-iF-DdE" id="YiB-f3-kdE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-nR-NOD">
+                                            <rect key="frame" x="8" y="0.0" width="304" height="106"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dam-Td-w5m">
+                                                    <rect key="frame" x="8" y="43" width="193" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DigTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="CXN-fS-CUJ">
+                                                    <rect key="frame" x="236" y="14" width="60" height="60"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26G-ga-5db">
+                                                    <rect key="frame" x="8" y="68" width="296" height="30"/>
+                                                    <animations/>
+                                                    <state key="normal" title="Leave"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3j-HN-eUn">
+                                                    <rect key="frame" x="8" y="14" width="226" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="imgCommunity" destination="CXN-fS-CUJ" id="hLc-nb-OMj"/>
+                                    <outlet property="lblCommunityName" destination="M3j-HN-eUn" id="kHd-0R-4vI"/>
+                                    <outlet property="lblRoleInCommunity" destination="Dam-Td-w5m" id="DkG-cY-2cg"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="105" id="KwB-6c-os3" customClass="EntryCell" customModule="Threads" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="105"/>
+                                <rect key="frame" x="0.0" y="199" width="320" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwB-6c-os3" id="VtF-Jm-Ek9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
@@ -220,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9o-8B-Jtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2291" y="413"/>
+            <point key="canvasLocation" x="2270" y="499"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
@@ -277,7 +324,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKN-IH-ZdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="421"/>
+            <point key="canvasLocation" x="1846" y="499"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DigTec.jpg" width="1280" height="1280"/>
+    </resources>
 </document>
