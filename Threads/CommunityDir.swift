@@ -84,15 +84,15 @@ class CommunityDir: UITableViewController {
             let entry = nav.topViewController as! EntryDir
             entry.community.removeAll()
             entry.community.append(dirCommunity[(tvCommunity.indexPathForSelectedRow?.row)!])
-            /*
-            for com in dirCommunity {
-                if com.id == currentCommunityID {
-                    entry.community.append(com)
-                }
-            }*/
-            
         }
     }
+    
+    @IBAction func goToMenu(sender: AnyObject) {
+        let menu = self.storyboard?.instantiateViewControllerWithIdentifier("MenuView") as! MenuView
+        self.presentViewController(menu, animated: true, completion: nil)
+        
+    }
+    
     
     /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.currentCommunityID = dirCommunity[indexPath.row].id

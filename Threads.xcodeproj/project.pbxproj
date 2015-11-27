@@ -19,6 +19,7 @@
 		3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */; };
 		3CC2DAD71BE2C2C700916FDD /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
 		841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841045CF1C065A760016F48A /* EntryHeaderCell.swift */; };
+		848FC2A21C08FF530047858E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FC2A11C08FF530047858E /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDir.swift; sourceTree = "<group>"; };
 		3CC2DAD61BE2C2C700916FDD /* ComLogos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ComLogos; sourceTree = "<group>"; };
 		841045CF1C065A760016F48A /* EntryHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryHeaderCell.swift; sourceTree = "<group>"; };
+		848FC2A11C08FF530047858E /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +71,11 @@
 			isa = PBXGroup;
 			children = (
 				3CC2DA9C1BE2B7C000916FDD /* Main.storyboard */,
-				3CC2DAD61BE2C2C700916FDD /* ComLogos */,
+				848FC2A11C08FF530047858E /* MenuView.swift */,
 				3CC2DAB71BE2B81300916FDD /* Entry */,
 				3CC2DAB01BE2B7FC00916FDD /* Com */,
 				3CC2DA981BE2B7C000916FDD /* AppDelegate.swift */,
+				3CC2DAD61BE2C2C700916FDD /* ComLogos */,
 				3CC2DA9F1BE2B7C000916FDD /* Assets.xcassets */,
 				3CC2DAA11BE2B7C000916FDD /* LaunchScreen.storyboard */,
 				3CC2DAA41BE2B7C000916FDD /* Info.plist */,
@@ -185,6 +188,7 @@
 				3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */,
 				3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */,
 				841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */,
+				848FC2A21C08FF530047858E /* MenuView.swift in Sources */,
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				3CC2DA991BE2B7C000916FDD /* AppDelegate.swift in Sources */,

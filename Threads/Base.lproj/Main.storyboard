@@ -50,7 +50,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i8-ps-JfG">
                                                     <rect key="frame" x="12" y="72" width="287" height="30"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.098039215690000001" green="0.44705882349999998" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                                     <state key="normal" title="Join">
                                                         <color key="titleColor" red="0.90929367080000001" green="0.90929367080000001" blue="0.90929367080000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,8 +97,11 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Threads" id="JBG-zJ-tMe">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="cwC-mV-qR0">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="cwC-mV-qR0">
                             <color key="tintColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="goToMenu:" destination="agI-VV-7cr" id="ZcJ-ar-fOy"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -108,7 +111,64 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkv-iU-IEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1355" y="413"/>
+            <point key="canvasLocation" x="1167" y="456"/>
+        </scene>
+        <!--Menu View-->
+        <scene sceneID="z62-Bf-hpA">
+            <objects>
+                <viewController storyboardIdentifier="MenuView" id="eH7-fD-0Rf" customClass="MenuView" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gyn-z4-SLx"/>
+                        <viewControllerLayoutGuide type="bottom" id="bsm-dv-dkt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0ip-Zz-dQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CovaImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="2wv-GI-K5o">
+                                <rect key="frame" x="120" y="28" width="80" height="80"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Igor Cova" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH3-eA-Pb1">
+                                <rect key="frame" x="14" y="116" width="286" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1V-Jx-ozZ">
+                                <rect key="frame" x="0.0" y="150" width="320" height="3"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.21089355536520807" green="0.33234978361075207" blue="0.41678685897435896" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-Nr-Ray">
+                                <rect key="frame" x="14" y="169" width="286" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="all communities">
+                                    <color key="titleColor" red="0.77475961540000005" green="0.77475961540000005" blue="0.77475961540000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCommunities" destination="eH7-fD-0Rf" eventType="touchUpInside" id="9zA-mQ-8XG"/>
+                                    <segue destination="S0K-sM-Wm2" kind="show" id="56g-1J-0Oa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.16470588235294117" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imgPerson" destination="2wv-GI-K5o" id="fLn-oT-RA4"/>
+                        <outlet property="lblPersonName" destination="wH3-eA-Pb1" id="0Bk-cy-6R4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Zw-Fa-Xkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="444"/>
         </scene>
         <!--Entity-->
         <scene sceneID="V9Q-pZ-2kT">
@@ -120,37 +180,32 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryHeaderCell" rowHeight="107" id="ku5-iF-DdE" customClass="EntryHeaderCell" customModule="Threads" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="107"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryHeaderCell" rowHeight="80" id="ku5-iF-DdE" customClass="EntryHeaderCell" customModule="Threads" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ku5-iF-DdE" id="YiB-f3-kdE">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-nR-NOD">
-                                            <rect key="frame" x="8" y="0.0" width="304" height="106"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-nR-NOD">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dam-Td-w5m">
-                                                    <rect key="frame" x="8" y="43" width="193" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DigTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="CXN-fS-CUJ">
-                                                    <rect key="frame" x="236" y="14" width="60" height="60"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26G-ga-5db">
-                                                    <rect key="frame" x="8" y="68" width="296" height="30"/>
-                                                    <animations/>
-                                                    <state key="normal" title="Leave"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3j-HN-eUn">
-                                                    <rect key="frame" x="8" y="14" width="226" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3j-HN-eUn">
+                                                    <rect key="frame" x="8" y="8" width="226" height="43"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DigTec.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="CXN-fS-CUJ">
+                                                    <rect key="frame" x="247" y="8" width="60" height="60"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dam-Td-w5m">
+                                                    <rect key="frame" x="8" y="53" width="193" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -159,8 +214,15 @@
                                         </view>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="oF5-nR-NOD" secondAttribute="trailing" id="6no-Or-jMS"/>
+                                        <constraint firstItem="oF5-nR-NOD" firstAttribute="top" secondItem="YiB-f3-kdE" secondAttribute="top" id="7aT-HR-gnZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="oF5-nR-NOD" secondAttribute="bottom" id="X2I-YI-ckP"/>
+                                        <constraint firstItem="oF5-nR-NOD" firstAttribute="leading" secondItem="YiB-f3-kdE" secondAttribute="leading" id="pXS-5t-Y4T"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.77475961540000005" green="0.77475961540000005" blue="0.77475961540000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="imgCommunity" destination="CXN-fS-CUJ" id="hLc-nb-OMj"/>
                                     <outlet property="lblCommunityName" destination="M3j-HN-eUn" id="kHd-0R-4vI"/>
@@ -168,7 +230,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="105" id="KwB-6c-os3" customClass="EntryCell" customModule="Threads" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="199" width="320" height="105"/>
+                                <rect key="frame" x="0.0" y="172" width="320" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwB-6c-os3" id="VtF-Jm-Ek9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
@@ -192,10 +254,6 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iq-Ly-byL">
-                                                    <rect key="frame" x="2" y="22" width="45" height="45"/>
-                                                    <animations/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeU-ha-Zlw">
                                                     <rect key="frame" x="53" y="45" width="249" height="21"/>
                                                     <animations/>
@@ -217,6 +275,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iq-Ly-byL">
+                                                    <rect key="frame" x="2" y="24" width="40" height="40"/>
+                                                    <animations/>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9o-8B-Jtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="499"/>
+            <point key="canvasLocation" x="2013" y="456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
@@ -280,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.28499510150000001" green="0.58760162900000001" blue="0.86713212350000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.098039215686274508" green="0.44705882352941179" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.93715232329999998" green="0.93715232329999998" blue="0.93715232329999998" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -297,20 +359,21 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvT-ku-T8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="413"/>
+            <point key="canvasLocation" x="710" y="444"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mHj-K5-ctK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="euu-nD-9sg" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jrC-Lk-Lkw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" red="0.31997417661747857" green="0.52411439566932361" blue="0.96842277486910999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.99198132753372192" green="0.99604541063308716" blue="0.99596863985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.26009900823055054" green="0.5254790564660039" blue="0.77464414267015713" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.098039215690000001" green="0.44705882349999998" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99198132753372192" green="0.99604541063308716" blue="0.99596863985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="textShadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -324,10 +387,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKN-IH-ZdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="499"/>
+            <point key="canvasLocation" x="1578" y="456"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CovaImg.png" width="100" height="100"/>
         <image name="DigTec.jpg" width="1280" height="1280"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="56g-1J-0Oa"/>
+    </inferredMetricsTieBreakers>
 </document>
