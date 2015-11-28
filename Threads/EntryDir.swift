@@ -16,12 +16,16 @@ class EntryDir: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setEntryDir()
+        
         self.tvEntry.delegate = self
         self.tvEntry.dataSource = self
         self.tvEntry.separatorStyle = .None
+        
         self.title = community[0].name
+        
+        self.navigationController!.navigationBar.topItem!.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,20 +90,20 @@ class EntryDir: UITableViewController {
    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 80
+            return 96
         }
+        
         let entry = dirEntry[indexPath.row]
-        let height : CGFloat = self.calculateHeightForString(entry.title)///1.0
-        return height + 90.0
+        let height : CGFloat = self.calculateHeightForString(entry.title)
+        return height + 100.0
     }
     
     func calculateHeightForString(inString : String) -> CGFloat{
         let messageString = inString
-        let attributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 14.0)!]
+        let attributes = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 15.0)!]
         let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
         let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
         let requredSize:CGRect = rect
         return requredSize.height
-        
     }
 }

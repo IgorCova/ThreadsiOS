@@ -10,6 +10,7 @@ import UIKit
 
 class CommunityDir: UITableViewController {
     
+    @IBOutlet weak var itmMenu: UIBarButtonItem!
     
     @IBOutlet var tvCommunity: UITableView!
     
@@ -22,7 +23,9 @@ class CommunityDir: UITableViewController {
         self.setCommunityDir()
         self.tvCommunity.delegate = self
         self.tvCommunity.dataSource = self
-        self.tvCommunity.separatorStyle = .None        
+        self.tvCommunity.separatorStyle = .None
+        
+        self.itmMenu.image = UIImage(named: "ComLogos/menu.png")
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,8 +48,7 @@ class CommunityDir: UITableViewController {
         let c3 = Community(id: 3, name: "mr Freeman", linkToImage: "ComLogos/mF.png", inMyList: true)
         let c4 = Community(id: 4, name: "Run Foundation", linkToImage: "ComLogos/RunFoundation.png", inMyList: false)
         let c5 = Community(id: 5, name: "Threads", linkToImage: "ComLogos/thread.png", inMyList: false)
-        
-        
+                
         dirCommunity.append(c1)
         dirCommunity.append(c2)
         dirCommunity.append(c3)
@@ -63,10 +65,10 @@ class CommunityDir: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if dirCommunity[indexPath.row].inMyList == false {
-            return 123.0
+            return 108.0
         }
         
-        return 83.0
+        return 81.0
     }
         
     func joinToCommunityByID(btn: UIButton) {
@@ -79,9 +81,8 @@ class CommunityDir: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "ShowCommunityEntrys") {
-            let nav = segue.destinationViewController as! UINavigationController
-            let entry = nav.topViewController as! EntryDir
+        if (segue.identifier == "ShowCommunityEntrys") {        
+            let entry = segue.destinationViewController as! EntryDir
             entry.community.removeAll()
             entry.community.append(dirCommunity[(tvCommunity.indexPathForSelectedRow?.row)!])
         }
@@ -90,9 +91,7 @@ class CommunityDir: UITableViewController {
     @IBAction func goToMenu(sender: AnyObject) {
         let menu = self.storyboard?.instantiateViewControllerWithIdentifier("MenuView") as! MenuView
         self.presentViewController(menu, animated: true, completion: nil)
-        
     }
-    
     
     /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.currentCommunityID = dirCommunity[indexPath.row].id
