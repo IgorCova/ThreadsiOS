@@ -9,7 +9,7 @@
 import UIKit
 
 class EntryCell: UITableViewCell {
-    
+    @IBOutlet weak var btnBookmark: UIButton!
     @IBOutlet weak var lblCommunityName: UILabel!
     @IBOutlet weak var imgCommunity: UIImageView!
     @IBOutlet weak var lblColumnName: UILabel!
@@ -27,12 +27,7 @@ class EntryCell: UITableViewCell {
         self.imgCommunity.layer.cornerRadius = self.imgCommunity.frame.size.height/2
         self.imgCommunity.layer.masksToBounds = true
         self.imgCommunity.layer.borderWidth = 0.1
-        let fixedWidth = self.txTitle.frame.size.width
-        self.txTitle.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
-        let newSize = self.txTitle.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
-        var newFrame = self.txTitle.frame
-        newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
-        self.txTitle.frame = newFrame
+        self.txTitle.sizeToFit()        
         
         //При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
@@ -47,6 +42,11 @@ class EntryCell: UITableViewCell {
         self.lblColumnName.text = entry.columnName
         self.txTitle.text = entry.title
         self.imgCommunity.image = UIImage(named: entry.communityImg)
+        if entry.columnName == "Post" {
+            self.btnBookmark.setImage(UIImage(named: "ComLogos/BookmarkRed.png"), forState: UIControlState.Normal)
+        } else {
+            self.btnBookmark.setImage(UIImage(named: "ComLogos/Bookmark.png"), forState: UIControlState.Normal)
+        }
     }
 
 }

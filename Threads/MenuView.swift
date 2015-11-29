@@ -11,6 +11,7 @@ import CoreData
 
 class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
 
+    @IBOutlet weak var btnAllCom: UIButton!
     @IBOutlet weak var lblPersonName: UILabel!
     @IBOutlet weak var imgPerson: UIImageView!
     var imagePicker = UIImagePickerController()
@@ -22,18 +23,15 @@ class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         self.imgPerson.layer.cornerRadius = self.imgPerson.frame.size.height/2
         self.imgPerson.layer.masksToBounds = true
         self.imgPerson.layer.borderWidth = 0.1
+        self.lblPersonName.text = "Cova Igor"
         
-        //self.imgPerson.image = 
+        self.btnAllCom.setImage(UIImage(named: "ComLogos/AllCom.png"), forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showCommunities() {
-    }
-
     @IBAction func setPhoto() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
             print("\nButton capture")
@@ -57,6 +55,7 @@ class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         let newImage = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context)
         newImage.setValue(image.description, forKey: "photo")
     }
+    
     /*
     // MARK: - Navigation
 

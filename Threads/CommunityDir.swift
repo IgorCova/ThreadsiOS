@@ -65,7 +65,7 @@ class CommunityDir: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if dirCommunity[indexPath.row].inMyList == false {
-            return 108.0
+            return 111.0
         }
         
         return 81.0
