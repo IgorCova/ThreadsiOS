@@ -29,8 +29,6 @@ class CommunityDir: UITableViewController {
         self.tvCommunity.backgroundView = nil
         self.tvCommunity.backgroundView = UIView()
         self.tvCommunity.backgroundView?.backgroundColor = UIColor(netHex: 0xE8E8E8)
-        
-        self.itmMenu.image = UIImage(named: "ComLogos/Menu.png")
     }
 
     override func didReceiveMemoryWarning() {

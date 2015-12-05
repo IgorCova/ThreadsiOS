@@ -33,15 +33,6 @@ class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         self.imgPerson.layer.borderWidth = 0.1
         
         self.lblPersonName.text = "Cova Igor"
-        
-        self.btnNews.setImage(UIImage(named: "ComLogos/News.png"), forState: .Normal)
-        self.btnAllCom.setImage(UIImage(named: "ComLogos/AllCommunities.png"), forState: .Normal)
-        self.btnMyCom.setImage(UIImage(named: "ComLogos/MyCommunities.png"), forState: .Normal)
-        self.btnSuggested.setImage(UIImage(named: "ComLogos/Suggested.png"), forState: .Normal)
-        self.btnPopular.setImage(UIImage(named: "ComLogos/Popular.png"), forState: .Normal)
-        self.btnControl.setImage(UIImage(named: "ComLogos/Control.png"), forState: .Normal)
-        self.btnSettings.setImage(UIImage(named: "ComLogos/Settings.png"), forState: .Normal)
-        self.btnBookmarks.setImage(UIImage(named: "ComLogos/Bookmarks.png"), forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
