@@ -11,11 +11,11 @@ import UIKit
 class CommunityDir: UITableViewController {
     
     @IBOutlet weak var itmMenu: UIBarButtonItem!
-    
     @IBOutlet var tvCommunity: UITableView!
     
     var dirCommunity = [Community]()
     var currentCommunityID : Int!
+    var isOnlyMyCommunities : Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,12 @@ class CommunityDir: UITableViewController {
         self.tvCommunity.dataSource = self
         self.tvCommunity.separatorStyle = .None
         
-        self.itmMenu.image = UIImage(named: "ComLogos/menu.png")
+        self.tvCommunity.backgroundColor = UIColor(netHex: 0xE8E8E8)
+        self.tvCommunity.backgroundView = nil
+        self.tvCommunity.backgroundView = UIView()
+        self.tvCommunity.backgroundView?.backgroundColor = UIColor(netHex: 0xE8E8E8)
+        
+        self.itmMenu.image = UIImage(named: "ComLogos/Menu.png")
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +57,11 @@ class CommunityDir: UITableViewController {
         dirCommunity.append(c1)
         dirCommunity.append(c2)
         dirCommunity.append(c3)
-        dirCommunity.append(c4)
-        dirCommunity.append(c5)
+        
+        if isOnlyMyCommunities == false {
+            dirCommunity.append(c4)
+            dirCommunity.append(c5)
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -149,4 +157,18 @@ class CommunityDir: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex: Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
+    }
 }

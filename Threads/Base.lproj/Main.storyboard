@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.83862605721059469" green="0.83862605721059469" blue="0.83862605721059469" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityCell" rowHeight="111" id="KYJ-jV-tOS" customClass="CommunityCell" customModule="Threads" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KYJ-jV-tOS" id="fZg-2R-Bol">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ap-xa-ujU">
@@ -116,8 +116,9 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Threads" id="JBG-zJ-tMe">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="cwC-mV-qR0">
+                    <navigationItem key="navigationItem" title="Communities" id="JBG-zJ-tMe">
+                        <barButtonItem key="leftBarButtonItem" image="Menu.png" width="30" id="cwC-mV-qR0">
+                            <inset key="imageInsets" minX="-3" minY="9" maxX="21" maxY="5"/>
                             <color key="tintColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="goToMenu:" destination="agI-VV-7cr" id="ZcJ-ar-fOy"/>
@@ -137,7 +138,7 @@
         <!--Menu View-->
         <scene sceneID="z62-Bf-hpA">
             <objects>
-                <viewController storyboardIdentifier="MenuView" modalPresentationStyle="formSheet" id="eH7-fD-0Rf" customClass="MenuView" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuView" modalTransitionStyle="crossDissolve" id="eH7-fD-0Rf" customClass="MenuView" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyn-z4-SLx"/>
                         <viewControllerLayoutGuide type="bottom" id="bsm-dv-dkt"/>
@@ -176,16 +177,119 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-Nr-Ray">
-                                <rect key="frame" x="15" y="190" width="285" height="23"/>
+                                <rect key="frame" x="15" y="238" width="290" height="23"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="JhI-3z-bqW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="All communities" image="AllCom.png">
+                                <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
+                                <state key="normal" title="All communities" image="AllCommunities.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="S0K-sM-Wm2" kind="show" id="56g-1J-0Oa"/>
+                                    <segue destination="S0K-sM-Wm2" kind="showDetail" identifier="ShowAllComm" action="showViewController:sender:" id="56g-1J-0Oa"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6m-fg-zt3">
+                                <rect key="frame" x="15" y="478" width="290" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="xvm-zA-hiL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
+                                <state key="normal" title="Control" image="Control.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td9-7p-m7c">
+                                <rect key="frame" x="15" y="430" width="290" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="tTB-IR-ImV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
+                                <state key="normal" title="Popular" image="Popular.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzD-iy-MRh">
+                                <rect key="frame" x="15" y="526" width="290" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="OTI-DG-RCn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
+                                <state key="normal" title="Settings" image="Settings.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADJ-WD-xdO">
+                                <rect key="frame" x="15" y="190" width="290" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="Rxc-7O-gq7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
+                                <state key="normal" title="News" image="News.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.074509803921568626" green="0.22352941176470587" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1h-Or-mxA">
+                                <rect key="frame" x="15" y="286" width="285" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="fdZ-wD-jFM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="262" maxY="0.0"/>
+                                <state key="normal" title="My communities" image="MyCommunities.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S0K-sM-Wm2" kind="showDetail" identifier="ShowMyComm" id="lUQ-R2-uqD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRX-WA-F9D">
+                                <rect key="frame" x="15" y="334" width="290" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="2Ky-t0-c2Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="266" maxY="0.0"/>
+                                <state key="normal" title="Suggested" image="Suggested.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcY-cI-5i5">
+                                <rect key="frame" x="15" y="382" width="290" height="23"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="Ijk-WZ-fIx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="267" maxY="0.0"/>
+                                <state key="normal" title="Bookmarks" image="Bookmarks.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <animations/>
@@ -193,27 +297,55 @@
                         <constraints>
                             <constraint firstItem="wH3-eA-Pb1" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="0Pw-eD-EgO"/>
                             <constraint firstAttribute="trailing" secondItem="wH3-eA-Pb1" secondAttribute="trailing" constant="20" id="2sq-1j-ITC"/>
+                            <constraint firstItem="FzD-iy-MRh" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="44W-4Z-5sy"/>
+                            <constraint firstAttribute="trailing" secondItem="R6m-fg-zt3" secondAttribute="trailing" constant="15" id="4k5-AL-sjK"/>
                             <constraint firstItem="Z1V-Jx-ozZ" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="5n1-tc-r1a"/>
-                            <constraint firstItem="2wv-GI-K5o" firstAttribute="top" secondItem="gyn-z4-SLx" secondAttribute="bottom" constant="20" id="ImP-gp-mdS"/>
+                            <constraint firstItem="Td9-7p-m7c" firstAttribute="top" secondItem="JcY-cI-5i5" secondAttribute="bottom" constant="25" id="5yo-fh-YMX"/>
+                            <constraint firstItem="FzD-iy-MRh" firstAttribute="top" secondItem="R6m-fg-zt3" secondAttribute="bottom" constant="25" id="9dW-7r-eZm"/>
+                            <constraint firstItem="R6m-fg-zt3" firstAttribute="top" secondItem="Td9-7p-m7c" secondAttribute="bottom" constant="25" id="Ad8-xr-5WX"/>
+                            <constraint firstItem="2wv-GI-K5o" firstAttribute="top" secondItem="gyn-z4-SLx" secondAttribute="bottom" constant="20" id="BvZ-bf-DPd"/>
+                            <constraint firstItem="mRX-WA-F9D" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="E3a-ga-6hu"/>
+                            <constraint firstAttribute="trailing" secondItem="Td9-7p-m7c" secondAttribute="trailing" constant="15" id="E5w-Qy-o05"/>
+                            <constraint firstItem="S1h-Or-mxA" firstAttribute="top" secondItem="0Hu-Nr-Ray" secondAttribute="bottom" constant="25" id="Hfe-UT-y2R"/>
+                            <constraint firstItem="mRX-WA-F9D" firstAttribute="top" secondItem="S1h-Or-mxA" secondAttribute="bottom" constant="25" id="MbM-gM-i8a"/>
+                            <constraint firstAttribute="trailing" secondItem="S1h-Or-mxA" secondAttribute="trailing" constant="20" id="ODN-Ad-a4q"/>
                             <constraint firstItem="Z1V-Jx-ozZ" firstAttribute="top" secondItem="2wv-GI-K5o" secondAttribute="bottom" constant="54" id="RDd-jy-8Qe"/>
                             <constraint firstItem="0Hu-Nr-Ray" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="TTe-9P-mdG"/>
+                            <constraint firstAttribute="trailing" secondItem="JcY-cI-5i5" secondAttribute="trailing" constant="15" id="UCf-Id-hWj"/>
+                            <constraint firstItem="0Hu-Nr-Ray" firstAttribute="top" secondItem="ADJ-WD-xdO" secondAttribute="bottom" constant="25" id="Ww9-hm-dOY"/>
+                            <constraint firstAttribute="trailing" secondItem="FzD-iy-MRh" secondAttribute="trailing" constant="15" id="aTx-xw-d9U"/>
                             <constraint firstAttribute="trailing" secondItem="Z1V-Jx-ozZ" secondAttribute="trailing" constant="15" id="azf-LA-AiT"/>
                             <constraint firstItem="wH3-eA-Pb1" firstAttribute="top" secondItem="2wv-GI-K5o" secondAttribute="bottom" constant="8" id="bD9-RE-BaG"/>
-                            <constraint firstAttribute="trailing" secondItem="0Hu-Nr-Ray" secondAttribute="trailing" constant="20" id="cAA-XY-2Ke"/>
+                            <constraint firstItem="Td9-7p-m7c" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="bMT-eT-lSB"/>
+                            <constraint firstAttribute="trailing" secondItem="0Hu-Nr-Ray" secondAttribute="trailing" constant="15" id="cAA-XY-2Ke"/>
+                            <constraint firstItem="JcY-cI-5i5" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="cdX-pj-0qg"/>
+                            <constraint firstItem="JcY-cI-5i5" firstAttribute="top" secondItem="mRX-WA-F9D" secondAttribute="bottom" constant="25" id="cvY-K5-iq3"/>
+                            <constraint firstItem="R6m-fg-zt3" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="dBi-ZN-Vbp"/>
                             <constraint firstItem="2wv-GI-K5o" firstAttribute="centerX" secondItem="0ip-Zz-dQ5" secondAttribute="centerX" id="eaT-Ee-5gc"/>
-                            <constraint firstItem="0Hu-Nr-Ray" firstAttribute="top" secondItem="Z1V-Jx-ozZ" secondAttribute="bottom" constant="15" id="lgP-Ig-yCi"/>
+                            <constraint firstItem="ADJ-WD-xdO" firstAttribute="top" secondItem="Z1V-Jx-ozZ" secondAttribute="bottom" constant="15" id="gR5-Vi-s6A"/>
+                            <constraint firstAttribute="trailing" secondItem="mRX-WA-F9D" secondAttribute="trailing" constant="15" id="huK-eh-xv5"/>
+                            <constraint firstItem="S1h-Or-mxA" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="qw0-Uh-SuJ"/>
+                            <constraint firstItem="ADJ-WD-xdO" firstAttribute="leading" secondItem="0ip-Zz-dQ5" secondAttribute="leading" constant="15" id="tMf-9M-dZO"/>
+                            <constraint firstAttribute="trailing" secondItem="ADJ-WD-xdO" secondAttribute="trailing" constant="15" id="yzA-Td-nHd"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnAllCom" destination="0Hu-Nr-Ray" id="PWr-IZ-eNo"/>
+                        <outlet property="btnBookmarks" destination="JcY-cI-5i5" id="Wza-6r-8hq"/>
+                        <outlet property="btnControl" destination="R6m-fg-zt3" id="Xe1-pc-It8"/>
+                        <outlet property="btnMyCom" destination="S1h-Or-mxA" id="zfH-UA-g2J"/>
+                        <outlet property="btnNews" destination="ADJ-WD-xdO" id="CuU-2Z-NSU"/>
+                        <outlet property="btnPopular" destination="Td9-7p-m7c" id="2SG-en-dFA"/>
+                        <outlet property="btnSettings" destination="FzD-iy-MRh" id="RBS-3P-h1g"/>
+                        <outlet property="btnSuggested" destination="mRX-WA-F9D" id="KOO-sd-FHi"/>
                         <outlet property="imgPerson" destination="2wv-GI-K5o" id="fLn-oT-RA4"/>
                         <outlet property="lblPersonName" destination="wH3-eA-Pb1" id="0Bk-cy-6R4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Zw-Fa-Xkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="311" y="444"/>
+            <point key="canvasLocation" x="338" y="444"/>
         </scene>
         <!--Entity-->
         <scene sceneID="V9Q-pZ-2kT">
@@ -229,7 +361,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ku5-iF-DdE" id="YiB-f3-kdE">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-nR-NOD">
@@ -314,7 +446,7 @@
                                 <rect key="frame" x="0.0" y="193" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwB-6c-os3" id="VtF-Jm-Ek9">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULi-5A-Zr9">
@@ -448,7 +580,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S0K-sM-Wm2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" id="S0K-sM-Wm2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AHt-b7-eZd">
@@ -477,9 +609,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AllCom.png" width="21" height="22"/>
+        <image name="AllCommunities.png" width="44" height="42"/>
         <image name="Bookmark.png" width="30" height="72"/>
         <image name="BookmarkRed.png" width="30" height="72"/>
-        <image name="menu.png" width="20" height="15"/>
+        <image name="Bookmarks.png" width="38" height="48"/>
+        <image name="Control.png" width="42" height="44"/>
+        <image name="Menu.png" width="40" height="30"/>
+        <image name="MyCommunities.png" width="44" height="44"/>
+        <image name="News.png" width="42" height="42"/>
+        <image name="Popular.png" width="42" height="42"/>
+        <image name="Settings.png" width="44" height="42"/>
+        <image name="Suggested.png" width="44" height="42"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="56g-1J-0Oa"/>
+    </inferredMetricsTieBreakers>
 </document>

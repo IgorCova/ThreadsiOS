@@ -14,6 +14,14 @@ class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     @IBOutlet weak var btnAllCom: UIButton!
     @IBOutlet weak var lblPersonName: UILabel!
     @IBOutlet weak var imgPerson: UIImageView!
+    @IBOutlet weak var btnMyCom: UIButton!
+    @IBOutlet weak var btnSuggested: UIButton!
+    @IBOutlet weak var btnPopular: UIButton!
+    @IBOutlet weak var btnControl: UIButton!
+    @IBOutlet weak var btnSettings: UIButton!
+    @IBOutlet weak var btnNews: UIButton!
+    @IBOutlet weak var btnBookmarks: UIButton!
+    
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -23,26 +31,21 @@ class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         self.imgPerson.layer.cornerRadius = self.imgPerson.frame.size.height/2
         self.imgPerson.layer.masksToBounds = true
         self.imgPerson.layer.borderWidth = 0.1
+        
         self.lblPersonName.text = "Cova Igor"
         
-        self.btnAllCom.setImage(UIImage(named: "ComLogos/AllCom.png"), forState: .Normal)
+        self.btnNews.setImage(UIImage(named: "ComLogos/News.png"), forState: .Normal)
+        self.btnAllCom.setImage(UIImage(named: "ComLogos/AllCommunities.png"), forState: .Normal)
+        self.btnMyCom.setImage(UIImage(named: "ComLogos/MyCommunities.png"), forState: .Normal)
+        self.btnSuggested.setImage(UIImage(named: "ComLogos/Suggested.png"), forState: .Normal)
+        self.btnPopular.setImage(UIImage(named: "ComLogos/Popular.png"), forState: .Normal)
+        self.btnControl.setImage(UIImage(named: "ComLogos/Control.png"), forState: .Normal)
+        self.btnSettings.setImage(UIImage(named: "ComLogos/Settings.png"), forState: .Normal)
+        self.btnBookmarks.setImage(UIImage(named: "ComLogos/Bookmarks.png"), forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func setPhoto() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
-            print("\nButton capture")
-            
-            self.imagePicker.delegate = self
-            self.imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
-            self.imagePicker.allowsEditing = false
-            
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        }
-
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
@@ -56,14 +59,20 @@ class MenuView: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         newImage.setValue(image.description, forKey: "photo")
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let navController = segue.destinationViewController as! UINavigationController
+        let comm = navController.viewControllers[0] as! CommunityDir
+        
+        if (segue.identifier == "ShowMyComm") {
+            comm.isOnlyMyCommunities = true
+        } else if (segue.identifier == "ShowAllComm") {
+            comm.isOnlyMyCommunities = false
+        } 
     }
-    */
+    
 
 }

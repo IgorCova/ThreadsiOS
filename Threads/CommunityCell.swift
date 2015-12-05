@@ -31,7 +31,6 @@ class CommunityCell: UITableViewCell {
         self.plView.layer.shadowOffset = CGSizeMake(-2, 2)
         self.plView.layer.shadowRadius = 3
         self.plView.layer.shadowOpacity = 0.2
-        
     }
     
     func setCell(com: Community) {

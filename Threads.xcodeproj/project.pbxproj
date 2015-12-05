@@ -17,11 +17,11 @@
 		3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB11BE2B80E00916FDD /* Entry.swift */; };
 		3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB21BE2B80E00916FDD /* EntryCell.swift */; };
 		3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */; };
-		3CC2DAD71BE2C2C700916FDD /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
 		841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841045CF1C065A760016F48A /* EntryHeaderCell.swift */; };
 		8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8468C2F81C0A4A74001F7FD6 /* PersonData.xcdatamodeld */; };
 		848FC2A21C08FF530047858E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FC2A11C08FF530047858E /* MenuView.swift */; };
 		84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */; };
+		F31006F11C1330A50008DA50 /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,11 +184,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F31006F11C1330A50008DA50 /* ComLogos in Resources */,
 				3CC2DAA31BE2B7C000916FDD /* LaunchScreen.storyboard in Resources */,
 				3CC2DAA01BE2B7C000916FDD /* Assets.xcassets in Resources */,
 				84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */,
 				3CC2DA9E1BE2B7C000916FDD /* Main.storyboard in Resources */,
-				3CC2DAD71BE2C2C700916FDD /* ComLogos in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +320,7 @@
 		3CC2DAA81BE2B7C000916FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iPhone;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Threads/Info.plist;
@@ -335,7 +335,7 @@
 		3CC2DAA91BE2B7C000916FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iPhone;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Threads/Info.plist;
