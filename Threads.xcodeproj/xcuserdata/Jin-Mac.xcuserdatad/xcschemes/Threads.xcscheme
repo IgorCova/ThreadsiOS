@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
-               BuildableName = "Threads.app"
-               BlueprintName = "Threads"
+               BuildableName = "Comm.app"
+               BlueprintName = "Comm"
                ReferencedContainer = "container:Threads.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
-            BuildableName = "Threads.app"
-            BlueprintName = "Threads"
+            BuildableName = "Comm.app"
+            BlueprintName = "Comm"
             ReferencedContainer = "container:Threads.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
-            BuildableName = "Threads.app"
-            BlueprintName = "Threads"
+            BuildableName = "Comm.app"
+            BlueprintName = "Comm"
             ReferencedContainer = "container:Threads.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3CC2DA941BE2B7C000916FDD"
-            BuildableName = "Threads.app"
-            BlueprintName = "Threads"
+            BuildableName = "Comm.app"
+            BlueprintName = "Comm"
             ReferencedContainer = "container:Threads.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

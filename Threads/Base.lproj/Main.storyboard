@@ -17,7 +17,7 @@
         <!--Communities-->
         <scene sceneID="W4d-3M-ZbH">
             <objects>
-                <tableViewController storyboardIdentifier="CommunityDir" title="Communities" id="agI-VV-7cr" customClass="CommunityDir" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CommunityDir" title="Communities" id="agI-VV-7cr" customClass="CommunityDir" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="123" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVz-ZX-LMx">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityCell" rowHeight="111" id="KYJ-jV-tOS" customClass="CommunityCell" customModule="Threads" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityCell" rowHeight="111" id="KYJ-jV-tOS" customClass="CommunityCell" customModule="Comm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KYJ-jV-tOS" id="fZg-2R-Bol">
@@ -138,7 +138,7 @@
         <!--Menu View-->
         <scene sceneID="z62-Bf-hpA">
             <objects>
-                <viewController storyboardIdentifier="MenuView" modalTransitionStyle="crossDissolve" id="eH7-fD-0Rf" customClass="MenuView" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuView" modalTransitionStyle="crossDissolve" id="eH7-fD-0Rf" customClass="MenuView" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyn-z4-SLx"/>
                         <viewControllerLayoutGuide type="bottom" id="bsm-dv-dkt"/>
@@ -185,7 +185,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
-                                <state key="normal" title="All communities" image="AllCommunities.png">
+                                <state key="normal" title="All communities">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -201,7 +201,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
-                                <state key="normal" title="Control" image="Control.png">
+                                <state key="normal" title="Control">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -214,7 +214,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
-                                <state key="normal" title="Popular" image="Popular.png">
+                                <state key="normal" title="Popular">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -227,7 +227,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <inset key="contentEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
-                                <state key="normal" title="Settings" image="Settings.png">
+                                <state key="normal" title="Settings">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -239,7 +239,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="266" maxY="0.0"/>
-                                <state key="normal" title="News" image="News.png">
+                                <state key="normal" title="News">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="selected">
@@ -256,7 +256,7 @@
                                 <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="262" maxY="0.0"/>
-                                <state key="normal" title="My communities" image="MyCommunities.png">
+                                <state key="normal" title="My communities">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -273,7 +273,7 @@
                                 <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="266" maxY="0.0"/>
-                                <state key="normal" title="Suggested" image="Suggested.png">
+                                <state key="normal" title="Suggested">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -287,7 +287,7 @@
                                 <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="267" maxY="0.0"/>
-                                <state key="normal" title="Bookmarks" image="Bookmarks.png">
+                                <state key="normal" title="Bookmarks">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -350,14 +350,14 @@
         <!--Entity-->
         <scene sceneID="V9Q-pZ-2kT">
             <objects>
-                <tableViewController storyboardIdentifier="EntryDir" title="Entity" id="lZs-qv-p3h" customClass="EntryDir" customModule="Threads" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="EntryDir" title="Entity" id="lZs-qv-p3h" customClass="EntryDir" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" id="NDP-SH-iOs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryHeaderCell" rowHeight="101" id="ku5-iF-DdE" customClass="EntryHeaderCell" customModule="Threads" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryHeaderCell" rowHeight="101" id="ku5-iF-DdE" customClass="EntryHeaderCell" customModule="Comm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ku5-iF-DdE" id="YiB-f3-kdE">
@@ -442,7 +442,7 @@
                                     <outlet property="plView" destination="oF5-nR-NOD" id="f5z-5M-MsU"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="100" id="KwB-6c-os3" customClass="EntryCell" customModule="Threads" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="100" id="KwB-6c-os3" customClass="EntryCell" customModule="Comm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="193" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwB-6c-os3" id="VtF-Jm-Ek9">
@@ -609,17 +609,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AllCommunities.png" width="44" height="42"/>
         <image name="Bookmark.png" width="30" height="72"/>
         <image name="BookmarkRed.png" width="30" height="72"/>
-        <image name="Bookmarks.png" width="38" height="48"/>
-        <image name="Control.png" width="42" height="44"/>
         <image name="Menu.png" width="40" height="30"/>
-        <image name="MyCommunities.png" width="44" height="44"/>
-        <image name="News.png" width="42" height="42"/>
-        <image name="Popular.png" width="42" height="42"/>
-        <image name="Settings.png" width="44" height="42"/>
-        <image name="Suggested.png" width="44" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="56g-1J-0Oa"/>

@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3CC2DA951BE2B7C000916FDD /* Threads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threads.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CC2DA951BE2B7C000916FDD /* Comm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC2DA981BE2B7C000916FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CC2DA9D1BE2B7C000916FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CC2DA9F1BE2B7C000916FDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		3CC2DA961BE2B7C000916FDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3CC2DA951BE2B7C000916FDD /* Threads.app */,
+				3CC2DA951BE2B7C000916FDD /* Comm.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3CC2DA941BE2B7C000916FDD /* Threads */ = {
+		3CC2DA941BE2B7C000916FDD /* Comm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CC2DAA71BE2B7C000916FDD /* Build configuration list for PBXNativeTarget "Threads" */;
+			buildConfigurationList = 3CC2DAA71BE2B7C000916FDD /* Build configuration list for PBXNativeTarget "Comm" */;
 			buildPhases = (
 				3CC2DA911BE2B7C000916FDD /* Sources */,
 				3CC2DA921BE2B7C000916FDD /* Frameworks */,
@@ -141,9 +141,9 @@
 			);
 			dependencies = (
 			);
-			name = Threads;
+			name = Comm;
 			productName = Threads;
-			productReference = 3CC2DA951BE2B7C000916FDD /* Threads.app */;
+			productReference = 3CC2DA951BE2B7C000916FDD /* Comm.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3CC2DA941BE2B7C000916FDD /* Threads */,
+				3CC2DA941BE2B7C000916FDD /* Comm */,
 			);
 		};
 /* End PBXProject section */
@@ -359,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3CC2DAA71BE2B7C000916FDD /* Build configuration list for PBXNativeTarget "Threads" */ = {
+		3CC2DAA71BE2B7C000916FDD /* Build configuration list for PBXNativeTarget "Comm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3CC2DAA81BE2B7C000916FDD /* Debug */,
