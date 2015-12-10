@@ -21,11 +21,11 @@ class EntryDir: UITableViewController {
         self.tvEntry.delegate = self
         self.tvEntry.dataSource = self
         self.tvEntry.separatorStyle = .None
-        
         self.title = community[0].name
         
         self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
     }
 
     override func didReceiveMemoryWarning() {

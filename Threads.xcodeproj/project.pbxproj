@@ -22,6 +22,14 @@
 		848FC2A21C08FF530047858E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FC2A11C08FF530047858E /* MenuView.swift */; };
 		84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */; };
 		F31006F11C1330A50008DA50 /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
+		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
+		F39439B81C14529900DA2431 /* WelcomePage.png in Resources */ = {isa = PBXBuildFile; fileRef = F39439B71C14529900DA2431 /* WelcomePage.png */; };
+		F3AE60181C143EB6004E74C8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3AE60171C143EB6004E74C8 /* Icon.png */; };
+		F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B667931C176ED600B05CF5 /* SWRevealViewController.m */; };
+		F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B667961C1772C300B05CF5 /* MenuDir.swift */; };
+		F3B6679E1C177B2D00B05CF5 /* NewsDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6679D1C177B2D00B05CF5 /* NewsDir.swift */; };
+		F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6679F1C17869000B05CF5 /* ProfileCell.swift */; };
+		F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */; };
 		F3C10E421C1351FA007A94AA /* AllCommunities.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E391C1351FA007A94AA /* AllCommunities.png */; };
 		F3C10E431C1351FA007A94AA /* Bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E3A1C1351FA007A94AA /* Bookmarks.png */; };
 		F3C10E441C1351FA007A94AA /* Control.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E3B1C1351FA007A94AA /* Control.png */; };
@@ -54,6 +62,16 @@
 		8468C2F91C0A4A74001F7FD6 /* PersonData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonData.xcdatamodel; sourceTree = "<group>"; };
 		848FC2A11C08FF530047858E /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LatoRegular.ttf; sourceTree = "<group>"; };
+		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		F39439B71C14529900DA2431 /* WelcomePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomePage.png; sourceTree = "<group>"; };
+		F3AE60171C143EB6004E74C8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		F3B667911C176ED600B05CF5 /* Comm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Comm-Bridging-Header.h"; sourceTree = "<group>"; };
+		F3B667921C176ED600B05CF5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		F3B667931C176ED600B05CF5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F3B667961C1772C300B05CF5 /* MenuDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDir.swift; sourceTree = "<group>"; };
+		F3B6679D1C177B2D00B05CF5 /* NewsDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDir.swift; sourceTree = "<group>"; };
+		F3B6679F1C17869000B05CF5 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		F3C10E391C1351FA007A94AA /* AllCommunities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllCommunities.png; sourceTree = "<group>"; };
 		F3C10E3A1C1351FA007A94AA /* Bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookmarks.png; sourceTree = "<group>"; };
 		F3C10E3B1C1351FA007A94AA /* Control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Control.png; sourceTree = "<group>"; };
@@ -98,17 +116,16 @@
 		3CC2DA971BE2B7C000916FDD /* Threads */ = {
 			isa = PBXGroup;
 			children = (
-				F3C10E361C1350E3007A94AA /* images */,
 				3CC2DA9C1BE2B7C000916FDD /* Main.storyboard */,
-				848FC2A11C08FF530047858E /* MenuView.swift */,
-				3CC2DAB71BE2B81300916FDD /* Entry */,
+				F3B6679D1C177B2D00B05CF5 /* NewsDir.swift */,
+				F3B667A11C1788EB00B05CF5 /* Profile */,
+				F3B667981C1772C900B05CF5 /* Menu */,
 				3CC2DAB01BE2B7FC00916FDD /* Com */,
-				3CC2DA981BE2B7C000916FDD /* AppDelegate.swift */,
+				3CC2DAB71BE2B81300916FDD /* Entry */,
+				F3B667951C176EDC00B05CF5 /* Supporting Files */,
 				84CC6D0D1C0B06BE008AA59F /* Fonts */,
+				F3C10E361C1350E3007A94AA /* images */,
 				3CC2DAD61BE2C2C700916FDD /* ComLogos */,
-				3CC2DA9F1BE2B7C000916FDD /* Assets.xcassets */,
-				3CC2DAA11BE2B7C000916FDD /* LaunchScreen.storyboard */,
-				3CC2DAA41BE2B7C000916FDD /* Info.plist */,
 				3CC2DAB81BE2B85D00916FDD /* System */,
 				8468C2F81C0A4A74001F7FD6 /* PersonData.xcdatamodeld */,
 			);
@@ -139,6 +156,9 @@
 		3CC2DAB81BE2B85D00916FDD /* System */ = {
 			isa = PBXGroup;
 			children = (
+				3CC2DAA41BE2B7C000916FDD /* Info.plist */,
+				3CC2DAA11BE2B7C000916FDD /* LaunchScreen.storyboard */,
+				3CC2DA9F1BE2B7C000916FDD /* Assets.xcassets */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -146,14 +166,46 @@
 		84CC6D0D1C0B06BE008AA59F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */,
 				84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		F3B667951C176EDC00B05CF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CC2DA981BE2B7C000916FDD /* AppDelegate.swift */,
+				F3B667911C176ED600B05CF5 /* Comm-Bridging-Header.h */,
+				F3B667921C176ED600B05CF5 /* SWRevealViewController.h */,
+				F3B667931C176ED600B05CF5 /* SWRevealViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F3B667981C1772C900B05CF5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				848FC2A11C08FF530047858E /* MenuView.swift */,
+				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
+				F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		F3B667A11C1788EB00B05CF5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F3B6679F1C17869000B05CF5 /* ProfileCell.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		F3C10E361C1350E3007A94AA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F39439B71C14529900DA2431 /* WelcomePage.png */,
+				F3AE60171C143EB6004E74C8 /* Icon.png */,
 				F3C10E4B1C13523A007A94AA /* Back.png */,
 				F3C10E4C1C13523A007A94AA /* Bookmark.png */,
 				F3C10E4D1C13523A007A94AA /* BookmarkRed.png */,
@@ -196,6 +248,7 @@
 		3CC2DA8D1BE2B7C000916FDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Igor Cova";
 				TargetAttributes = {
@@ -228,7 +281,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3AE60181C143EB6004E74C8 /* Icon.png in Resources */,
 				F3C10E451C1351FA007A94AA /* Menu.png in Resources */,
+				F39439B81C14529900DA2431 /* WelcomePage.png in Resources */,
 				F3C10E461C1351FA007A94AA /* MyCommunities.png in Resources */,
 				F31006F11C1330A50008DA50 /* ComLogos in Resources */,
 				F3C10E471C1351FA007A94AA /* News.png in Resources */,
@@ -239,6 +294,7 @@
 				3CC2DAA01BE2B7C000916FDD /* Assets.xcassets in Resources */,
 				84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */,
 				3CC2DA9E1BE2B7C000916FDD /* Main.storyboard in Resources */,
+				F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */,
 				F3C10E481C1351FA007A94AA /* Popular.png in Resources */,
 				F3C10E491C1351FA007A94AA /* Settings.png in Resources */,
 				F3C10E4E1C13523A007A94AA /* Back.png in Resources */,
@@ -255,14 +311,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */,
 				3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */,
+				F3B6679E1C177B2D00B05CF5 /* NewsDir.swift in Sources */,
 				3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */,
+				F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */,
 				8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */,
 				3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */,
 				841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */,
 				848FC2A21C08FF530047858E /* MenuView.swift in Sources */,
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
+				F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */,
+				F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */,
 				3CC2DA991BE2B7C000916FDD /* AppDelegate.swift in Sources */,
 				3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */,
 			);
@@ -377,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = iPhone;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Threads/Info.plist;
@@ -384,6 +446,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.Threads;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Threads/Comm-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -392,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = iPhone;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Threads/Info.plist;
@@ -399,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.Threads;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Threads/Comm-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

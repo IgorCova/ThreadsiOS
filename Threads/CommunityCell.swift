@@ -26,11 +26,11 @@ class CommunityCell: UITableViewCell {
         self.imgLogoCom.layer.masksToBounds = true
         self.imgLogoCom.layer.borderWidth = 0.1
         
-        //При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
+        /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
         self.plView.layer.shadowOffset = CGSizeMake(-2, 2)
         self.plView.layer.shadowRadius = 3
-        self.plView.layer.shadowOpacity = 0.2
+        self.plView.layer.shadowOpacity = 0.2*/
     }
     
     func setCell(com: Community) {

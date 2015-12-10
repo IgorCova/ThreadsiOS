@@ -28,11 +28,11 @@ class EntryHeaderCell: UITableViewCell {
         
         self.btnLeave.layer.cornerRadius = 2
         
-        //При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
+        /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
         self.plView.layer.shadowOffset = CGSizeMake(-2, 2)
         self.plView.layer.shadowRadius = 3
-        self.plView.layer.shadowOpacity = 0.2
+        self.plView.layer.shadowOpacity = 0.2*/
     }
     
     func setCell(com: Community) {

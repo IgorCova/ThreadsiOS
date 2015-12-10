@@ -13,13 +13,21 @@ class CommunityDir: UITableViewController {
     @IBOutlet weak var itmMenu: UIBarButtonItem!
     @IBOutlet var tvCommunity: UITableView!
     
+    enum CommDictType {
+        case MyComm
+        case AllComm
+        case SugComm
+    }
+    
+    var commDictType = CommDictType.AllComm
+    
     var dirCommunity = [Community]()
     var currentCommunityID : Int!
     var isOnlyMyCommunities : Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.setCommunityDir()
         self.tvCommunity.delegate = self
         self.tvCommunity.dataSource = self
@@ -29,6 +37,7 @@ class CommunityDir: UITableViewController {
         self.tvCommunity.backgroundView = nil
         self.tvCommunity.backgroundView = UIView()
         self.tvCommunity.backgroundView?.backgroundColor = UIColor(netHex: 0xE8E8E8)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,17 +55,20 @@ class CommunityDir: UITableViewController {
     }
     
     func setCommunityDir() {
+        
         let c1 = Community(id: 1, name: "Digital Tectonics", linkToImage: "ComLogos/DigTec.jpg", inMyList: true)
         let c2 = Community(id: 2, name: "Major Mafia", linkToImage: "ComLogos/MajorMafia.png", inMyList: true)
         let c3 = Community(id: 3, name: "mr Freeman", linkToImage: "ComLogos/mF.png", inMyList: true)
         let c4 = Community(id: 4, name: "Run Foundation", linkToImage: "ComLogos/RunFoundation.png", inMyList: false)
         let c5 = Community(id: 5, name: "Threads", linkToImage: "ComLogos/thread.png", inMyList: false)
-                
-        dirCommunity.append(c1)
-        dirCommunity.append(c2)
-        dirCommunity.append(c3)
         
-        if isOnlyMyCommunities == false {
+        if (commDictType != .SugComm) {
+            dirCommunity.append(c1)
+            dirCommunity.append(c2)
+            dirCommunity.append(c3)
+        }
+        
+        if (commDictType == .AllComm) || (commDictType == .SugComm) {
             dirCommunity.append(c4)
             dirCommunity.append(c5)
         }
@@ -76,15 +88,6 @@ class CommunityDir: UITableViewController {
         
         return 81.0
     }
-        
-    func joinToCommunityByID(btn: UIButton) {
-        for val in dirCommunity {
-            if val.id == btn.tag {
-                val.inMyList = true
-                tvCommunity.reloadData()
-            }
-        }
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "ShowCommunityEntrys") {        
@@ -92,11 +95,6 @@ class CommunityDir: UITableViewController {
             entry.community.removeAll()
             entry.community.append(dirCommunity[(tvCommunity.indexPathForSelectedRow?.row)!])
         }
-    }
-    
-    @IBAction func goToMenu(sender: AnyObject) {
-        let menu = self.storyboard?.instantiateViewControllerWithIdentifier("MenuView") as! MenuView
-        self.presentViewController(menu, animated: true, completion: nil)
     }
     
     /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

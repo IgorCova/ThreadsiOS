@@ -29,11 +29,11 @@ class EntryCell: UITableViewCell {
         self.imgCommunity.layer.borderWidth = 0.1
         self.txTitle.sizeToFit()        
         
-        //При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
+        /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
         self.plView.layer.shadowOffset = CGSizeMake(-2, 2)
         self.plView.layer.shadowRadius = 3
-        self.plView.layer.shadowOpacity = 0.2
+        self.plView.layer.shadowOpacity = 0.2*/
     }
     
     func setCell(entry: Entry) {
@@ -43,9 +43,9 @@ class EntryCell: UITableViewCell {
         self.txTitle.text = entry.title
         self.imgCommunity.image = UIImage(named: entry.communityImg)
         if entry.columnName == "Post" {
-            self.btnBookmark.setImage(UIImage(named: "ComLogos/BookmarkRed.png"), forState: UIControlState.Normal)
+            self.btnBookmark.setImage(UIImage(named: "BookmarkRed.png"), forState: UIControlState.Normal)
         } else {
-            self.btnBookmark.setImage(UIImage(named: "ComLogos/Bookmark.png"), forState: UIControlState.Normal)
+            self.btnBookmark.setImage(UIImage(named: "Bookmark.png"), forState: UIControlState.Normal)
         }
     }
 
