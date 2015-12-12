@@ -19,7 +19,6 @@
 		3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */; };
 		841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841045CF1C065A760016F48A /* EntryHeaderCell.swift */; };
 		8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8468C2F81C0A4A74001F7FD6 /* PersonData.xcdatamodeld */; };
-		848FC2A21C08FF530047858E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FC2A11C08FF530047858E /* MenuView.swift */; };
 		84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */; };
 		F31006F11C1330A50008DA50 /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
 		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
@@ -60,7 +59,6 @@
 		3CC2DAD61BE2C2C700916FDD /* ComLogos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ComLogos; sourceTree = "<group>"; };
 		841045CF1C065A760016F48A /* EntryHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryHeaderCell.swift; sourceTree = "<group>"; };
 		8468C2F91C0A4A74001F7FD6 /* PersonData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonData.xcdatamodel; sourceTree = "<group>"; };
-		848FC2A11C08FF530047858E /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LatoRegular.ttf; sourceTree = "<group>"; };
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		F39439B71C14529900DA2431 /* WelcomePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomePage.png; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		F3B667981C1772C900B05CF5 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				848FC2A11C08FF530047858E /* MenuView.swift */,
 				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
 				F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */,
 			);
@@ -319,7 +316,6 @@
 				8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */,
 				3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */,
 				841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */,
-				848FC2A21C08FF530047858E /* MenuView.swift in Sources */,
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */,

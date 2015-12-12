@@ -15,11 +15,13 @@ class CommunityCell: UITableViewCell {
     @IBOutlet weak var lblNameCom: UILabel!
     @IBOutlet weak var plView: UIView!
     @IBOutlet weak var lblRole: UILabel!
+    @IBOutlet weak var lblCountMembers: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.imgLogoCom.layer.cornerRadius = self.imgLogoCom.frame.size.height/2
@@ -36,7 +38,7 @@ class CommunityCell: UITableViewCell {
     func setCell(com: Community) {
         self.imgLogoCom.image = UIImage(named: com.linkToImage)
         self.lblNameCom.text = com.name
-        
+        self.lblCountMembers.text = com.countMembers + " members"
         if com.inMyList == true {
             self.joinButton.hidden = true
             self.lblRole.text = "I'm member"

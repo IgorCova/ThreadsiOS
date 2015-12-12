@@ -12,6 +12,7 @@ class CommunityDir: UITableViewController {
     
     @IBOutlet weak var itmMenu: UIBarButtonItem!
     @IBOutlet var tvCommunity: UITableView!
+    @IBOutlet weak var btnToMenu: UIBarButtonItem!
     
     enum CommDictType {
         case MyComm
@@ -37,7 +38,9 @@ class CommunityDir: UITableViewController {
         self.tvCommunity.backgroundView = nil
         self.tvCommunity.backgroundView = UIView()
         self.tvCommunity.backgroundView?.backgroundColor = UIColor(netHex: 0xE8E8E8)
-
+        
+        self.btnToMenu.target = self.revealViewController()
+        self.btnToMenu.action = Selector("revealToggle:")
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,11 +59,11 @@ class CommunityDir: UITableViewController {
     
     func setCommunityDir() {
         
-        let c1 = Community(id: 1, name: "Digital Tectonics", linkToImage: "ComLogos/DigTec.jpg", inMyList: true)
-        let c2 = Community(id: 2, name: "Major Mafia", linkToImage: "ComLogos/MajorMafia.png", inMyList: true)
-        let c3 = Community(id: 3, name: "mr Freeman", linkToImage: "ComLogos/mF.png", inMyList: true)
-        let c4 = Community(id: 4, name: "Run Foundation", linkToImage: "ComLogos/RunFoundation.png", inMyList: false)
-        let c5 = Community(id: 5, name: "Threads", linkToImage: "ComLogos/thread.png", inMyList: false)
+        let c1 = Community(id: 1, name: "Digital Tectonics", linkToImage: "ComLogos/DigTec.jpg", inMyList: true, countMembers: "1145")
+        let c2 = Community(id: 2, name: "Major Mafia", linkToImage: "ComLogos/MajorMafia.png", inMyList: true, countMembers: "214")
+        let c3 = Community(id: 3, name: "mr Freeman", linkToImage: "ComLogos/mF.png", inMyList: true, countMembers: "1098")
+        let c4 = Community(id: 4, name: "Run Foundation", linkToImage: "ComLogos/RunFoundation.png", inMyList: false, countMembers: "310")
+        let c5 = Community(id: 5, name: "Threads", linkToImage: "ComLogos/thread.png", inMyList: false, countMembers: "18017")
         
         if (commDictType != .SugComm) {
             dirCommunity.append(c1)
@@ -83,10 +86,10 @@ class CommunityDir: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if dirCommunity[indexPath.row].inMyList == false {
-            return 111.0
+            return 125.0
         }
         
-        return 81.0
+        return 95.0
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

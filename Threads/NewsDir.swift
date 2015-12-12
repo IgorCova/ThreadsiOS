@@ -13,21 +13,29 @@ class NewsDir: UITableViewController {
     var dirNews = [Entry]()
     
     @IBOutlet var tvNews: UITableView!
+    @IBOutlet weak var btnToMenu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        self.fillNewsDir()
+        
+        if dirNews.isEmpty {
+            self.fillNewsDir()
+        }
         
         self.tvNews.delegate = self
         self.tvNews.dataSource = self
         self.tvNews.separatorStyle = .None
+        
+        self.btnToMenu.target = self.revealViewController()
+        self.btnToMenu.action = Selector("revealToggle:")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,7 +103,7 @@ class NewsDir: UITableViewController {
     
     func calculateHeightForString(inString : String) -> CGFloat{
         let messageString = inString
-        let attributes = [NSFontAttributeName: UIFont(name: "Lato", size: 15.0)!]
+        let attributes = [NSFontAttributeName: UIFont(name: "Lato", size: 17.0)!]
         let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
         let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
         let requredSize:CGRect = rect

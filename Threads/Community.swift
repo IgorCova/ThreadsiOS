@@ -21,14 +21,16 @@ class Community {
     }*/
     var linkToImage : String
     var inMyList : Bool
+    var countMembers : String
     
-    init (id: Int, name : String, linkToImage : String, inMyList : Bool) {
+    init (id: Int, name : String, linkToImage : String, inMyList : Bool, countMembers : String) {
         self.id = id
         self.name = name
        /* self.typeID = typeID
         self.categoryID = categoryID*/
         self.linkToImage = linkToImage
         self.inMyList = inMyList
+        self.countMembers = countMembers
     }
 }
 

@@ -10,14 +10,13 @@ import UIKit
 
 class MenuDir: UITableViewController {
     
-    var menuItems: [(cell: String?, name: String?, img: String?)] = [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")] //= [(cell: "", name: "")]
+    var menuItems: [(cell: String?, name: String?, img: String?)] = [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
    
     enum CommDictType {
         case MyComm
         case AllComm
         case SugComm
     }
-    
     
     @IBOutlet var tvMenuItems: UITableView!
     
@@ -26,6 +25,13 @@ class MenuDir: UITableViewController {
         
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
+        
+        /*
+        if self.revealViewController() != nil {
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+            
+        }*/
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,6 +44,8 @@ class MenuDir: UITableViewController {
                          ,(cell: "AllCommCell", name: "All community", img: "AllCommunities.png")
                          ,(cell: "MyCommCell", name: "My community", img: "MyCommunities.png")
                          ,(cell: "SgCommCell", name: "Suggested", img: "Suggested.png")], "Bookmarks", "Popular", "Control", "Settings"]*/
+        
+        
         self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
         ,(cell: "NewsCell", name: "News", img: "News.png")
         ,(cell: "CommCell", name: "All community", img: "AllCommunities.png")
@@ -95,6 +103,10 @@ class MenuDir: UITableViewController {
         }
         
         return  42.0
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.revealViewController().setFrontViewPosition(FrontViewPosition.LeftSideMostRemoved, animated:  true)
     }
 
     /*
