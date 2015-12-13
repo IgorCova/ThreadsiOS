@@ -1,19 +1,19 @@
 //
-//  NewsDir.swift
+//  MyNewsDir.swift
 //  Threads
 //
-//  Created by Igor Cova on 08/12/15.
+//  Created by Igor Cova on 13/12/15.
 //  Copyright © 2015 Igor Cova. All rights reserved.
 //
 
 import UIKit
 
-class NewsDir: UITableViewController {
-    
+class MyNewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
+
     var dirNews = [Entry]()
     
-    @IBOutlet var tvNews: UITableView!
     @IBOutlet weak var btnToMenu: UIBarButtonItem!
+    @IBOutlet weak var tvNews: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,39 +22,51 @@ class NewsDir: UITableViewController {
             self.fillNewsDir()
         }
         
+        self.navigationController?.hidesBarsOnSwipe = true
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
+        
         self.tvNews.delegate = self
         self.tvNews.dataSource = self
         self.tvNews.separatorStyle = .None
-        
         self.btnToMenu.target = self.revealViewController()
         self.btnToMenu.action = Selector("revealToggle:")
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        
+    }
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.contentInset.top = topLayoutGuide.length
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dirNews.count
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return dirNews.count
     }
     
-    override func viewDidAppear(animated: Bool) {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("NewsCell") as? EntryCell)!
+        cell.setCell(dirNews[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let entry = dirNews[indexPath.row]
+        let height : CGFloat = self.calculateHeightForString(entry.title)
+        return height + 100.0
+    }
+    
+    func calculateHeightForString(inString : String) -> CGFloat{
+        let messageString = inString
+        let attributes = [NSFontAttributeName: UIFont(name: "Lato", size: 17.0)!]
+        let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
+        let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
+        let requredSize:CGRect = rect
+        return requredSize.height
     }
     
     func fillNewsDir() {
@@ -87,74 +99,4 @@ class NewsDir: UITableViewController {
         dirNews.append(e8)
         dirNews.append(e9)
     }
-
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("NewsCell") as? EntryCell)!
-        cell.setCell(dirNews[indexPath.row])
-        
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let entry = dirNews[indexPath.row]
-        let height : CGFloat = self.calculateHeightForString(entry.title)//self.getHeightForTitle(entry.title)
-        return height + 100.0
-    }
-    
-    func calculateHeightForString(inString : String) -> CGFloat{
-        let messageString = inString
-        let attributes = [NSFontAttributeName: UIFont(name: "Lato", size: 17.0)!]
-        let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
-        let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
-        let requredSize:CGRect = rect
-        return requredSize.height
-    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -55,6 +55,7 @@ class MenuDir: UITableViewController {
         ,(cell: "CommCell", name: "Popular", img: "Popular.png")
         ,(cell: "CommCell", name: "Control", img: "Control.png")
         ,(cell: "CommCell", name: "Settings", img: "Settings.png")
+            ,(cell: "NewNewsCell", name: "New News", img: "News.png")
         ]
         
         //, "Bookmarks", "Popular", "Control", "Settings"]
