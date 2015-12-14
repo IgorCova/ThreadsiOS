@@ -397,7 +397,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1i-iL-rgB">
                                 <rect key="frame" x="15" y="193" width="290" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugK-6W-zw0">
@@ -406,7 +406,7 @@
                                     <constraint firstAttribute="height" constant="21" id="mAD-fT-pbC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSA-Li-nxL">
@@ -659,13 +659,13 @@
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="nWa-ed-Aih" customClass="NewsDir" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" id="joY-A0-lfa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="93" id="FKV-xh-tp9" customClass="EntryCell" customModule="Comm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="93"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKV-xh-tp9" id="df6-Ia-KQm">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
@@ -779,7 +779,7 @@
                             <outlet property="delegate" destination="nWa-ed-Aih" id="eYY-Yp-vLH"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="News" id="7Rw-Zc-1KD">
                         <barButtonItem key="leftBarButtonItem" image="Menu.png" width="30" id="zby-Ha-9TL">
@@ -820,22 +820,22 @@
         <!--News-->
         <scene sceneID="0qa-jM-mjz">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="kxq-9o-cac" customClass="MyNewsDir" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kxq-9o-cac" customClass="MyNewsDir" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kXc-9q-Hya"/>
                         <viewControllerLayoutGuide type="bottom" id="EuN-cr-D8V"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n0F-wv-5Yq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7CV-8j-bDo">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="93" id="hdS-v8-jjQ" customClass="EntryCell" customModule="Comm" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="93"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdS-v8-jjQ" id="WIE-Ow-6lo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
@@ -950,7 +950,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.059481954699999999" green="0.44869081750000001" blue="0.75464932370000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.10483711227843548" green="0.45950324237324575" blue="0.70424875057252057" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EuN-cr-D8V" firstAttribute="top" secondItem="7CV-8j-bDo" secondAttribute="bottom" id="3kg-BP-eYC"/>
                             <constraint firstItem="7CV-8j-bDo" firstAttribute="leading" secondItem="n0F-wv-5Yq" secondAttribute="leading" id="9z3-6Z-2xr"/>
@@ -958,14 +959,13 @@
                             <constraint firstAttribute="trailing" secondItem="7CV-8j-bDo" secondAttribute="trailing" id="Ov5-Nf-OzN"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="News" id="0Ob-Br-bB9">
                         <barButtonItem key="leftBarButtonItem" image="Menu.png" width="30" id="hwR-ol-4Fk">
                             <inset key="imageInsets" minX="-3" minY="9" maxX="21" maxY="5"/>
                             <color key="tintColor" red="0.98000591989999997" green="0.99171859029999998" blue="0.98419374230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnToMenu" destination="hwR-ol-4Fk" id="kTV-mr-XQF"/>
@@ -975,19 +975,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpH-ay-Sh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="2491"/>
+            <point key="canvasLocation" x="1166" y="2491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VA8-5k-tQn">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" hidesBarsOnTap="YES" id="Q9C-fq-S7x" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" id="Q9C-fq-S7x" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="esd-jV-v0x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.44705882349999998" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.098039215690000001" green="0.44705882349999998" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.098039215686274508" green="0.44705882352941173" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

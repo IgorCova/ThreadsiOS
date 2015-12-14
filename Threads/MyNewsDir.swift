@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MyNewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
+class MyNewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate {
 
     var dirNews = [Entry]()
     
     @IBOutlet weak var btnToMenu: UIBarButtonItem!
     @IBOutlet weak var tvNews: UITableView!
+    var lastOffsetY : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +32,21 @@ class MyNewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         self.btnToMenu.target = self.revealViewController()
         self.btnToMenu.action = Selector("revealToggle:")
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
-        
     }
-
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView){
+        self.lastOffsetY = scrollView.contentOffset.y
+    }
+    
+    func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
+        let hide = scrollView.contentOffset.y > self.lastOffsetY
+        self.navigationController?.setNavigationBarHidden(hide, animated: true)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dirNews.count
@@ -68,6 +77,8 @@ class MyNewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         let requredSize:CGRect = rect
         return requredSize.height
     }
+    
+    
     
     func fillNewsDir() {
         

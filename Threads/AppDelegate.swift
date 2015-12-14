@@ -14,12 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-      /*  self.window?.backgroundColor = UIColor(netHex: 0x1972B7)
-        self.window?.frame = CGRectMake(0.0, application.statusBarFrame.size.height, (self.window?.bounds.size.width)!, self.window!.bounds.size.height - application.statusBarFrame.size.height)*/ // 
-       // [COVA I] IT'S NOT WORKED
         return true
     }
 

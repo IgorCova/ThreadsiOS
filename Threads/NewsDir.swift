@@ -29,7 +29,7 @@ class NewsDir: UITableViewController {
         self.btnToMenu.target = self.revealViewController()
         self.btnToMenu.action = Selector("revealToggle:")
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,6 +55,7 @@ class NewsDir: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        UIApplication.sharedApplication().statusBarStyle = .Default
     }
     
     func fillNewsDir() {
