@@ -21,13 +21,12 @@
 		8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8468C2F81C0A4A74001F7FD6 /* PersonData.xcdatamodeld */; };
 		84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */; };
 		F31006F11C1330A50008DA50 /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
-		F32106801C1D672E00EFF9F3 /* MyNewsDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321067F1C1D672E00EFF9F3 /* MyNewsDir.swift */; };
+		F32106801C1D672E00EFF9F3 /* NewsDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321067F1C1D672E00EFF9F3 /* NewsDir.swift */; };
 		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
 		F39439B81C14529900DA2431 /* WelcomePage.png in Resources */ = {isa = PBXBuildFile; fileRef = F39439B71C14529900DA2431 /* WelcomePage.png */; };
 		F3AE60181C143EB6004E74C8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3AE60171C143EB6004E74C8 /* Icon.png */; };
 		F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B667931C176ED600B05CF5 /* SWRevealViewController.m */; };
 		F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B667961C1772C300B05CF5 /* MenuDir.swift */; };
-		F3B6679E1C177B2D00B05CF5 /* NewsDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6679D1C177B2D00B05CF5 /* NewsDir.swift */; };
 		F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6679F1C17869000B05CF5 /* ProfileCell.swift */; };
 		F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */; };
 		F3C10E421C1351FA007A94AA /* AllCommunities.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E391C1351FA007A94AA /* AllCommunities.png */; };
@@ -61,7 +60,7 @@
 		841045CF1C065A760016F48A /* EntryHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryHeaderCell.swift; sourceTree = "<group>"; };
 		8468C2F91C0A4A74001F7FD6 /* PersonData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonData.xcdatamodel; sourceTree = "<group>"; };
 		84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LatoRegular.ttf; sourceTree = "<group>"; };
-		F321067F1C1D672E00EFF9F3 /* MyNewsDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNewsDir.swift; sourceTree = "<group>"; };
+		F321067F1C1D672E00EFF9F3 /* NewsDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDir.swift; sourceTree = "<group>"; };
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		F39439B71C14529900DA2431 /* WelcomePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomePage.png; sourceTree = "<group>"; };
 		F3AE60171C143EB6004E74C8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -69,7 +68,6 @@
 		F3B667921C176ED600B05CF5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F3B667931C176ED600B05CF5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		F3B667961C1772C300B05CF5 /* MenuDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDir.swift; sourceTree = "<group>"; };
-		F3B6679D1C177B2D00B05CF5 /* NewsDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDir.swift; sourceTree = "<group>"; };
 		F3B6679F1C17869000B05CF5 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		F3C10E391C1351FA007A94AA /* AllCommunities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllCommunities.png; sourceTree = "<group>"; };
@@ -117,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC2DA9C1BE2B7C000916FDD /* Main.storyboard */,
-				F3B6679D1C177B2D00B05CF5 /* NewsDir.swift */,
+				F321067F1C1D672E00EFF9F3 /* NewsDir.swift */,
 				F3B667A11C1788EB00B05CF5 /* Profile */,
 				F3B667981C1772C900B05CF5 /* Menu */,
 				3CC2DAB01BE2B7FC00916FDD /* Com */,
@@ -128,7 +126,6 @@
 				3CC2DAD61BE2C2C700916FDD /* ComLogos */,
 				3CC2DAB81BE2B85D00916FDD /* System */,
 				8468C2F81C0A4A74001F7FD6 /* PersonData.xcdatamodeld */,
-				F321067F1C1D672E00EFF9F3 /* MyNewsDir.swift */,
 			);
 			path = Threads;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 			files = (
 				F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */,
 				3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */,
-				F3B6679E1C177B2D00B05CF5 /* NewsDir.swift in Sources */,
 				3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */,
 				F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */,
 				8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */,
@@ -325,7 +321,7 @@
 				F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */,
 				3CC2DA991BE2B7C000916FDD /* AppDelegate.swift in Sources */,
 				3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */,
-				F32106801C1D672E00EFF9F3 /* MyNewsDir.swift in Sources */,
+				F32106801C1D672E00EFF9F3 /* NewsDir.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
