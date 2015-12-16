@@ -25,56 +25,32 @@ class MenuDir: UITableViewController {
         
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
-        
-        /*
-        if self.revealViewController() != nil {
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-            
-        }*/
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        /*self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
-                         ,(cell: "NewsCell", name: "News", img: "News.png")
-                         ,(cell: "AllCommCell", name: "All community", img: "AllCommunities.png")
-                         ,(cell: "MyCommCell", name: "My community", img: "MyCommunities.png")
-                         ,(cell: "SgCommCell", name: "Suggested", img: "Suggested.png")], "Bookmarks", "Popular", "Control", "Settings"]*/
-        
-        
         self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
-        ,(cell: "NewsCell", name: "News", img: "News.png")
-        ,(cell: "CommCell", name: "All community", img: "AllCommunities.png")
-        ,(cell: "CommCell", name: "My community", img: "MyCommunities.png")
-        ,(cell: "CommCell", name: "Suggested", img: "Suggested.png")
-        ,(cell: "CommCell", name: "Bookmarks", img: "Bookmarks.png")
-        ,(cell: "CommCell", name: "Popular", img: "Popular.png")
-        ,(cell: "CommCell", name: "Control", img: "Control.png")
-        ,(cell: "CommCell", name: "Settings", img: "Settings.png")
-        ]
-        
-        //, "Bookmarks", "Popular", "Control", "Settings"]
-        //self.menuItems = ["ProfileCell", "NewsCell", "AllCommCell"]//,"MyCommCell", "SgCommCell", "BookmarksCell", "PopularCell", "ControlCell", "SettingsCell"]
+            ,(cell: "NewsCell", name: "News", img: "News.png")
+            ,(cell: "CommCell", name: "All community", img: "AllCommunities.png")
+            ,(cell: "CommCell", name: "My community", img: "MyCommunities.png")
+            ,(cell: "CommCell", name: "Suggested", img: "Suggested.png")
+            ,(cell: "CommCell", name: "Bookmarks", img: "Bookmarks.png")
+            ,(cell: "CommCell", name: "Popular", img: "Popular.png")
+            ,(cell: "CommCell", name: "Control", img: "Control.png")
+            ,(cell: "CommCell", name: "Settings", img: "Settings.png")
+            ]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
-    // MARK: - Table view data source
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return menuItems.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         if indexPath.row == 0 {
             let profileCell = (tableView.dequeueReusableCellWithIdentifier("ProfileCell") as? ProfileCell)!
             profileCell.userInteractionEnabled = false
@@ -109,45 +85,6 @@ class MenuDir: UITableViewController {
         self.revealViewController().setFrontViewPosition(FrontViewPosition.LeftSideMostRemoved, animated:  true)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toComms" {
             let navController = segue.destinationViewController as! UINavigationController

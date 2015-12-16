@@ -42,12 +42,9 @@ class CommunityCell: UITableViewCell {
         if com.inMyList == true {
             self.joinButton.hidden = true
             self.lblRole.text = "I'm member"
-            //self.lblRole.hidden = false
         } else {
             self.joinButton.hidden = false
-            //self.joinButton.layer.cornerRadius = 2
             self.lblRole.text = "Join"
-            //self.lblRole.hidden = true
         }
     }
 }

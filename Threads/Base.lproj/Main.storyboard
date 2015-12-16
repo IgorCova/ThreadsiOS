@@ -120,7 +120,7 @@
                                     <outlet property="lblNameCom" destination="PxP-v6-xkz" id="qd9-Ez-UxE"/>
                                     <outlet property="lblRole" destination="LnV-DF-rDC" id="ZZh-RL-GJR"/>
                                     <outlet property="plView" destination="0ap-xa-ujU" id="BPj-Jh-7gK"/>
-                                    <segue destination="lZs-qv-p3h" kind="show" identifier="ShowCommunityEntrys" id="afF-pl-zMK"/>
+                                    <segue destination="lZs-qv-p3h" kind="show" identifier="ShowCommunityEntries" id="afF-pl-zMK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

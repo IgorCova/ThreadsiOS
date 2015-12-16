@@ -10,33 +10,28 @@ import Foundation
 
 class Entry {
     var id : Int
-   // var communityID : Int
-    var communityName : String
-    var communityImg : String
+    var communityId : Int
     
-  //var columnID : Int
+    var communityName: String {
+        return CommunityData().getNameById(communityId)
+    }
+    
+    var communityImg : String {
+        return CommunityData().getLogoById(communityId)
+    }
+
     var columnName : String
-    
-  //var redactorID : Int
     var date : String
     var title : String
     init (   id: Int
-   //         ,communityID : Int
-            ,communityName : String
-            ,communityImg : String
-        
-          //,columnID : Int
+            ,communityId : Int
             ,columnName : String
-        
-          //,redactorID : Int
             ,date : String
             ,title : String
         ) {
         self.id = id
-    //    self.communityID = communityID
-        self.communityName = communityName
+        self.communityId = communityId
         self.columnName = columnName
-        self.communityImg = communityImg
         self.date = date
         self.title = title
     }
