@@ -155,6 +155,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryHeaderCell" rowHeight="105" id="ku5-iF-DdE" customClass="EntryHeaderCell" customModule="Comm" customModuleProvider="target">
@@ -253,7 +254,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUO-5w-ff2">
-                                                    <rect key="frame" x="55" y="10" width="260" height="28"/>
+                                                    <rect key="frame" x="55" y="10" width="260" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" red="0.098039215690000001" green="0.44705882349999998" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -277,11 +278,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Be-N1-xQL">
-                                                    <rect key="frame" x="5" y="57" width="310" height="250"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lametg, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="text" translatesAutoresizingMaskIntoConstraints="NO" id="6Be-N1-xQL">
+                                                    <rect key="frame" x="5" y="57.5" width="310" height="36.5"/>
                                                     <color key="textColor" red="0.16909054487179487" green="0.16909054487179487" blue="0.16909054487179487" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d3-CG-LGK">
@@ -294,7 +294,7 @@
                                                     <state key="selected" image="BookmarkRed.png"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Column" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-vF-1v0">
-                                                    <rect key="frame" x="171" y="39" width="145" height="21"/>
+                                                    <rect key="frame" x="171" y="38" width="145" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="fhA-Eh-ZwJ"/>
                                                         <constraint firstAttribute="width" constant="145" id="tWO-XJ-Gb1"/>
@@ -369,7 +369,11 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Comm" id="Kjo-8e-v7T"/>
+                    <navigationItem key="navigationItem" title="Comm" id="Kjo-8e-v7T">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PCw-cL-QOW">
+                            <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tvEntry" destination="NDP-SH-iOs" id="3uX-gm-Qy5"/>
@@ -378,6 +382,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9o-8B-Jtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2095" y="1087"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0TX-yQ-QZe">
+            <objects>
+                <viewController id="gcR-4e-SOC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VYQ-AR-tzw"/>
+                        <viewControllerLayoutGuide type="bottom" id="xay-eF-LnQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xwr-4r-x9J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vK2-5c-tWj">
+                                <rect key="frame" x="0.0" y="15" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="What's news?" id="GWr-iA-tuI">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IO5-xJ-KjV"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="N9J-pg-ELL"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8xC-eE-CKP">
+                                <rect key="frame" x="0.0" y="59" width="320" height="509"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZmF-J1-2Mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2095" y="1740"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
@@ -574,7 +615,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkn-HI-7Jq">
-                                                            <rect key="frame" x="55" y="10" width="260" height="28"/>
+                                                            <rect key="frame" x="55" y="10" width="260" height="27.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                             <color key="textColor" red="0.098039215690000001" green="0.44705882349999998" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -598,9 +639,8 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-dv-TpF">
-                                                            <rect key="frame" x="5" y="55" width="310" height="302"/>
-                                                            <string key="text">Lorem ipsum dolor sit er elit lametg, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="text" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-dv-TpF">
+                                                            <rect key="frame" x="5" y="55" width="310" height="36.5"/>
                                                             <color key="textColor" red="0.01176470588" green="0.0078431372550000003" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -655,6 +695,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90035994760000004" green="0.90035994760000004" blue="0.90035994760000004" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="btnBookmark" destination="EDc-kM-WOa" id="UNT-kk-sD7"/>
                                             <outlet property="imgCommunity" destination="cbp-af-arP" id="kFz-lZ-WCV"/>

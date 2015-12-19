@@ -14,26 +14,37 @@ class CommunityData {
     
     func getNameById(id: Int) -> String {
         var commName: String?
-        /*
+        if communities.count == 0 {
+            loadDefData()
+        }
         if id >= 0 && id < communities.count {
             if let i = communities.indexOf({$0.id == id}) {
                 commName = communities[i].name
             } else {
                 commName = "Non"
             }
-        }*/
-        
-        commName = "thread"
+        }
+
+       // commName = "thread"
         
         return commName!
     }
     
     func getLogoById(id: Int) -> String {
+        var commLogo: String?
         if communities.count == 0 {
             loadDefData()
         }
+        
+        if id >= 0 && id < communities.count {
+            if let i = communities.indexOf({$0.id == id}) {
+                commLogo = communities[i].linkToImage
+            } else {
+                commLogo = "Non"
+            }
+        }
 
-        return "ComLogos/mF.png"
+        return commLogo!
     }
     
     func loadDefData() {

@@ -68,6 +68,6 @@ class EntryDir: UITableViewController {
         
         let entry = dirEntry[indexPath.row]
         let height : CGFloat = calculateHeightForString(entry.title)
-        return height + 100.0
+        return height + 80.0
     }
 }

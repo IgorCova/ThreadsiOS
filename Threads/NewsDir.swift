@@ -35,6 +35,16 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
         self.btnToMenu.action = Selector("revealToggle:")
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        
+        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: "swipe:")
+
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        self.navigationController?.hidesBarsOnSwipe = true
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,6 +52,12 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
         self.tvNews.reloadData()
     }
     
+    func swipe(sender: UIPanGestureRecognizer) {
+        let isHidden = (self.navigationController?.navigationBar.frame.origin.y < 0)
+        
+        self.navigationController?.navigationBarHidden = isHidden
+    }
+    /*
     func scrollViewWillBeginDragging(scrollView: UIScrollView){
         self.lastOffsetY = scrollView.contentOffset.y
     }
@@ -49,7 +65,7 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
     func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
         let hide = scrollView.contentOffset.y > self.lastOffsetY
         self.navigationController?.setNavigationBarHidden(hide, animated: true)
-    }
+    }*/
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -73,7 +89,7 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let entry = dirNews[indexPath.row]
         let height : CGFloat = calculateHeightForString(entry.title)
-        return height + 100.0
+        return height + 80.0
     }
 
 }
