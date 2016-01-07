@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class CommunityData {
-    
+    var data: NSData?
     private var communities = [Community]()
     
     func getNameById(id: Int) -> String {
@@ -67,5 +68,31 @@ class CommunityData {
         self.communities.append(c7)
         self.communities.append(c8)
         self.communities.append(c9)
+        
+        /*if let dataJS = wsGet() {
+            let json = JSON(data: dataJS)
+            //let dict = json.dictionary?["CommunityReadDictResult"]
+            let name = json["Name"][1].description
+            print(name)
+        }*/
+    }
+    
+    func wsGet() -> NSData? {
+        
+        let manager = AFHTTPRequestOperationManager()
+        //manager.requestSerializer.setValue(<#T##value: AnyObject?##AnyObject?#>, forKey: <#T##String#>)
+        manager.GET("http://192.168.199.6:80/ThreadsService.svc/Community_ReadDict"
+            ,parameters: nil
+            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+               // print("JSON: " + responseObject.description)
+                if let dataFromString = responseObject.description.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+                    self.data = dataFromString
+                }
+            },
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
+                print("Error: " + error.localizedDescription)
+        })
+        
+        return self.data
     }
 }
