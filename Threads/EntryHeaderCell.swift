@@ -38,7 +38,7 @@ class EntryHeaderCell: UITableViewCell {
     func setCell(com: Community) {
         self.lblCommunityName.text = com.name
         self.lblRoleInCommunity.text = "I'm owner"
-        self.imgCommunity.image = UIImage(named: com.linkToImage)
+        self.imgCommunity.imageFromUrl(com.linkToImage)
     }
 
 }

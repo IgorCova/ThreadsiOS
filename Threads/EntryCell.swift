@@ -41,7 +41,10 @@ class EntryCell: UITableViewCell {
         self.lblDate.text = entry.date
         self.lblColumnName.text = entry.columnName
         self.txTitle.text = entry.title
-        self.imgCommunity.image = UIImage(named: entry.communityImg)
+        
+        self.imgCommunity.imageFromUrl(entry.communityImg)
+        
+        
         if entry.columnName == "Post" {
             self.btnBookmark.setImage(UIImage(named: "BookmarkRed.png"), forState: UIControlState.Normal)
         } else {

@@ -17,7 +17,14 @@ class EntryDir: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dirEntry = EntryData().getEntriesByCommId((community?.id)!)
+      //  self.dirEntry = EntryData().getEntriesByCommId((community?.id)!)
+        
+        EntryData().wsGetEntryReadByCommunityID((community?.id)!) {entryDict, successful in
+            if successful {
+                self.dirEntry = entryDict
+                self.tvEntry.reloadData()
+            }
+        }
         
         self.tvEntry.delegate = self
         self.tvEntry.dataSource = self

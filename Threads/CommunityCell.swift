@@ -36,7 +36,7 @@ class CommunityCell: UITableViewCell {
     }
     
     func setCell(com: Community) {
-        self.imgLogoCom.image = UIImage(named: com.linkToImage)
+        self.imgLogoCom.imageFromUrl(com.linkToImage)
         self.lblNameCom.text = com.name
         self.lblCountMembers.text = com.countMembers + " members"
         if com.inMyList == true {

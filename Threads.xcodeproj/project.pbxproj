@@ -22,6 +22,7 @@
 		84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */; };
 		CA0C465E5026609983EE619B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40B2CD6BB6C75F7AB60935C /* Pods.framework */; };
 		F31006F11C1330A50008DA50 /* ComLogos in Resources */ = {isa = PBXBuildFile; fileRef = 3CC2DAD61BE2C2C700916FDD /* ComLogos */; };
+		F31442801C3FD05500D4BCC5 /* Bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = F314427F1C3FD05500D4BCC5 /* Bookmarks.png */; };
 		F32106801C1D672E00EFF9F3 /* NewsDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321067F1C1D672E00EFF9F3 /* NewsDir.swift */; };
 		F33560571C3E7071002A127E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33560561C3E7071002A127E /* SwiftyJSON.swift */; };
 		F337E3F71C221EB300557168 /* EntryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F61C221EB300557168 /* EntryData.swift */; };
@@ -34,7 +35,6 @@
 		F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6679F1C17869000B05CF5 /* ProfileCell.swift */; };
 		F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */; };
 		F3C10E421C1351FA007A94AA /* AllCommunities.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E391C1351FA007A94AA /* AllCommunities.png */; };
-		F3C10E431C1351FA007A94AA /* Bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E3A1C1351FA007A94AA /* Bookmarks.png */; };
 		F3C10E441C1351FA007A94AA /* Control.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E3B1C1351FA007A94AA /* Control.png */; };
 		F3C10E451C1351FA007A94AA /* Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E3C1C1351FA007A94AA /* Menu.png */; };
 		F3C10E461C1351FA007A94AA /* MyCommunities.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E3D1C1351FA007A94AA /* MyCommunities.png */; };
@@ -67,6 +67,7 @@
 		8468C2F91C0A4A74001F7FD6 /* PersonData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonData.xcdatamodel; sourceTree = "<group>"; };
 		84CC6D0E1C0B06FE008AA59F /* LatoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LatoRegular.ttf; sourceTree = "<group>"; };
 		A40B2CD6BB6C75F7AB60935C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F314427F1C3FD05500D4BCC5 /* Bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookmarks.png; sourceTree = "<group>"; };
 		F321067F1C1D672E00EFF9F3 /* NewsDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDir.swift; sourceTree = "<group>"; };
 		F33560561C3E7071002A127E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F337E3F61C221EB300557168 /* EntryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryData.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		F3B6679F1C17869000B05CF5 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		F3C10E391C1351FA007A94AA /* AllCommunities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AllCommunities.png; sourceTree = "<group>"; };
-		F3C10E3A1C1351FA007A94AA /* Bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookmarks.png; sourceTree = "<group>"; };
 		F3C10E3B1C1351FA007A94AA /* Control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Control.png; sourceTree = "<group>"; };
 		F3C10E3C1C1351FA007A94AA /* Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Menu.png; sourceTree = "<group>"; };
 		F3C10E3D1C1351FA007A94AA /* MyCommunities.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyCommunities.png; sourceTree = "<group>"; };
@@ -234,13 +234,13 @@
 		F3C10E361C1350E3007A94AA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F314427F1C3FD05500D4BCC5 /* Bookmarks.png */,
 				F39439B71C14529900DA2431 /* WelcomePage.png */,
 				F3AE60171C143EB6004E74C8 /* Icon.png */,
 				F3C10E4B1C13523A007A94AA /* Back.png */,
 				F3C10E4C1C13523A007A94AA /* Bookmark.png */,
 				F3C10E4D1C13523A007A94AA /* BookmarkRed.png */,
 				F3C10E391C1351FA007A94AA /* AllCommunities.png */,
-				F3C10E3A1C1351FA007A94AA /* Bookmarks.png */,
 				F3C10E3B1C1351FA007A94AA /* Control.png */,
 				F3C10E3C1C1351FA007A94AA /* Menu.png */,
 				F3C10E3D1C1351FA007A94AA /* MyCommunities.png */,
@@ -323,7 +323,7 @@
 				3CC2DAA31BE2B7C000916FDD /* LaunchScreen.storyboard in Resources */,
 				F3C10E4F1C13523A007A94AA /* Bookmark.png in Resources */,
 				F3C10E4A1C1351FA007A94AA /* Suggested.png in Resources */,
-				F3C10E431C1351FA007A94AA /* Bookmarks.png in Resources */,
+				F31442801C3FD05500D4BCC5 /* Bookmarks.png in Resources */,
 				3CC2DAA01BE2B7C000916FDD /* Assets.xcassets in Resources */,
 				84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */,
 				3CC2DA9E1BE2B7C000916FDD /* Main.storyboard in Resources */,
@@ -436,6 +436,7 @@
 /* Begin XCBuildConfiguration section */
 		3CC2DAA51BE2B7C000916FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 542734DA7F8138C6B981EC92 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -481,6 +482,7 @@
 		};
 		3CC2DAA61BE2B7C000916FDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 542734DA7F8138C6B981EC92 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

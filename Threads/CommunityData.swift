@@ -10,54 +10,41 @@ import Foundation
 import SwiftyJSON
 
 class CommunityData {
-    var data: NSData?
+    var dataj: NSData?
     private var communities = [Community]()
     
-    func getNameById(id: Int) -> String {
-        var commName: String?
-        if communities.count == 0 {
-            loadDefData()
-        }
-        if id >= 0 && id < communities.count {
-            if let i = communities.indexOf({$0.id == id}) {
-                commName = communities[i].name
-            } else {
-                commName = "Non"
-            }
-        }
-
-       // commName = "thread"
+    func wsGetCommunityDict(completion : (comms:[Community], successful: Bool) -> Void) {
         
-        return commName!
-    }
-    
-    func getLogoById(id: Int) -> String {
-        var commLogo: String?
-        if communities.count == 0 {
-            loadDefData()
-        }
-        
-        if id >= 0 && id < communities.count {
-            if let i = communities.indexOf({$0.id == id}) {
-                commLogo = communities[i].linkToImage
-            } else {
-                commLogo = "Non"
-            }
-        }
-
-        return commLogo!
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.GET("\(Threads)/Community_ReadDict"
+            ,parameters: nil
+            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+                //print("JSON: " + responseObject.description)
+                let communityDict = JSON(responseObject)["CommunityReadDictResult"].arrayValue
+                var communities = [Community]()
+                
+                for comm in communityDict {
+                    let id = comm["ID"].int!
+                    let cm = Community(id: id, name: comm["Name"].string!, inMyList: true, countMembers: "100")
+                    communities.append(cm)
+                }
+                completion(comms: communities, successful: true)
+            },
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
+                print("Error: " + error.localizedDescription)
+                completion(comms: [], successful: false)
+        })
     }
     
     func loadDefData() {
-        let c1 = Community(id: 1, name: "Digital Tectonics", linkToImage: "ComLogos/DigTec.jpg", inMyList: true, countMembers: "1145")
-        let c2 = Community(id: 2, name: "Major Mafia", linkToImage: "ComLogos/MajorMafia.png", inMyList: true, countMembers: "214")
-        let c3 = Community(id: 3, name: "Mr. Freeman", linkToImage: "ComLogos/mF.png", inMyList: true, countMembers: "1098")
-        let c4 = Community(id: 4, name: "Run Foundation", linkToImage: "ComLogos/RunFoundation.png", inMyList: false, countMembers: "310")
-        let c5 = Community(id: 5, name: "Threads", linkToImage: "ComLogos/thread.png", inMyList: false, countMembers: "18017")
-        let c6 = Community(id: 6, name: "GitHub news", linkToImage: "ComLogos/DigTec.jpg", inMyList: true, countMembers: "1145")
-        let c7 = Community(id: 7, name: "HubraHubr", linkToImage: "ComLogos/MajorMafia.png", inMyList: true, countMembers: "214")
-        let c8 = Community(id: 8, name: "Franky Show", linkToImage: "ComLogos/mF.png", inMyList: true, countMembers: "1098")
-        let c9 = Community(id: 9, name: "Adventures", linkToImage: "ComLogos/RunFoundation.png", inMyList: false, countMembers: "310")
+        let c1 = Community(id: 1, name: "Threads", inMyList: true, countMembers: "1145")
+        let c2 = Community(id: 2, name: "Threads Design", inMyList: true, countMembers: "214")
+        let c3 = Community(id: 3, name: "Run Foundation", inMyList: true, countMembers: "1098")
+        let c4 = Community(id: 4, name: "Cross Join", inMyList: false, countMembers: "310")
+        let c5 = Community(id: 5, name: "Major Mafia", inMyList: false, countMembers: "18017")
+        let c6 = Community(id: 6, name: "Digital Tectonics", inMyList: true, countMembers: "1145")
+        let c7 = Community(id: 7, name: "Eat Sleep JDM", inMyList: true, countMembers: "214")
         
         self.communities.append(c1)
         self.communities.append(c2)
@@ -66,33 +53,6 @@ class CommunityData {
         self.communities.append(c5)
         self.communities.append(c6)
         self.communities.append(c7)
-        self.communities.append(c8)
-        self.communities.append(c9)
-        
-        /*if let dataJS = wsGet() {
-            let json = JSON(data: dataJS)
-            //let dict = json.dictionary?["CommunityReadDictResult"]
-            let name = json["Name"][1].description
-            print(name)
-        }*/
     }
     
-    func wsGet() -> NSData? {
-        
-        let manager = AFHTTPRequestOperationManager()
-        //manager.requestSerializer.setValue(<#T##value: AnyObject?##AnyObject?#>, forKey: <#T##String#>)
-        manager.GET("http://192.168.199.6:80/ThreadsService.svc/Community_ReadDict"
-            ,parameters: nil
-            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-               // print("JSON: " + responseObject.description)
-                if let dataFromString = responseObject.description.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-                    self.data = dataFromString
-                }
-            },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
-                print("Error: " + error.localizedDescription)
-        })
-        
-        return self.data
-    }
 }

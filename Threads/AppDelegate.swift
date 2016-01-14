@@ -128,4 +128,24 @@ func calculateHeightForString(inString : String) -> CGFloat{
     return requredSize.height
 }
 
+extension UIImageView {
+    public func imageFromUrl(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
+                if error != nil {
+                    print("thers an error in the log")
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let image = UIImage(data: data!)
+                        self.image = image
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+}
+
+internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
+internal let CommLogo = "http://95.84.164.113/Logos/Community"
 

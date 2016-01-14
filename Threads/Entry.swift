@@ -12,25 +12,23 @@ class Entry {
     var id : Int
     var communityId : Int
     
-    var communityName: String {
-        return CommunityData().getNameById(communityId)
-    }
-    
+    var communityName: String
     var communityImg : String {
-        return CommunityData().getLogoById(communityId)
+        return "\(CommLogo)/\(communityId).png"
     }
-
     var columnName : String
     var date : String
     var title : String
     init (   id: Int
             ,communityId : Int
+            ,communityName: String
             ,columnName : String
             ,date : String
             ,title : String
         ) {
         self.id = id
         self.communityId = communityId
+        self.communityName = communityName
         self.columnName = columnName
         self.date = date
         self.title = title
