@@ -17,11 +17,11 @@ class CommunityData {
         
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer = AFJSONRequestSerializer()
-        manager.GET("\(Threads)/Community_ReadDict"
-            ,parameters: nil
+        manager.POST("\(Threads)/Community_ReadDict",
+             parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": []]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
-                let communityDict = JSON(responseObject)["CommunityReadDictResult"].arrayValue
+                print("JSON: " + responseObject.description)
+                let communityDict = JSON(responseObject)["Community_ReadDictResult"]["Data"].arrayValue
                 var communities = [Community]()
                 
                 for comm in communityDict {
