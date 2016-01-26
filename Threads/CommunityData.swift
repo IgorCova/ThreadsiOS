@@ -20,8 +20,8 @@ class CommunityData {
         manager.POST("\(Threads)/Community_ReadDict",
              parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": []]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                print("JSON: " + responseObject.description)
-                let communityDict = JSON(responseObject)["Community_ReadDictResult"]["Data"].arrayValue
+                //print("JSON: " + responseObject.description)
+                let communityDict = JSON(responseObject)["Data"].arrayValue
                 var communities = [Community]()
                 
                 for comm in communityDict {

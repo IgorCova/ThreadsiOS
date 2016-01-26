@@ -35,12 +35,11 @@ class EntryData {
         
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer = AFJSONRequestSerializer()
-        print(["Session": "1234567890", "DID":"CovaPhone", "Params": ["CommunityID": id]])
         manager.POST("\(Threads)/Entry_ReadByCommunityID"
             ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["CommunityID": id]]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                print("JSON: " + responseObject.description)
-                let communityDict = JSON(responseObject)["Entry_ReadByCommunityIDResult"].arrayValue
+                //print("JSON: " + responseObject.description)
+                let communityDict = JSON(responseObject)["Data"].arrayValue
                 var entries = [Entry]()
                 for comm in communityDict {
                     let ent = Entry(id: comm["ID"].int!, communityId: comm["CommunityID"].int!,  communityName: comm["CommunityID_Name"].string!, columnName: comm["ColumnID_Name"].string!, date: "18.10.15 20:20", title: comm["EntryText"].string!)
