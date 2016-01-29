@@ -42,8 +42,6 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
     
     override func willMoveToParentViewController(parent: UIViewController?) {
         self.navigationController?.hidesBarsOnSwipe = true
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
