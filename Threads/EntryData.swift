@@ -24,12 +24,12 @@ class EntryData {
                 var entries = [Entry]()
                 for comm in communityDict {
                     let ent = Entry(
-                         id: comm["ID"].int!
-                        ,communityId: comm["CommunityID"].int!
-                        ,communityName: comm["CommunityID_Name"].string!
-                        ,columnName: comm["ColumnID_Name"].string!
-                        ,date: "18.10.15 20:20"
-                        ,text: comm["EntryText"].string!)
+                         id:            comm["Entry_ID"].int!
+                        ,communityId:   comm["Community_ID"].int!
+                        ,communityName: comm["Community_Name"].string!
+                        ,columnName:    comm["ColumnCommunity_Name"].string!
+                        ,date:          "18.10.15 20:20"
+                        ,text:          comm["Entry_Text"].string!)
                     entries.append(ent)
                 }
                 completion(entries: entries, successful: true)

@@ -19,16 +19,17 @@ class NewsData {
             ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["PersonID": id]]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
                 //print("JSON: " + responseObject.description)
+                
                 let newsData = JSON(responseObject)["Data"].arrayValue
                 var entries = [Entry]()
                 for post in newsData {
                     let ent = Entry(
-                        id: post["EntryID"].int!
-                        ,communityId: post["CommunityID"].int!
-                        ,communityName: post["CommunityID_Name"].string!
-                        ,columnName: post["ColumnCommunityID_Name"].string!
-                        ,date: "18.10.15 20:20"
-                        ,text: post["EntryID_EntryText"].string!)
+                        id:             post["Entry_ID"].int!
+                        ,communityId:   post["Community_ID"].int!
+                        ,communityName: post["Community_Name"].string!
+                        ,columnName:    post["ColumnCommunity_Name"].string!
+                        ,date:          "18.10.15 20:25"
+                        ,text:          post["Entry_Text"].string!)
                     entries.append(ent)
                 }
                 completion(arNews: entries, successful: true)
