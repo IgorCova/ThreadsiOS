@@ -18,19 +18,19 @@ class Entry {
     }
     var columnName : String
     var date : String
-    var title : String
+    var text : String
     init (   id: Int
             ,communityId : Int
             ,communityName: String
             ,columnName : String
             ,date : String
-            ,title : String
+            ,text : String
         ) {
         self.id = id
         self.communityId = communityId
         self.communityName = communityName
         self.columnName = columnName
         self.date = date
-        self.title = title
+        self.text = text
     }
 }

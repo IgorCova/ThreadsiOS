@@ -16,9 +16,7 @@ class EntryDir: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      //  self.dirEntry = EntryData().getEntriesByCommId((community?.id)!)
-        
+    
         EntryData().wsGetEntryReadByCommunityID((community?.id)!) {entryDict, successful in
             if successful {
                 self.dirEntry = entryDict
@@ -74,7 +72,7 @@ class EntryDir: UITableViewController {
         }
         
         let entry = dirEntry[indexPath.row]
-        let height : CGFloat = calculateHeightForString(entry.title)
+        let height : CGFloat = calculateHeightForString(entry.text)
         return height + 80.0
     }
 }

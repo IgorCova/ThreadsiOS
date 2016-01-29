@@ -23,8 +23,11 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if dirNews.isEmpty {
-            self.dirNews = EntryData().getNews()
+        NewsData().wsGetNewsReadByPersonID(1) { arNews, successful in
+            if successful {
+                self.dirNews = arNews
+                self.tvNews.reloadData()
+            }
         }
 
         self.tvNews.delegate = self
@@ -35,10 +38,6 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
         self.btnToMenu.action = Selector("revealToggle:")
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
-        
-        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: "swipe:")
-
     }
     
     override func willMoveToParentViewController(parent: UIViewController?) {
@@ -51,21 +50,6 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
         super.viewWillAppear(animated)
         self.tvNews.reloadData()
     }
-    
-    func swipe(sender: UIPanGestureRecognizer) {
-        let isHidden = (self.navigationController?.navigationBar.frame.origin.y < 0)
-        
-        self.navigationController?.navigationBarHidden = isHidden
-    }
-    /*
-    func scrollViewWillBeginDragging(scrollView: UIScrollView){
-        self.lastOffsetY = scrollView.contentOffset.y
-    }
-    
-    func scrollViewWillBeginDecelerating(scrollView: UIScrollView){
-        let hide = scrollView.contentOffset.y > self.lastOffsetY
-        self.navigationController?.setNavigationBarHidden(hide, animated: true)
-    }*/
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -88,7 +72,7 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let entry = dirNews[indexPath.row]
-        let height : CGFloat = calculateHeightForString(entry.title)
+        let height : CGFloat = calculateHeightForString(entry.text)
         return height + 80.0
     }
 

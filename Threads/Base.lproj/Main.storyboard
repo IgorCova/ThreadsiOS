@@ -426,7 +426,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="S0K-sM-Wm2" sceneMemberID="viewController">
+                <navigationController id="S0K-sM-Wm2" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -746,7 +746,7 @@
         <!--Navigation Controller-->
         <scene sceneID="VA8-5k-tQn">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="Q9C-fq-S7x" sceneMemberID="viewController">
+                <navigationController id="Q9C-fq-S7x" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

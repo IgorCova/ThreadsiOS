@@ -27,10 +27,10 @@
 		F33560571C3E7071002A127E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33560561C3E7071002A127E /* SwiftyJSON.swift */; };
 		F337E3F71C221EB300557168 /* EntryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F61C221EB300557168 /* EntryData.swift */; };
 		F337E3FA1C2221F300557168 /* CommunityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F91C2221F300557168 /* CommunityData.swift */; };
+		F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D1C651C5C180200D0CECD /* NewsData.swift */; };
 		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
 		F39439B81C14529900DA2431 /* WelcomePage.png in Resources */ = {isa = PBXBuildFile; fileRef = F39439B71C14529900DA2431 /* WelcomePage.png */; };
 		F3AE60181C143EB6004E74C8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3AE60171C143EB6004E74C8 /* Icon.png */; };
-		F3B2C97F1C595051009FE0AE /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B2C97E1C595051009FE0AE /* News.swift */; };
 		F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B667931C176ED600B05CF5 /* SWRevealViewController.m */; };
 		F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B667961C1772C300B05CF5 /* MenuDir.swift */; };
 		F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6679F1C17869000B05CF5 /* ProfileCell.swift */; };
@@ -55,7 +55,6 @@
 		F3F386F91C582C4100DF2C31 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386D11C582C4100DF2C31 /* AFSecurityPolicy.m */; };
 		F3F386FA1C582C4100DF2C31 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386D41C582C4100DF2C31 /* AFURLRequestSerialization.m */; };
 		F3F386FB1C582C4100DF2C31 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386D61C582C4100DF2C31 /* AFURLResponseSerialization.m */; };
-		F3F386FC1C582C4100DF2C31 /* AFNetworking.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F3F386D91C582C4100DF2C31 /* AFNetworking.xcconfig */; };
 		F3F386FD1C582C4100DF2C31 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386DA1C582C4100DF2C31 /* AFNetworking-dummy.m */; };
 		F3F386FE1C582C4100DF2C31 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3F386DD1C582C4100DF2C31 /* Info.plist */; };
 		F3F386FF1C582C4100DF2C31 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386E01C582C4100DF2C31 /* AFNetworkActivityIndicatorManager.m */; };
@@ -93,10 +92,10 @@
 		F33560561C3E7071002A127E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F337E3F61C221EB300557168 /* EntryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryData.swift; sourceTree = "<group>"; };
 		F337E3F91C2221F300557168 /* CommunityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityData.swift; sourceTree = "<group>"; };
+		F36D1C651C5C180200D0CECD /* NewsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		F39439B71C14529900DA2431 /* WelcomePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WelcomePage.png; sourceTree = "<group>"; };
 		F3AE60171C143EB6004E74C8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		F3B2C97E1C595051009FE0AE /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		F3B667911C176ED600B05CF5 /* Comm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Comm-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3B667921C176ED600B05CF5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F3B667931C176ED600B05CF5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -210,7 +209,6 @@
 			children = (
 				3CC2DAAA1BE2B7F600916FDD /* Community.swift */,
 				3CC2DAB11BE2B80E00916FDD /* Entry.swift */,
-				F3B2C97E1C595051009FE0AE /* News.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -255,6 +253,7 @@
 			children = (
 				F337E3F61C221EB300557168 /* EntryData.swift */,
 				F337E3F91C2221F300557168 /* CommunityData.swift */,
+				F36D1C651C5C180200D0CECD /* NewsData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -278,9 +277,9 @@
 		F3B667981C1772C900B05CF5 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
+				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
 				3CC2DAAC1BE2B7F600916FDD /* CommunityDir.swift */,
 				3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */,
-				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
 				F321067F1C1D672E00EFF9F3 /* NewsDir.swift */,
 			);
 			name = Directory;
@@ -457,7 +456,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Igor Cova";
 				TargetAttributes = {
 					3CC2DA941BE2B7C000916FDD = {
@@ -499,7 +498,6 @@
 				F3C10E4F1C13523A007A94AA /* Bookmark.png in Resources */,
 				F3F386FE1C582C4100DF2C31 /* Info.plist in Resources */,
 				F3C10E4A1C1351FA007A94AA /* Suggested.png in Resources */,
-				F3F386FC1C582C4100DF2C31 /* AFNetworking.xcconfig in Resources */,
 				F31442801C3FD05500D4BCC5 /* Bookmarks.png in Resources */,
 				3CC2DAA01BE2B7C000916FDD /* Assets.xcassets in Resources */,
 				84CC6D0F1C0B06FE008AA59F /* LatoRegular.ttf in Resources */,
@@ -583,6 +581,7 @@
 				F3F387031C582C4100DF2C31 /* UIImageView+AFNetworking.m in Sources */,
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
 				F3F387041C582C4100DF2C31 /* UIProgressView+AFNetworking.m in Sources */,
+				F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				F3F386FF1C582C4100DF2C31 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */,
@@ -599,7 +598,6 @@
 				F3F387001C582C4100DF2C31 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				F337E3FA1C2221F300557168 /* CommunityData.swift in Sources */,
 				F3F387011C582C4100DF2C31 /* UIAlertView+AFNetworking.m in Sources */,
-				F3B2C97F1C595051009FE0AE /* News.swift in Sources */,
 				F33560571C3E7071002A127E /* SwiftyJSON.swift in Sources */,
 				3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */,
 				F3F386F41C582C4100DF2C31 /* AFHTTPRequestOperationManager.m in Sources */,

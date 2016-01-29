@@ -40,7 +40,7 @@ class EntryCell: UITableViewCell {
         self.lblCommunityName.text = entry.communityName
         self.lblDate.text = entry.date
         self.lblColumnName.text = entry.columnName
-        self.txTitle.text = entry.title
+        self.txTitle.text = entry.text
         
         self.imgCommunity.imageFromUrl(entry.communityImg)
         
