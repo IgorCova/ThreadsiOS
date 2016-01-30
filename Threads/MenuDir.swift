@@ -11,7 +11,9 @@ import UIKit
 class MenuDir: UITableViewController {
     
     var menuItems: [(cell: String?, name: String?, img: String?)] = [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
-   
+    
+    var member : Member?
+    
     enum CommDictType {
         case MyComm
         case AllComm
@@ -22,6 +24,13 @@ class MenuDir: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        MemberData().wsGetMemberInstance(1) {memberInstance, successful in
+            if successful {
+                self.member = memberInstance
+                self.tvMenuItems.reloadData()
+            }
+        }
         
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
@@ -53,6 +62,11 @@ class MenuDir: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let profileCell = (tableView.dequeueReusableCellWithIdentifier("ProfileCell") as? ProfileCell)!
+            
+            if self.member != nil {
+                profileCell.setCell(self.member!)
+            }
+            
             profileCell.userInteractionEnabled = false
             return profileCell
         }

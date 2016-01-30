@@ -148,4 +148,5 @@ extension UIImageView {
 
 internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
 internal let CommLogo = "http://95.84.164.113/Logos/Community"
+internal let MemberLogo = "http://95.84.164.113/Logos/Member"
 

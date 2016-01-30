@@ -23,9 +23,11 @@ class ProfileCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        self.imgProfile.image = UIImage(named: "ComLogos/CovaImg.png")
-        self.lblPersonName.text = "Cova Igor"
+    }
+    
+    func setCell(mem: Member) {
+        self.imgProfile.imageFromUrl(mem.linkToLogo)
+        self.lblPersonName.text = mem.fullName
     }
 
 }

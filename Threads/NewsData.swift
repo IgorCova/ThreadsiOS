@@ -15,8 +15,8 @@ class NewsData {
         
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer = AFJSONRequestSerializer()
-        manager.POST("\(Threads)/News_ReadByPersonID"
-            ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["PersonID": id]]
+        manager.POST("\(Threads)/News_ReadByMemberID"
+            ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["MemberID": id]]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
                 //print("JSON: " + responseObject.description)
                 

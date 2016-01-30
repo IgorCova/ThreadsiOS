@@ -46,6 +46,8 @@
 		F3C10E4E1C13523A007A94AA /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E4B1C13523A007A94AA /* Back.png */; };
 		F3C10E4F1C13523A007A94AA /* Bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E4C1C13523A007A94AA /* Bookmark.png */; };
 		F3C10E501C13523A007A94AA /* BookmarkRed.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E4D1C13523A007A94AA /* BookmarkRed.png */; };
+		F3C3A59B1C5CE510003FA1F3 /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3A59A1C5CE510003FA1F3 /* MemberData.swift */; };
+		F3C3A59D1C5CE522003FA1F3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3A59C1C5CE522003FA1F3 /* Member.swift */; };
 		F3F386F31C582C4100DF2C31 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386C21C582C4100DF2C31 /* AFHTTPRequestOperation.m */; };
 		F3F386F41C582C4100DF2C31 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386C41C582C4100DF2C31 /* AFHTTPRequestOperationManager.m */; };
 		F3F386F51C582C4100DF2C31 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F386C61C582C4100DF2C31 /* AFURLConnectionOperation.m */; };
@@ -113,6 +115,8 @@
 		F3C10E4B1C13523A007A94AA /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
 		F3C10E4C1C13523A007A94AA /* Bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookmark.png; sourceTree = "<group>"; };
 		F3C10E4D1C13523A007A94AA /* BookmarkRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BookmarkRed.png; sourceTree = "<group>"; };
+		F3C3A59A1C5CE510003FA1F3 /* MemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
+		F3C3A59C1C5CE522003FA1F3 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F3F386C01C582C4100DF2C31 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		F3F386C11C582C4100DF2C31 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		F3F386C21C582C4100DF2C31 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			children = (
 				3CC2DAAA1BE2B7F600916FDD /* Community.swift */,
 				3CC2DAB11BE2B80E00916FDD /* Entry.swift */,
+				F3C3A59C1C5CE522003FA1F3 /* Member.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			children = (
 				F337E3F61C221EB300557168 /* EntryData.swift */,
 				F337E3F91C2221F300557168 /* CommunityData.swift */,
+				F3C3A59A1C5CE510003FA1F3 /* MemberData.swift */,
 				F36D1C651C5C180200D0CECD /* NewsData.swift */,
 			);
 			name = Data;
@@ -277,9 +283,9 @@
 		F3B667981C1772C900B05CF5 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
-				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
 				3CC2DAAC1BE2B7F600916FDD /* CommunityDir.swift */,
 				3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */,
+				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
 				F321067F1C1D672E00EFF9F3 /* NewsDir.swift */,
 			);
 			name = Directory;
@@ -581,6 +587,7 @@
 				F3F387031C582C4100DF2C31 /* UIImageView+AFNetworking.m in Sources */,
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
 				F3F387041C582C4100DF2C31 /* UIProgressView+AFNetworking.m in Sources */,
+				F3C3A59D1C5CE522003FA1F3 /* Member.swift in Sources */,
 				F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				F3F386FF1C582C4100DF2C31 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -598,6 +605,7 @@
 				F3F387001C582C4100DF2C31 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				F337E3FA1C2221F300557168 /* CommunityData.swift in Sources */,
 				F3F387011C582C4100DF2C31 /* UIAlertView+AFNetworking.m in Sources */,
+				F3C3A59B1C5CE510003FA1F3 /* MemberData.swift in Sources */,
 				F33560571C3E7071002A127E /* SwiftyJSON.swift in Sources */,
 				3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */,
 				F3F386F41C582C4100DF2C31 /* AFHTTPRequestOperationManager.m in Sources */,
