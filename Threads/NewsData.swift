@@ -18,7 +18,7 @@ class NewsData {
         manager.POST("\(Threads)/News_ReadByMemberID"
             ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["MemberID": id]]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
+                print("JSON: " + responseObject.description)
                 
                 let newsData = JSON(responseObject)["Data"].arrayValue
                 var entries = [Entry]()

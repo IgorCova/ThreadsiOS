@@ -14,13 +14,13 @@ class Community {
     var linkToImage : String {
         return "\(CommLogo)/\(id).png"
     }
-    var inMyList : Bool
+    var isMember : Bool
     var countMembers : String
     
-    init (id: Int, name : String, inMyList : Bool, countMembers : String) {
+    init (id: Int, name : String, isMember : Bool, countMembers : String) {
         self.id = id
         self.name = name
-        self.inMyList = inMyList
+        self.isMember = isMember
         self.countMembers = countMembers
     }
 }

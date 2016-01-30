@@ -37,7 +37,7 @@ class MenuDir: UITableViewController {
         self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
             ,(cell: "NewsCell", name: "News", img: "News.png")
             ,(cell: "CommCell", name: "All community", img: "AllCommunities.png")
-            ,(cell: "CommCell", name: "My community", img: "MyCommunities.png")
+            ,(cell: "CommCell", name: "Сommunity", img: "Communities.png")
             ,(cell: "CommCell", name: "Suggested", img: "Suggested.png")
             ,(cell: "CommCell", name: "Bookmarks", img: "Bookmarks.png")
             ,(cell: "CommCell", name: "Popular", img: "Popular.png")

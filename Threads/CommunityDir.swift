@@ -34,12 +34,30 @@ class CommunityDir: UITableViewController {
 
         self.tvCommunity.delegate = self
         self.tvCommunity.dataSource = self
-
-        CommunityData().wsGetCommunityDict() {communityDict, successful in
-            if successful {
-                self.dirCommunity = communityDict
-                self.tvCommunity.reloadData()
+        
+        if commDictType == .AllComm {
+            CommunityData().wsGetCommunityDict(1) {communityDict, successful in
+                if successful {
+                    self.dirCommunity = communityDict
+                    self.tvCommunity.reloadData()
+                }
             }
+        } else if commDictType == .MyComm {
+            CommunityData().wsGetCommunityMyDict(1) {communityDict, successful in
+                if successful {
+                    self.dirCommunity = communityDict
+                    self.tvCommunity.reloadData()
+                }
+            }
+
+        } else if commDictType == .SugComm {
+            CommunityData().wsGetCommunitySuggestDict(1) {communityDict, successful in
+                if successful {
+                    self.dirCommunity = communityDict
+                    self.tvCommunity.reloadData()
+                }
+            }
+            
         }
         
         self.tvCommunity.separatorStyle = .None
@@ -77,7 +95,7 @@ class CommunityDir: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if dirCommunity[indexPath.row].inMyList == false {
+        if dirCommunity[indexPath.row].isMember == false {
             return 128.0
         }
         

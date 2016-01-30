@@ -39,12 +39,12 @@ class CommunityCell: UITableViewCell {
         self.imgLogoCom.imageFromUrl(com.linkToImage)
         self.lblNameCom.text = com.name
         self.lblCountMembers.text = com.countMembers + " members"
-        if com.inMyList == true {
+        if com.isMember == true {
             self.joinButton.hidden = true
             self.lblRole.text = "I'm member"
         } else {
             self.joinButton.hidden = false
-            self.lblRole.text = "Join"
+            self.lblRole.text = "Outsider"
         }
     }
 }

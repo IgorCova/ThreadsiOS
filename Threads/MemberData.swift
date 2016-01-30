@@ -16,7 +16,7 @@ class MemberData {
         manager.POST("\(Threads)/Member_ReadInstance",
             parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": id]]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                print("JSON: " + responseObject.description)
+                //print("JSON: " + responseObject.description)
                 let memberData = JSON(responseObject)["Data"].dictionaryValue
                 let mem = Member(
                      id: memberData["ID"]!.int!
