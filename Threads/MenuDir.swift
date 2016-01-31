@@ -11,6 +11,7 @@ import UIKit
 class MenuDir: UITableViewController {
     
     var menuItems: [(cell: String?, name: String?, img: String?)] = [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
+    var dirRefreshControl : UIRefreshControl!
     
     var member : Member?
     
@@ -24,13 +25,13 @@ class MenuDir: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        MemberData().wsGetMemberInstance(1) {memberInstance, successful in
-            if successful {
-                self.member = memberInstance
-                self.tvMenuItems.reloadData()
-            }
-        }
+        
+        self.dirRefreshControl = UIRefreshControl()
+        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(dirRefreshControl)
+        
+        self.refresh(self)
         
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
@@ -48,6 +49,17 @@ class MenuDir: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func refresh(sender:AnyObject) {
+        MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
+            if successful {
+                self.member = memberInstance
+                self.tvMenuItems.reloadData()
+                self.dirRefreshControl.endRefreshing()
+            }
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {

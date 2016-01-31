@@ -23,6 +23,8 @@ class CommunityDir: UITableViewController {
     
     var commDictType = CommDictType.AllComm
     
+    var dirRefreshControl : UIRefreshControl!
+    
     var dirCommunity = [Community]()
     
     var currentCommunityID : Int!
@@ -35,30 +37,7 @@ class CommunityDir: UITableViewController {
         self.tvCommunity.delegate = self
         self.tvCommunity.dataSource = self
         
-        if commDictType == .AllComm {
-            CommunityData().wsGetCommunityDict(1) {communityDict, successful in
-                if successful {
-                    self.dirCommunity = communityDict
-                    self.tvCommunity.reloadData()
-                }
-            }
-        } else if commDictType == .MyComm {
-            CommunityData().wsGetCommunityMyDict(1) {communityDict, successful in
-                if successful {
-                    self.dirCommunity = communityDict
-                    self.tvCommunity.reloadData()
-                }
-            }
-
-        } else if commDictType == .SugComm {
-            CommunityData().wsGetCommunitySuggestDict(1) {communityDict, successful in
-                if successful {
-                    self.dirCommunity = communityDict
-                    self.tvCommunity.reloadData()
-                }
-            }
-            
-        }
+        self.refresh(self)
         
         self.tvCommunity.separatorStyle = .None
 
@@ -69,6 +48,40 @@ class CommunityDir: UITableViewController {
         
         self.btnToMenu.target = self.revealViewController()
         self.btnToMenu.action = Selector("revealToggle:")
+        
+        self.dirRefreshControl = UIRefreshControl()
+        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(dirRefreshControl)
+    }
+    
+    func refresh(sender:AnyObject) {
+        if commDictType == .AllComm {
+            CommunityData().wsGetCommunityDict(MyMemberID) {communityDict, successful in
+                if successful {
+                    self.dirCommunity = communityDict
+                    self.tvCommunity.reloadData()
+                    self.dirRefreshControl.endRefreshing()
+                }
+            }
+        } else if commDictType == .MyComm {
+            CommunityData().wsGetCommunityMyDict(MyMemberID) {communityDict, successful in
+                if successful {
+                    self.dirCommunity = communityDict
+                    self.tvCommunity.reloadData()
+                    self.dirRefreshControl.endRefreshing()
+                }
+            }
+            
+        } else if commDictType == .SugComm {
+            CommunityData().wsGetCommunitySuggestDict(MyMemberID) {communityDict, successful in
+                if successful {
+                    self.dirCommunity = communityDict
+                    self.tvCommunity.reloadData()
+                    self.dirRefreshControl.endRefreshing()
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

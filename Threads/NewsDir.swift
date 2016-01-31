@@ -8,27 +8,19 @@
 
 import UIKit
 
-class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate {
+class NewsDir: UITableViewController {
 
     var dirNews = [Entry]()
     
     @IBOutlet weak var btnToMenu: UIBarButtonItem!
     @IBOutlet weak var tvNews: UITableView!
-    var lastOffsetY : CGFloat = 0
     
-    let navbar = UINavigationBar()
-    var viewScrollIsDragging: Bool?
-    var viewScrollIsDecelerating: Bool?
+    var dirRefreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NewsData().wsGetNewsReadByPersonID(1) { arNews, successful in
-            if successful {
-                self.dirNews = arNews
-                self.tvNews.reloadData()
-            }
-        }
+        self.refresh(self)
 
         self.tvNews.delegate = self
         self.tvNews.dataSource = self
@@ -38,22 +30,33 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
         self.btnToMenu.action = Selector("revealToggle:")
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        self.dirRefreshControl = UIRefreshControl()
+        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(dirRefreshControl!)
     }
     
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        self.navigationController?.hidesBarsOnSwipe = true
+    func refresh(sender:AnyObject) {
+        NewsData().wsGetNewsReadByMemberID(MyMemberID) { arNews, successful in
+            if successful {
+                self.dirNews = arNews
+                self.tvNews.reloadData()
+                self.dirRefreshControl!.endRefreshing()
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.tvNews.reloadData()
+        tableView.reloadData()
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dirNews.count
     }
     
@@ -61,14 +64,14 @@ class NewsDir: UIViewController, UITableViewDelegate, UITableViewDataSource, UIG
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("NewsCell") as? EntryCell)!
         cell.setCell(dirNews[indexPath.row])
         
         return cell
     }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let entry = dirNews[indexPath.row]
         let height : CGFloat = calculateHeightForString(entry.text)
         return height + 80.0

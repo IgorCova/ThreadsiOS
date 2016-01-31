@@ -11,7 +11,7 @@ import Foundation
 class NewsData {
     private var arNews = [Entry]()
     
-    func wsGetNewsReadByPersonID(id: Int, completion : (arNews:[Entry], successful: Bool) -> Void) {
+    func wsGetNewsReadByMemberID(id: Int, completion : (arNews:[Entry], successful: Bool) -> Void) {
         
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer = AFJSONRequestSerializer()

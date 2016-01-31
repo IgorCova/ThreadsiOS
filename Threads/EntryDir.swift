@@ -12,17 +12,14 @@ class EntryDir: UITableViewController {
     var community : Community?
     var dirEntry = [Entry]()
     
+    var dirRefreshControl : UIRefreshControl!
+    
     @IBOutlet weak var tvEntry: UITableView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        EntryData().wsGetEntryReadByCommunityID((community?.id)!) {entryDict, successful in
-            if successful {
-                self.dirEntry = entryDict
-                self.tvEntry.reloadData()
-            }
-        }
+        
+        self.refresh(self)
         
         self.tvEntry.delegate = self
         self.tvEntry.dataSource = self
@@ -32,6 +29,10 @@ class EntryDir: UITableViewController {
         self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
+        self.dirRefreshControl = UIRefreshControl()
+        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(dirRefreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +42,18 @@ class EntryDir: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    func refresh(sender:AnyObject) {
+        
+        EntryData().wsGetEntryReadByCommunityID((community?.id)!) {entryDict, successful in
+            if successful {
+                self.dirEntry = entryDict
+                self.tvEntry.reloadData()
+                self.dirRefreshControl.endRefreshing()
+            }
+        }
+        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
