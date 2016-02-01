@@ -53,7 +53,6 @@ class EntryDir: UITableViewController {
                 self.dirRefreshControl.endRefreshing()
             }
         }
-        
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -87,5 +86,14 @@ class EntryDir: UITableViewController {
         let entry = dirEntry[indexPath.row]
         let height : CGFloat = calculateHeightForString(entry.text)
         return height + 80.0
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "addNewEntry" {
+            if let vc = segue.destinationViewController as? EntrySaver {
+                vc.communityId = (community?.id)!
+                vc.columnId = (community?.defaultColumnId)!
+            }
+        }
     }
 }

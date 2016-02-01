@@ -18,7 +18,7 @@ class NewsData {
         manager.POST("\(Threads)/News_ReadByMemberID"
             ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["MemberID": id]]
             ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                print("JSON: " + responseObject.description)
+                //print("JSON: " + responseObject.description)
                 
                 let newsData = JSON(responseObject)["Data"].arrayValue
                 var entries = [Entry]()
@@ -27,6 +27,7 @@ class NewsData {
                         id:             post["Entry_ID"].int!
                         ,communityId:   post["Community_ID"].int!
                         ,communityName: post["Community_Name"].string!
+                        ,columnId:      post["ColumnCommunity_ID"].int!
                         ,columnName:    post["ColumnCommunity_Name"].string!
                         ,date:          "18.10.15 20:25"
                         ,text:          post["Entry_Text"].string!)

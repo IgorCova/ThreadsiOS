@@ -26,7 +26,7 @@ class CommunityData {
                 
                 for comm in communityDict {
                     let id = comm["ID"].int!
-                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "100")
+                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "100", defaultColumnId : comm["DefaultColumnID"].int!)
                     communities.append(cm)
                 }
                 completion(comms: communities, successful: true)
@@ -50,7 +50,7 @@ class CommunityData {
                 
                 for comm in communityDict {
                     let id = comm["ID"].int!
-                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "150")
+                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "150", defaultColumnId : comm["DefaultColumnID"].int!)
                     communities.append(cm)
                 }
                 completion(comms: communities, successful: true)
@@ -74,7 +74,7 @@ class CommunityData {
                 
                 for comm in communityDict {
                     let id = comm["ID"].int!
-                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "200")
+                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "200", defaultColumnId : comm["DefaultColumnID"].int!)
                     communities.append(cm)
                 }
                 completion(comms: communities, successful: true)

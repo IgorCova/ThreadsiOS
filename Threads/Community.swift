@@ -16,11 +16,13 @@ class Community {
     }
     var isMember : Bool
     var countMembers : String
+    var defaultColumnId : Int
     
-    init (id: Int, name : String, isMember : Bool, countMembers : String) {
+    init (id: Int, name : String, isMember : Bool, countMembers : String, defaultColumnId: Int) {
         self.id = id
         self.name = name
         self.isMember = isMember
         self.countMembers = countMembers
+        self.defaultColumnId = defaultColumnId
     }
 }

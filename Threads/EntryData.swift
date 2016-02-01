@@ -27,6 +27,7 @@ class EntryData {
                          id:            comm["Entry_ID"].int!
                         ,communityId:   comm["Community_ID"].int!
                         ,communityName: comm["Community_Name"].string!
+                        ,columnId:      comm["ColumnCommunity_ID"].int!
                         ,columnName:    comm["ColumnCommunity_Name"].string!
                         ,date:          "18.10.15 20:20"
                         ,text:          comm["Entry_Text"].string!)
@@ -39,5 +40,33 @@ class EntryData {
                 completion(entries: [], successful: false)
         })
     }
+    
+    func wsEntrySave(wsEntry: NewEntry, completion : (id :Int, successful: Bool) -> Void) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer = AFJSONRequestSerializer()
+        
+        let communityId = wsEntry.communityId
+        let columnId = wsEntry.columnId
+        let entrytext = wsEntry.text
+        manager.POST("\(Threads)/Entry_Save"
+            ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["CommunityID": communityId, "ColumnID": columnId, "CreatorID": MyMemberID, "EntryText": entrytext]]
+            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+                //print("JSON: " + responseObject.description)
+                let entryData = JSON(responseObject)["Data"].dictionaryValue
+                
+                if let entryID = entryData["ID"]?.int {
+                   completion(id: entryID, successful: true)
+                } else {
+                    completion(id: 1, successful: true)
+                }
+                
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
+                print("Error: " + error.localizedDescription)
+                completion(id: 0, successful: false)
+        })
+    }
+
 
 }

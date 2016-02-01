@@ -37,8 +37,8 @@ class MenuDir: UITableViewController {
         self.tvMenuItems.dataSource = self
         self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
             ,(cell: "NewsCell", name: "News", img: "News.png")
-            ,(cell: "CommCell", name: "All community", img: "AllCommunities.png")
-            ,(cell: "CommCell", name: "Сommunity", img: "Communities.png")
+            ,(cell: "CommCell", name: "All Communities", img: "AllCommunities.png")
+            ,(cell: "CommCell", name: "My Communities", img: "Communities.png")
             ,(cell: "CommCell", name: "Suggested", img: "Suggested.png")
             ,(cell: "CommCell", name: "Bookmarks", img: "Bookmarks.png")
             ,(cell: "CommCell", name: "Popular", img: "Popular.png")
@@ -59,7 +59,6 @@ class MenuDir: UITableViewController {
                 self.dirRefreshControl.endRefreshing()
             }
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -88,9 +87,9 @@ class MenuDir: UITableViewController {
         itemCell.imageView?.image = UIImage(named: menuItems[indexPath.row].img!)
         itemCell.textLabel?.text = menuItems[indexPath.row].name
         
-        if menuItems[indexPath.row].name == "All community" {
+        if menuItems[indexPath.row].name == "All Communities" {
             itemCell.tag = 0
-        } else if menuItems[indexPath.row].name == "My community" {
+        } else if menuItems[indexPath.row].name == "My Communities" {
             itemCell.tag = 1
         } else if menuItems[indexPath.row].name == "Suggested" {
             itemCell.tag = 2
