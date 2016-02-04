@@ -29,7 +29,7 @@ class EntryData {
                         ,communityName: comm["Community_Name"].string!
                         ,columnId:      comm["ColumnCommunity_ID"].int!
                         ,columnName:    comm["ColumnCommunity_Name"].string!
-                        ,date:          "18.10.15 20:20"
+                        ,date:          comm["Entry_CreateDateEst"].string!
                         ,text:          comm["Entry_Text"].string!)
                     entries.append(ent)
                 }

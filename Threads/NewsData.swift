@@ -29,7 +29,7 @@ class NewsData {
                         ,communityName: post["Community_Name"].string!
                         ,columnId:      post["ColumnCommunity_ID"].int!
                         ,columnName:    post["ColumnCommunity_Name"].string!
-                        ,date:          "18.10.15 20:25"
+                        ,date:          post["Entry_CreateDateEst"].string!
                         ,text:          post["Entry_Text"].string!)
                     entries.append(ent)
                 }
