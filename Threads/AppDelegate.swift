@@ -121,7 +121,7 @@ extension UIColor {
 
 func calculateHeightForString(inString : String) -> CGFloat{
     let messageString = inString
-    let attributes = [NSFontAttributeName: UIFont(name: "SF UI Display", size: 16.0)!]
+    let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
     let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
     let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
     let requredSize:CGRect = rect

@@ -7,37 +7,39 @@
 //
 
 import Foundation
+import Alamofire
 
 class NewsData {
     private var arNews = [Entry]()
     
     func wsGetNewsReadByMemberID(id: Int, completion : (arNews:[Entry], successful: Bool) -> Void) {
         
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer = AFJSONRequestSerializer()
-        manager.POST("\(Threads)/News_ReadByMemberID"
-            ,parameters: ["Session": "1234567890", "DID": "CovaPhone", "Params": ["MemberID": id]]
-            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
-                let newsData = JSON(responseObject)["Data"].arrayValue
-                var entries = [Entry]()
-                for post in newsData {
-                    let ent = Entry(
-                        id:             post["Entry_ID"].int!
-                        ,communityId:   post["Community_ID"].int!
-                        ,communityName: post["Community_Name"].string!
-                        ,columnId:      post["ColumnCommunity_ID"].int!
-                        ,columnName:    post["ColumnCommunity_Name"].string!
-                        ,date:          post["Entry_CreateDateEst"].string!
-                        ,text:          post["Entry_Text"].string!)
-                    entries.append(ent)
+        let prms = ["Session": "1234567890", "DID": "CovaPhone", "Params": ["MemberID": id]]
+        Alamofire.request(.POST, "\(Threads)/News_ReadByMemberID", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].arrayValue
+                    var entries = [Entry]()
+                    for post in json {
+                        let ent = Entry(
+                            id:             post["Entry_ID"].int!
+                            ,communityId:   post["Community_ID"].int!
+                            ,communityName: post["Community_Name"].string!
+                            ,columnId:      post["ColumnCommunity_ID"].int!
+                            ,columnName:    post["ColumnCommunity_Name"].string!
+                            ,date:          post["Entry_CreateDateEst"].string!
+                            ,text:          post["Entry_Text"].string!)
+                        entries.append(ent)
+                    }
+                    completion(arNews: entries, successful: true)
+                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(arNews: [], successful: false)
                 }
-                completion(arNews: entries, successful: true)
-            },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
-                print("Error: " + error.localizedDescription)
-                completion(arNews: [], successful: false)
-        })
+        }
     }
     
 }

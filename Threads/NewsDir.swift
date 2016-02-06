@@ -43,6 +43,8 @@ class NewsDir: UITableViewController {
                 self.dirNews = arNews
                 self.tvNews.reloadData()
                 self.dirRefreshControl!.endRefreshing()
+            } else {
+                self.dirRefreshControl!.endRefreshing()
             }
         }
     }

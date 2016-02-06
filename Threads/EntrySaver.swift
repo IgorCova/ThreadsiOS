@@ -17,6 +17,7 @@ class EntrySaver: UIViewController , UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         txtEntryText.delegate = self
+        txtEntryText.selectAll(self)
         // Do any additional setup after loading the view.
     }
 
@@ -33,7 +34,7 @@ class EntrySaver: UIViewController , UITextViewDelegate {
         let entrytext = txtEntryText.text
         let newEntry = NewEntry(communityId: communityId!, columnId: columnId!, text: entrytext)
         
-        EntryData().wsEntrySave(newEntry) {id, successful in
+        EntryData().wsEntrySave(wsEntry: newEntry) {id, successful in
             if successful {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
