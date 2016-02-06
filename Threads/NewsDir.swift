@@ -75,7 +75,7 @@ class NewsDir: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let entry = dirNews[indexPath.row]
-        let height : CGFloat = calculateHeightForString(entry.text)
+        let height : CGFloat = entry.text.heightWithConstrainedWidth(310, font: CommFontText!)// calculateHeightForString(entry.text)
         return height + 80.0
     }
 

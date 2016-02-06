@@ -121,7 +121,7 @@ extension UIColor {
 
 func calculateHeightForString(inString : String) -> CGFloat{
     let messageString = inString
-    let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(17)]
+    let attributes = [NSFontAttributeName: CommFontText!]
     let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
     let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
     let requredSize:CGRect = rect
@@ -172,6 +172,8 @@ extension UIImageView {
         }
     }
 }
+
+internal let CommFontText = UIFont(name: ".SFUIText-Regular", size: 16)
 
 internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
 internal let CommLogo = "http://95.84.164.113/Logos/Community"

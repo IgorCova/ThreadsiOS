@@ -27,7 +27,7 @@ class EntryCell: UITableViewCell {
         self.imgCommunity.layer.cornerRadius = self.imgCommunity.frame.size.height/2
         self.imgCommunity.layer.masksToBounds = true
         self.imgCommunity.layer.borderWidth = 0.1
-        self.txTitle.sizeToFit()        
+        self.txTitle.font = CommFontText
         
         /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
@@ -43,8 +43,7 @@ class EntryCell: UITableViewCell {
         self.txTitle.text = entry.text
         
         self.imgCommunity.imageFromUrl(entry.communityImg)
-        
-        
+
         if entry.columnName == "Post" {
             self.btnBookmark.setImage(UIImage(named: "bookmarkSet.png"), forState: UIControlState.Normal)
         } else {
