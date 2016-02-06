@@ -26,6 +26,7 @@ class MenuItemCell: UITableViewCell {
         
         self.textLabel?.frame = CGRectMake(50, 10, 290, 23)
         self.textLabel!.textColor = .whiteColor()
-        self.textLabel!.font = UIFont(name: "Helvetica Neue ", size: 19)
+        self.textLabel!.font = UIFont(name: "SF UI Display", size: 19)
+        self.textLabel?.highlightedTextColor = UIColor(netHex: 0x0D3B5A)
     }
 }

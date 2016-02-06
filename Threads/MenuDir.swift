@@ -10,7 +10,7 @@ import UIKit
 
 class MenuDir: UITableViewController {
     
-    var menuItems: [(cell: String?, name: String?, img: String?)] = [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
+    var menuItems = [(cell: String?, name: String?, img: String?, imgS: String?)]() //= [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
     var dirRefreshControl : UIRefreshControl!
     
     var member : Member?
@@ -35,15 +35,15 @@ class MenuDir: UITableViewController {
         
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
-        self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
-            ,(cell: "NewsCell", name: "News", img: "News.png")
-            ,(cell: "CommCell", name: "All Communities", img: "AllCommunities.png")
-            ,(cell: "CommCell", name: "My Communities", img: "Communities.png")
-            ,(cell: "CommCell", name: "Suggested", img: "Suggested.png")
-            ,(cell: "CommCell", name: "Bookmarks", img: "Bookmarks.png")
-            ,(cell: "CommCell", name: "Popular", img: "Popular.png")
-            ,(cell: "CommCell", name: "Control", img: "Control.png")
-            ,(cell: "CommCell", name: "Settings", img: "Settings.png")
+        self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "", imgS: "")
+            ,(cell: "NewsCell", name: "News", img: "news.png", imgS: "newsSet.png")
+            ,(cell: "CommCell", name: "Communities", img: "communities.png", imgS: "communitiesSet.png")
+           // ,(cell: "CommCell", name: "My Communities", img: "communities.png", imgS: "communitiesSet.png")
+            ,(cell: "CommCell", name: "Suggested", img: "suggested.png", imgS: "suggestedSet.png")
+            ,(cell: "CommCell", name: "Bookmarks", img: "bookmarks.png", imgS: "bookmarksSet.png")
+            ,(cell: "CommCell", name: "Popular", img: "popular.png", imgS: "popularSet.png")
+            ,(cell: "CommCell", name: "Contacts", img: "contacts.png", imgS: "contactsSet.png")
+            ,(cell: "CommCell", name: "Settings", img: "settings.png", imgS: "settingsSet.png")
             ]
     }
 
@@ -85,6 +85,8 @@ class MenuDir: UITableViewController {
         let cellName = menuItems[indexPath.row].cell!
         let itemCell = (tableView.dequeueReusableCellWithIdentifier(cellName) as? MenuItemCell)!
         itemCell.imageView?.image = UIImage(named: menuItems[indexPath.row].img!)
+        itemCell.imageView?.highlightedImage = UIImage(named: menuItems[indexPath.row].imgS!)
+        
         itemCell.textLabel?.text = menuItems[indexPath.row].name
         
         if menuItems[indexPath.row].name == "All Communities" {

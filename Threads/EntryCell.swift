@@ -46,9 +46,9 @@ class EntryCell: UITableViewCell {
         
         
         if entry.columnName == "Post" {
-            self.btnBookmark.setImage(UIImage(named: "BookmarkRed.png"), forState: UIControlState.Normal)
+            self.btnBookmark.setImage(UIImage(named: "bookmarkSet.png"), forState: UIControlState.Normal)
         } else {
-            self.btnBookmark.setImage(UIImage(named: "Bookmark.png"), forState: UIControlState.Normal)
+            self.btnBookmark.setImage(UIImage(named: "bookmark.png"), forState: UIControlState.Normal)
         }
     }
 

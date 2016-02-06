@@ -121,11 +121,38 @@ extension UIColor {
 
 func calculateHeightForString(inString : String) -> CGFloat{
     let messageString = inString
-    let attributes = [NSFontAttributeName: UIFont(name: "Lato", size: 17.0)!]
+    let attributes = [NSFontAttributeName: UIFont(name: "SF UI Display", size: 16.0)!]
     let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
     let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
     let requredSize:CGRect = rect
     return requredSize.height
+}
+
+extension String {
+    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.max)
+        
+        let boundingBox = self.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        
+        return boundingBox.height
+    }
+}
+
+extension NSAttributedString {
+    func heightWithConstrainedWidth(width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.max)
+        let boundingBox = self.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    func widthWithConstrainedHeight(height: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: CGFloat.max, height: height)
+        
+        let boundingBox = self.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        
+        return ceil(boundingBox.width)
+    }
 }
 
 extension UIImageView {
