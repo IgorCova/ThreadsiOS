@@ -7,83 +7,75 @@
 //
 
 import Foundation
-import SwiftyJSON
+import Alamofire
 
 class CommunityData {
     var dataj: NSData?
     private var communities = [Community]()
     
     func wsGetCommunityDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
-        
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer = AFJSONRequestSerializer()
-        manager.POST("\(Threads)/Community_ReadDict",
-             parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": memberID]]
-            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
-                let communityDict = JSON(responseObject)["Data"].arrayValue
-                var communities = [Community]()
-                
-                for comm in communityDict {
-                    let id = comm["ID"].int!
-                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "100", defaultColumnId : comm["DefaultColumnID"].int!)
-                    communities.append(cm)
+        let prms = ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": memberID]]
+        Alamofire.request(.POST, "\(Threads)/Community_ReadDict", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].arrayValue
+                    
+                    for comm in json {
+                        let id = comm["ID"].int!
+                        let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "100", defaultColumnId : comm["DefaultColumnID"].int!)
+                        self.communities.append(cm)
+                    }
+                    completion(comms: self.communities, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(comms: self.communities, successful: false)
                 }
-                completion(comms: communities, successful: true)
-            },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
-                print("Error: " + error.localizedDescription)
-                completion(comms: [], successful: false)
-        })
+        }
     }
     
     func wsGetCommunityMyDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
-        
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer = AFJSONRequestSerializer()
-        manager.POST("\(Threads)/Community_ReadMyDict",
-            parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": memberID]]
-            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
-                let communityDict = JSON(responseObject)["Data"].arrayValue
-                var communities = [Community]()
-                
-                for comm in communityDict {
-                    let id = comm["ID"].int!
-                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "150", defaultColumnId : comm["DefaultColumnID"].int!)
-                    communities.append(cm)
+        let prms = ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": memberID]]
+        Alamofire.request(.POST, "\(Threads)/Community_ReadMyDict", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].arrayValue
+                    
+                    for comm in json {
+                        let id = comm["ID"].int!
+                        let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "120", defaultColumnId : comm["DefaultColumnID"].int!)
+                        self.communities.append(cm)
+                    }
+                    completion(comms: self.communities, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(comms: self.communities, successful: false)
                 }
-                completion(comms: communities, successful: true)
-            },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
-                print("Error: " + error.localizedDescription)
-                completion(comms: [], successful: false)
-        })
+        }
     }
     
     func wsGetCommunitySuggestDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
-        
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer = AFJSONRequestSerializer()
-        manager.POST("\(Threads)/Community_ReadSuggestDict",
-            parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": memberID]]
-            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
-                let communityDict = JSON(responseObject)["Data"].arrayValue
-                var communities = [Community]()
-                
-                for comm in communityDict {
-                    let id = comm["ID"].int!
-                    let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "200", defaultColumnId : comm["DefaultColumnID"].int!)
-                    communities.append(cm)
+        let prms = ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": memberID]]
+        Alamofire.request(.POST, "\(Threads)/Community_ReadSuggestDict", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].arrayValue
+                    
+                    for comm in json {
+                        let id = comm["ID"].int!
+                        let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: "1550", defaultColumnId : comm["DefaultColumnID"].int!)
+                        self.communities.append(cm)
+                    }
+                    completion(comms: self.communities, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(comms: self.communities, successful: false)
                 }
-                completion(comms: communities, successful: true)
-            },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
-                print("Error: " + error.localizedDescription)
-                completion(comms: [], successful: false)
-        })
+        }
     }
-
-    
 }

@@ -27,7 +27,7 @@ class CommunityCell: UITableViewCell {
         self.imgLogoCom.layer.cornerRadius = self.imgLogoCom.frame.size.height/2
         self.imgLogoCom.layer.masksToBounds = true
         self.imgLogoCom.layer.borderWidth = 0.1
-        
+        self.joinButton.layer.cornerRadius = 2
         /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
         self.plView.layer.shadowOffset = CGSizeMake(-2, 2)

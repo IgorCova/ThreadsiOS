@@ -5,31 +5,30 @@
 //  Created by Igor Cova on 30/01/16.
 //  Copyright © 2016 Igor Cova. All rights reserved.
 //
+import Alamofire
 
 class MemberData {
-    private var member: Member?
-    
     func wsGetMemberInstance(id: Int, completion : (memberInstance: Member?, successful: Bool) -> Void) {
-        
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer = AFJSONRequestSerializer()
-        manager.POST("\(Threads)/Member_ReadInstance",
-            parameters: ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": id]]
-            ,success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
-                //print("JSON: " + responseObject.description)
-                let memberData = JSON(responseObject)["Data"].dictionaryValue
-                let mem = Member(
-                     id: memberData["ID"]!.int!
-                    ,name: memberData["Name"]!.string!
-                    ,userName: memberData["UserName"]!.string!
-                    ,fullName: memberData["FullName"]!.string!
-                    ,about: memberData["About"]!.string!)
-                
-                completion(memberInstance: mem, successful: true)
-            },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError!) in
-                print("Error: " + error.localizedDescription)
-                completion(memberInstance: self.member, successful: false)
-        })
+        let prms = ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["MemberID": id]]
+        Alamofire.request(.POST, "\(Threads)/Member_ReadInstance", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].dictionaryValue
+                    let mem = Member (
+                         id: json["ID"]!.int!
+                        ,name: json["Name"]!.string!
+                        ,userName: json["UserName"]!.string!
+                        ,fullName: json["FullName"]!.string!
+                        ,about: json["About"]!.string!)
+                    
+                    completion(memberInstance: mem, successful: true)
+                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(memberInstance: nil, successful: false)
+                }
+        }
     }
 }

@@ -109,10 +109,10 @@ class CommunityDir: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if dirCommunity[indexPath.row].isMember == false {
-            return 128.0
+            return 132.0
         }
         
-        return 98.0
+        return 105.0
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
