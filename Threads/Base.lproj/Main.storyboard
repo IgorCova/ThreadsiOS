@@ -22,8 +22,14 @@
             <string>SFUIDisplay-Regular</string>
             <string>SFUIDisplay-Regular</string>
             <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
+            <string>SFUIDisplay-Regular</string>
         </mutableArray>
         <mutableArray key="SFUIText-Regular.otf">
+            <string>SFUIText-Regular</string>
             <string>SFUIText-Regular</string>
         </mutableArray>
     </customFonts>
@@ -416,7 +422,7 @@
                             <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addNewEntry:" destination="lZs-qv-p3h" id="HD5-BQ-8Bi"/>
-                                <segue destination="2ww-bu-Kle" kind="presentation" identifier="addNewEntry" id="cJ4-Wt-ceA"/>
+                                <segue destination="2ww-bu-Kle" kind="show" identifier="addNewEntry" id="I5f-ep-NgE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -428,6 +434,162 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9o-8B-Jtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2095" y="1087"/>
+        </scene>
+        <!--@username-->
+        <scene sceneID="qiA-WS-Nsm">
+            <objects>
+                <viewController id="G8N-Sc-VBw" customClass="ProfileCard" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7zZ-Vg-HbD"/>
+                        <viewControllerLayoutGuide type="bottom" id="0oV-L8-fG6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0uT-G3-hGE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSe-Ts-BHj">
+                                <rect key="frame" x="110" y="15" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-E6-hQH">
+                                <rect key="frame" x="5" y="120" width="310" height="1"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha4-CS-HnX">
+                                <rect key="frame" x="6" y="129" width="309" height="32"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="26"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="I'm no superman" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-q5-I2p">
+                                <rect key="frame" x="6" y="206" width="309" height="298"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU3-a3-gXt">
+                                <rect key="frame" x="5" y="205" width="310" height="1"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Surname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erU-RZ-11L">
+                                <rect key="frame" x="6" y="158" width="309" height="39"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="26"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="@username" id="mwI-f7-MoJ">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" width="30" id="dsa-1e-zhK">
+                            <inset key="imageInsets" minX="-3" minY="9" maxX="21" maxY="5"/>
+                            <color key="tintColor" red="0.98000591989999997" green="0.99171859029999998" blue="0.98419374230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="edit.png" id="kAH-VP-Wma">
+                            <inset key="imageInsets" minX="16" minY="13" maxX="6" maxY="8"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Jgw-tI-ST5" kind="show" id="fSd-L3-bIJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnToMenu" destination="dsa-1e-zhK" id="ePl-Jr-8Rr"/>
+                        <outlet property="imgPhoto" destination="mSe-Ts-BHj" id="HTE-UN-Z9F"/>
+                        <outlet property="lblName" destination="Ha4-CS-HnX" id="rQS-el-KKo"/>
+                        <outlet property="lblSurname" destination="erU-RZ-11L" id="g1w-6u-AGU"/>
+                        <outlet property="txtAbout" destination="YHH-q5-I2p" id="1Ou-z7-OgA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9D2-nW-DGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="458"/>
+        </scene>
+        <!--My profile-->
+        <scene sceneID="Xou-Og-Oyz">
+            <objects>
+                <viewController id="Jgw-tI-ST5" customClass="ProfileCardEdit" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e6g-Hg-2e2"/>
+                        <viewControllerLayoutGuide type="bottom" id="z1W-BM-yX3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7w9-yY-ai4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9M5-sA-tcE">
+                                <rect key="frame" x="9" y="8" width="100" height="100"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9s-is-edL">
+                                <rect key="frame" x="117" y="20" width="176" height="30"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-bf-ON5">
+                                <rect key="frame" x="117" y="49" width="183" height="1"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-r2-qBc">
+                                <rect key="frame" x="117" y="67" width="176" height="30"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hJ-Nk-X1t">
+                                <rect key="frame" x="117" y="95" width="183" height="1"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uu0-Y9-lla">
+                                <rect key="frame" x="9" y="116" width="291" height="30"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHT-1Y-ZhN">
+                                <rect key="frame" x="9" y="143" width="291" height="1"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="My profile" id="7PY-VJ-f1d">
+                        <barButtonItem key="rightBarButtonItem" image="save.png" id="iLH-X2-Wmf">
+                            <inset key="imageInsets" minX="21" minY="11" maxX="6" maxY="11"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveNewEntry:" destination="2ww-bu-Kle" id="D93-ci-ZPr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imgPhoto" destination="9M5-sA-tcE" id="d9X-aO-3Uc"/>
+                        <outlet property="txflName" destination="x9s-is-edL" id="MG2-hh-vOt"/>
+                        <outlet property="txflSurname" destination="Wf4-r2-qBc" id="2HP-rz-gAK"/>
+                        <outlet property="txflUsername" destination="uu0-Y9-lla" id="cLj-Um-gfx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuV-SG-p8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="458"/>
         </scene>
         <!--News-->
         <scene sceneID="Ccn-Ib-Zuz">
@@ -584,37 +746,20 @@
             </objects>
             <point key="canvasLocation" x="1175" y="1863"/>
         </scene>
-        <!--Entry Saver-->
+        <!--What's new?-->
         <scene sceneID="PZA-II-7Lk">
             <objects>
-                <viewController id="2ww-bu-Kle" customClass="EntrySaver" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="What's new?" id="2ww-bu-Kle" customClass="EntrySaver" customModule="Comm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SiF-H9-R0W"/>
                         <viewControllerLayoutGuide type="bottom" id="x4D-xV-8b8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Vk-tS-Gwb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7b9-BR-aO4">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="What's news?" id="PJp-xG-asD">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="w4H-UB-oP1">
-                                            <connections>
-                                                <action selector="cancelEntrySave:" destination="2ww-bu-Kle" id="HuG-lF-fc0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TBh-1R-vJc">
-                                            <connections>
-                                                <action selector="saveNewEntry:" destination="2ww-bu-Kle" id="HXk-3G-CXq"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="prD-1u-3HZ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI  Text" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="done"/>
@@ -624,14 +769,20 @@
                         <constraints>
                             <constraint firstItem="prD-1u-3HZ" firstAttribute="width" secondItem="8Vk-tS-Gwb" secondAttribute="width" id="1Yd-AY-AcJ"/>
                             <constraint firstItem="x4D-xV-8b8" firstAttribute="top" secondItem="prD-1u-3HZ" secondAttribute="bottom" id="SMN-9J-Ohj"/>
-                            <constraint firstItem="7b9-BR-aO4" firstAttribute="leading" secondItem="prD-1u-3HZ" secondAttribute="leading" id="WCo-bp-WYg"/>
                             <constraint firstAttribute="trailing" secondItem="prD-1u-3HZ" secondAttribute="trailing" id="c1I-D2-9Jf"/>
                             <constraint firstItem="prD-1u-3HZ" firstAttribute="leading" secondItem="8Vk-tS-Gwb" secondAttribute="leading" id="d6Y-Bn-e81"/>
-                            <constraint firstItem="7b9-BR-aO4" firstAttribute="top" secondItem="SiF-H9-R0W" secondAttribute="bottom" id="lCH-6s-1XB"/>
-                            <constraint firstItem="7b9-BR-aO4" firstAttribute="trailing" secondItem="prD-1u-3HZ" secondAttribute="trailing" id="rWv-MW-SQt"/>
-                            <constraint firstItem="prD-1u-3HZ" firstAttribute="top" secondItem="7b9-BR-aO4" secondAttribute="bottom" id="ysd-mV-0xW"/>
+                            <constraint firstItem="prD-1u-3HZ" firstAttribute="top" secondItem="SiF-H9-R0W" secondAttribute="bottom" id="kcF-Kk-QUA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="What's new?" id="NzA-Wb-UfF">
+                        <barButtonItem key="rightBarButtonItem" image="save.png" id="h4w-YJ-vTv">
+                            <inset key="imageInsets" minX="21" minY="11" maxX="6" maxY="11"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveNewEntry:" destination="2ww-bu-Kle" id="ccd-ci-rG7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="txtEntryText" destination="prD-1u-3HZ" id="ljH-IY-jwU"/>
@@ -639,7 +790,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZh-f8-Z4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="1087"/>
+            <point key="canvasLocation" x="2568" y="1087"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Tm-cS-OCJ">
@@ -648,7 +799,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="AHt-b7-eZd">
+                    <navigationBar key="navigationBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="AHt-b7-eZd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.98000591993331909" green="0.991718590259552" blue="0.98419374227523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -704,7 +855,7 @@
                         <color key="backgroundColor" red="0.050980392159999999" green="0.23137254900000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.050980392156862744" green="0.23137254901960785" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="160" id="Yse-KR-ywl" customClass="ProfileCell" customModule="Comm" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="160" id="Yse-KR-ywl" customClass="ProfileCell" customModule="Comm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yse-KR-ywl" id="G2L-Uk-ego">
@@ -758,6 +909,7 @@
                                 <connections>
                                     <outlet property="imgProfile" destination="PpJ-HI-CSf" id="lgM-GW-HU3"/>
                                     <outlet property="lblPersonName" destination="1I9-rD-46d" id="O1B-Jp-1FG"/>
+                                    <segue destination="rVg-jx-tGr" kind="custom" identifier="toProfile" customClass="SWRevealViewControllerSeguePushController" id="6vM-sV-p8G"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="2PB-t2-2jZ" customClass="MenuItemCell" customModule="Comm" customModuleProvider="target">
@@ -808,7 +960,7 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="esd-jV-v0x">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="esd-jV-v0x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.12941176470588234" green="0.52156862745098043" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
@@ -822,11 +974,38 @@
             </objects>
             <point key="canvasLocation" x="667" y="1863"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q1t-QZ-Aub">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rVg-jx-tGr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="0tc-Vi-u7c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G8N-Sc-VBw" kind="relationship" relationship="rootViewController" id="X1s-8M-QR1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZyW-n0-6RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="458"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bookmark.png" width="30" height="72"/>
         <image name="bookmarkSet.png" width="30" height="72"/>
+        <image name="edit.png" width="44" height="44"/>
         <image name="menu.png" width="40" height="30"/>
+        <image name="save.png" width="50" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8oo-xK-5Jn"/>

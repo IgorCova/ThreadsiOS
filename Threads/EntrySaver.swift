@@ -16,6 +16,9 @@ class EntrySaver: UIViewController , UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem?.title = ""
+        
         txtEntryText.delegate = self
         txtEntryText.selectAll(self)
         // Do any additional setup after loading the view.
@@ -26,17 +29,13 @@ class EntrySaver: UIViewController , UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancelEntrySave(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBAction func saveNewEntry(sender: AnyObject) {
         let entrytext = txtEntryText.text
         let newEntry = NewEntry(communityId: communityId!, columnId: columnId!, text: entrytext)
         
         EntryData().wsEntrySave(wsEntry: newEntry) {id, successful in
             if successful {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.navigationController?.popViewControllerAnimated(true)// dismissViewControllerAnimated(true, completion: nil)
             }
         }
     }

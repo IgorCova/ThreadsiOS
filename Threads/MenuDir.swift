@@ -78,7 +78,7 @@ class MenuDir: UITableViewController {
                 profileCell.setCell(self.member!)
             }
             
-            profileCell.userInteractionEnabled = false
+           // profileCell.userInteractionEnabled = false
             return profileCell
         }
         

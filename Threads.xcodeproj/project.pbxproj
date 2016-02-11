@@ -45,6 +45,10 @@
 		F3C10E501C13523A007A94AA /* bookmarkSet.png in Resources */ = {isa = PBXBuildFile; fileRef = F3C10E4D1C13523A007A94AA /* bookmarkSet.png */; };
 		F3C3A59B1C5CE510003FA1F3 /* MemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3A59A1C5CE510003FA1F3 /* MemberData.swift */; };
 		F3C3A59D1C5CE522003FA1F3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3A59C1C5CE522003FA1F3 /* Member.swift */; };
+		F3D102F41C6D0885001F0FA1 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D102F31C6D0885001F0FA1 /* ProfileCard.swift */; };
+		F3D102F81C6D1C85001F0FA1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102F61C6D1C85001F0FA1 /* edit.png */; };
+		F3D102F91C6D1C85001F0FA1 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102F71C6D1C85001F0FA1 /* save.png */; };
+		F3D102FB1C6D28F8001F0FA1 /* ProfileCardEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */; };
 		F3FEDB561C65EA2C00B09B97 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB551C65EA2C00B09B97 /* contacts.png */; };
 		F3FEDB581C65EA5000B09B97 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB571C65EA5000B09B97 /* bookmarks.png */; };
 		F3FEDB611C65EF6500B09B97 /* bookmarksSet.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB5A1C65EF6500B09B97 /* bookmarksSet.png */; };
@@ -101,6 +105,10 @@
 		F3C10E4D1C13523A007A94AA /* bookmarkSet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmarkSet.png; sourceTree = "<group>"; };
 		F3C3A59A1C5CE510003FA1F3 /* MemberData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberData.swift; sourceTree = "<group>"; };
 		F3C3A59C1C5CE522003FA1F3 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		F3D102F31C6D0885001F0FA1 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
+		F3D102F61C6D1C85001F0FA1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		F3D102F71C6D1C85001F0FA1 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardEdit.swift; sourceTree = "<group>"; };
 		F3FEDB431C65E83000B09B97 /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
 		F3FEDB441C65E83800B09B97 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
 		F3FEDB451C65E85000B09B97 /* SFUIText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Light.otf"; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC2DA9C1BE2B7C000916FDD /* Main.storyboard */,
+				F3D102F51C6D0EFF001F0FA1 /* Card */,
 				F3B667A11C1788EB00B05CF5 /* Cells */,
 				3CC2DAB01BE2B7FC00916FDD /* Classes */,
 				F337E3F81C221EBB00557168 /* Data */,
@@ -217,7 +226,6 @@
 				F337E3F91C2221F300557168 /* CommunityData.swift */,
 				F3C3A59A1C5CE510003FA1F3 /* MemberData.swift */,
 				F36D1C651C5C180200D0CECD /* NewsData.swift */,
-				F3A16AF01C5FE63300576F59 /* EntrySaver.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -267,11 +275,23 @@
 				F3C10E4B1C13523A007A94AA /* back.png */,
 				F3C10E4C1C13523A007A94AA /* bookmark.png */,
 				F3C10E4D1C13523A007A94AA /* bookmarkSet.png */,
+				F3D102F61C6D1C85001F0FA1 /* edit.png */,
 				F3AE60171C143EB6004E74C8 /* Icon.png */,
 				F3C10E3C1C1351FA007A94AA /* menu.png */,
+				F3D102F71C6D1C85001F0FA1 /* save.png */,
 				F3A2420D1C6624D5006DF860 /* welcomePage.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		F3D102F51C6D0EFF001F0FA1 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				F3A16AF01C5FE63300576F59 /* EntrySaver.swift */,
+				F3D102F31C6D0885001F0FA1 /* ProfileCard.swift */,
+				F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 		F3FEDB591C65EA7000B09B97 /* Menu */ = {
@@ -359,7 +379,9 @@
 			files = (
 				F3FEDB651C65EF6500B09B97 /* popularSet.png in Resources */,
 				F3AE60181C143EB6004E74C8 /* Icon.png in Resources */,
+				F3D102F91C6D1C85001F0FA1 /* save.png in Resources */,
 				F3C10E451C1351FA007A94AA /* menu.png in Resources */,
+				F3D102F81C6D1C85001F0FA1 /* edit.png in Resources */,
 				F3FEDB581C65EA5000B09B97 /* bookmarks.png in Resources */,
 				F3C10E461C1351FA007A94AA /* communities.png in Resources */,
 				F31006F11C1330A50008DA50 /* ComLogos in Resources */,
@@ -441,11 +463,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */,
+				F3D102F41C6D0885001F0FA1 /* ProfileCard.swift in Sources */,
 				F3A16AF11C5FE63300576F59 /* EntrySaver.swift in Sources */,
 				3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */,
 				3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */,
 				F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */,
 				8468C2FA1C0A4A74001F7FD6 /* PersonData.xcdatamodeld in Sources */,
+				F3D102FB1C6D28F8001F0FA1 /* ProfileCardEdit.swift in Sources */,
 				3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */,
 				841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */,
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
