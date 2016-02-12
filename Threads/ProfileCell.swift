@@ -19,8 +19,6 @@ class ProfileCell: UITableViewCell {
         self.imgProfile.layer.cornerRadius = self.imgProfile.frame.size.height/2
         self.imgProfile.layer.masksToBounds = true
         self.imgProfile.layer.borderWidth = 0.1
-
-        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

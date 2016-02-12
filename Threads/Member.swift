@@ -11,18 +11,26 @@ import Foundation
 class Member {
     var id : Int
     var name : String
+    var surname : String
     var userName : String
-    var fullName : String
+    var about : String
+    var phone : String
+    
     var linkToLogo : String {
         return "\(MemberLogo)/\(id).png"
     }
-    var about : String
     
-    init (id: Int, name : String, userName : String, fullName : String, about : String) {
+    var fullName : String {
+        return "\(name) \(surname)"
+    }
+    
+    
+    init (id: Int, name : String, surname : String, userName : String, about : String, phone : String) {
         self.id = id
         self.name = name
+        self.surname = surname
         self.userName = userName
-        self.fullName = fullName
         self.about = about
+        self.phone = phone
     }
 }

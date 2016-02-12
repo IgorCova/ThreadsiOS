@@ -14,16 +14,23 @@ class ProfileCard: UIViewController {
     @IBOutlet weak var lblSurname: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnToMenu: UIBarButtonItem!
-
+    var member: Member?
     @IBOutlet weak var txtAbout: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
+            if successful {
+                self.member = memberInstance
                 
-        lblName.text = "Igor"
-        lblSurname.text = "Cova"
-        txtAbout.text = "I'm no superman"
-        imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
-        self.title = "Igor_Cova"
+                self.lblName.text = self.member!.name
+                self.lblSurname.text = self.member?.surname
+                self.txtAbout.text = self.member?.about
+                self.imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
+                self.title = self.member?.userName
+            }
+        }
+        
         
         self.imgPhoto.layer.cornerRadius = self.imgPhoto.frame.size.height/2
         self.imgPhoto.layer.masksToBounds = true
@@ -38,16 +45,18 @@ class ProfileCard: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "editProfile" {
+            if let vc = segue.destinationViewController as? ProfileCardEdit {
+                vc.member = self.member
+            }
+        }
     }
-    */
+    
 
 }
