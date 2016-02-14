@@ -136,6 +136,25 @@ extension String {
         
         return boundingBox.height
     }
+    
+    func replace(string:String, replacement:String) -> String {
+        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
+        
+    func removePunctMarks() -> String {
+        var text = self
+        text = text.replace("+", replacement: "")
+        text = text.replace("-", replacement: "")
+        text = text.replace(" ", replacement: "")
+        text = text.replace(")", replacement: "")
+        text = text.replace("(", replacement: "")
+    
+        return text
+    }
+    
+    func removeWhitespace() -> String {
+        return self.replace(" ", replacement: "")
+    }
 }
 
 extension NSAttributedString {
@@ -179,4 +198,5 @@ internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
 internal let CommLogo = "http://95.84.164.113/Logos/Community"
 internal let MemberLogo = "http://95.84.164.113/Logos/Member"
 internal var MyMemberID = 1
+internal var MyDID = UIDevice.currentDevice().identifierForVendor!.UUIDString
 

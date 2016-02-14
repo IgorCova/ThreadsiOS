@@ -39,7 +39,7 @@ class MemberData {
         let prms = ["Session": "1234567890", "DID" : "CovaPhone", "Params": ["Member": jcmem]]
         Alamofire.request(.POST, "\(Threads)/Member_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
-                print(response.result.value)
+                //print(response.result.value)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].dictionaryValue

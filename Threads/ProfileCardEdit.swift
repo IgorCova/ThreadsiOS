@@ -34,11 +34,9 @@ class ProfileCardEdit: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func saveMember(sender: AnyObject) {
-        
         self.member?.name = txflName.text!
         self.member?.surname = txflSurname.text!
         self.member?.userName = txflUsername.text!
