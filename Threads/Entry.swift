@@ -20,6 +20,14 @@ class Entry {
     var columnName : String
     var date : String
     var text : String
+    
+    var creatorId : Int
+    var creatorFullname : String
+    var creatorImg : String {
+        return "\(MemberLogo)/\(creatorId).png"
+    }
+
+    
     init (   id: Int
             ,communityId : Int
             ,communityName: String
@@ -27,6 +35,8 @@ class Entry {
             ,columnName : String
             ,date : String
             ,text : String
+            ,creatorId : Int
+            ,creatorFullname : String
         ) {
         self.id = id
         self.communityId = communityId
@@ -35,6 +45,8 @@ class Entry {
         self.columnName = columnName
         self.date = date
         self.text = text
+        self.creatorId = creatorId
+        self.creatorFullname = creatorFullname
     }
 }
 

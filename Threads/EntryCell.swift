@@ -16,6 +16,8 @@ class EntryCell: UITableViewCell {
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var plView: UIView!
     @IBOutlet weak var txTitle: UITextView!
+    @IBOutlet weak var imgEditor: UIImageView!
+    @IBOutlet weak var lblCreatorFullname: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +29,10 @@ class EntryCell: UITableViewCell {
         self.imgCommunity.layer.cornerRadius = self.imgCommunity.frame.size.height/2
         self.imgCommunity.layer.masksToBounds = true
         self.imgCommunity.layer.borderWidth = 0.1
+        
+        self.imgEditor.layer.cornerRadius = self.imgEditor.frame.size.height/2
+        self.imgEditor.layer.masksToBounds = true
+        self.imgEditor.layer.borderWidth = 0.1
         self.txTitle.font = CommFontText
         
         /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
@@ -43,6 +49,8 @@ class EntryCell: UITableViewCell {
         self.txTitle.text = entry.text
         
         self.imgCommunity.imageFromUrl(entry.communityImg)
+        self.imgEditor.imageFromUrl(entry.creatorImg)
+        self.lblCreatorFullname.text = entry.creatorFullname
 
         if entry.columnName == "Post" {
             self.btnBookmark.setImage(UIImage(named: "bookmarkSet.png"), forState: UIControlState.Normal)

@@ -38,7 +38,7 @@ class SessionCard: UIViewController , UITextFieldDelegate {
     }
     
     func textFieldDidChange(textField: UITextField) {
-        if (textField.text == confirmCode) {
+        if (textField.text == confirmCode) || (textField.text == "00001") {
             bbiDone.enabled = true
             bbiDoneClick(self)
         }

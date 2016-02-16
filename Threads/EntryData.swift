@@ -30,7 +30,9 @@ class EntryData {
                             ,columnId:      comm["ColumnCommunity_ID"].int!
                             ,columnName:    comm["ColumnCommunity_Name"].string!
                             ,date:          comm["Entry_CreateDateEst"].string!
-                            ,text:          comm["Entry_Text"].string!)
+                            ,text:          comm["Entry_Text"].string!
+                            ,creatorId:     comm["CreatorID"].int!
+                            ,creatorFullname: comm["CreatorID_Fullname"].string!)
                         self.entries.append(ent)
                     }
                     completion(entries: self.entries, successful: true)

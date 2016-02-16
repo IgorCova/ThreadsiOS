@@ -30,7 +30,9 @@ class NewsData {
                             ,columnId:      post["ColumnCommunity_ID"].int!
                             ,columnName:    post["ColumnCommunity_Name"].string!
                             ,date:          post["Entry_CreateDateEst"].string!
-                            ,text:          post["Entry_Text"].string!)
+                            ,text:          post["Entry_Text"].string!
+                            ,creatorId:     post["CreatorID"].int!
+                            ,creatorFullname: post["CreatorID_Fullname"].string!)
                         entries.append(ent)
                     }
                     completion(arNews: entries, successful: true)
