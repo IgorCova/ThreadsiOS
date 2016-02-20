@@ -16,6 +16,8 @@ class SessionCard: UIViewController , UITextFieldDelegate {
     
     var phone = ""
     var confirmCode = ""
+    var sessionReqId = 0
+    var memberId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +39,30 @@ class SessionCard: UIViewController , UITextFieldDelegate {
         self.presentViewController(Core, animated:true, completion:nil)
     }
     
+    func toWelcomeCard() {
+        let wc = self.storyboard!.instantiateViewControllerWithIdentifier("Welcome") as! WelcomeCard
+        self.presentViewController(wc, animated:true, completion:nil)
+    }
+
+    
     func textFieldDidChange(textField: UITextField) {
         if (textField.text == confirmCode) || (textField.text == "00001") {
-            bbiDone.enabled = true
-            bbiDoneClick(self)
+            
+            SessionData().wsSessionSave(sessionReqId, completion: {(mem, isNew, successful) -> Void in
+                if successful {
+                    if mem.id > 0
+                    {
+                        let member = MemberEntryFields(id: mem.id, sessionId: mem.sessionId)
+                        MemberData().saveMemberEntry(member)
+                    }
+                    if isNew == true {
+                        self.toWelcomeCard()
+                    } else {
+                        self.bbiDone.enabled = true
+                        self.bbiDoneClick(self)
+                    }
+                }
+                })
         }
     }
     

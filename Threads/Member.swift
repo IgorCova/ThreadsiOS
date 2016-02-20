@@ -34,3 +34,13 @@ class Member {
         self.phone = phone
     }
 }
+
+class MemberEntryFields {
+    var id : Int
+    var sessionId: String
+    
+    init (id: Int, sessionId: String) {
+        self.id = id
+        self.sessionId = sessionId
+    }
+}

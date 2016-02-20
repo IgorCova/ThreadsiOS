@@ -24,11 +24,14 @@
 		F32446EA1C6F57A4005DF9FA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32446E91C6F57A4005DF9FA /* Session.swift */; };
 		F32446EC1C6F584D005DF9FA /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32446EB1C6F584D005DF9FA /* SessionData.swift */; };
 		F32446EE1C6F5A6B005DF9FA /* SessionReqCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32446ED1C6F5A6B005DF9FA /* SessionReqCard.swift */; };
-		F32446F01C6F5B6B005DF9FA /* WelcomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32446EF1C6F5B6B005DF9FA /* WelcomeCard.swift */; };
+		F32446F01C6F5B6B005DF9FA /* StartCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32446EF1C6F5B6B005DF9FA /* StartCard.swift */; };
 		F32446F41C6F5D6B005DF9FA /* startPage.png in Resources */ = {isa = PBXBuildFile; fileRef = F32446F31C6F5D6B005DF9FA /* startPage.png */; };
 		F33560571C3E7071002A127E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33560561C3E7071002A127E /* SwiftyJSON.swift */; };
 		F337E3F71C221EB300557168 /* EntryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F61C221EB300557168 /* EntryData.swift */; };
 		F337E3FA1C2221F300557168 /* CommunityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F91C2221F300557168 /* CommunityData.swift */; };
+		F34428CC1C78E6810033EA77 /* WelcomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34428CB1C78E6810033EA77 /* WelcomeCard.swift */; };
+		F35133561C7915140034E23A /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35133541C7915140034E23A /* Log+CoreDataProperties.swift */; };
+		F35133571C7915140034E23A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35133551C7915140034E23A /* Log.swift */; };
 		F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D1C651C5C180200D0CECD /* NewsData.swift */; };
 		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
 		F3A16AF11C5FE63300576F59 /* EntrySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A16AF01C5FE63300576F59 /* EntrySaver.swift */; };
@@ -60,7 +63,6 @@
 		F3D102F91C6D1C85001F0FA1 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102F71C6D1C85001F0FA1 /* save.png */; };
 		F3D102FB1C6D28F8001F0FA1 /* ProfileCardEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */; };
 		F3D257A31C712CE2002A70CC /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3D257A11C712CE2002A70CC /* CoreDataModel.xcdatamodeld */; };
-		F3D257A61C712D1D002A70CC /* MemberEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D257A51C712D1D002A70CC /* MemberEntry.swift */; };
 		F3FEDB561C65EA2C00B09B97 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB551C65EA2C00B09B97 /* contacts.png */; };
 		F3FEDB581C65EA5000B09B97 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB571C65EA5000B09B97 /* bookmarks.png */; };
 		F3FEDB611C65EF6500B09B97 /* bookmarksSet.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB5A1C65EF6500B09B97 /* bookmarksSet.png */; };
@@ -94,11 +96,14 @@
 		F32446E91C6F57A4005DF9FA /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F32446EB1C6F584D005DF9FA /* SessionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
 		F32446ED1C6F5A6B005DF9FA /* SessionReqCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionReqCard.swift; sourceTree = "<group>"; };
-		F32446EF1C6F5B6B005DF9FA /* WelcomeCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCard.swift; sourceTree = "<group>"; };
+		F32446EF1C6F5B6B005DF9FA /* StartCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCard.swift; sourceTree = "<group>"; };
 		F32446F31C6F5D6B005DF9FA /* startPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startPage.png; sourceTree = "<group>"; };
 		F33560561C3E7071002A127E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F337E3F61C221EB300557168 /* EntryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryData.swift; sourceTree = "<group>"; };
 		F337E3F91C2221F300557168 /* CommunityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityData.swift; sourceTree = "<group>"; };
+		F34428CB1C78E6810033EA77 /* WelcomeCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCard.swift; sourceTree = "<group>"; };
+		F35133541C7915140034E23A /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F35133551C7915140034E23A /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F36D1C651C5C180200D0CECD /* NewsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		F3A16AF01C5FE63300576F59 /* EntrySaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrySaver.swift; sourceTree = "<group>"; };
@@ -132,7 +137,6 @@
 		F3D102F71C6D1C85001F0FA1 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 		F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardEdit.swift; sourceTree = "<group>"; };
 		F3D257A21C712CE2002A70CC /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		F3D257A51C712D1D002A70CC /* MemberEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberEntry.swift; sourceTree = "<group>"; };
 		F3FEDB431C65E83000B09B97 /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
 		F3FEDB441C65E83800B09B97 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
 		F3FEDB451C65E85000B09B97 /* SFUIText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Light.otf"; sourceTree = "<group>"; };
@@ -324,7 +328,8 @@
 				F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */,
 				F3D03C3A1C6FD8670066610E /* SessionCard.swift */,
 				F32446ED1C6F5A6B005DF9FA /* SessionReqCard.swift */,
-				F32446EF1C6F5B6B005DF9FA /* WelcomeCard.swift */,
+				F32446EF1C6F5B6B005DF9FA /* StartCard.swift */,
+				F34428CB1C78E6810033EA77 /* WelcomeCard.swift */,
 			);
 			name = Card;
 			sourceTree = "<group>";
@@ -333,7 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				F3D257A11C712CE2002A70CC /* CoreDataModel.xcdatamodeld */,
-				F3D257A51C712D1D002A70CC /* MemberEntry.swift */,
+				F35133541C7915140034E23A /* Log+CoreDataProperties.swift */,
+				F35133551C7915140034E23A /* Log.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 			files = (
 				F3B667971C1772C300B05CF5 /* MenuDir.swift in Sources */,
 				F32446EC1C6F584D005DF9FA /* SessionData.swift in Sources */,
+				F35133571C7915140034E23A /* Log.swift in Sources */,
 				F3D102F41C6D0885001F0FA1 /* ProfileCard.swift in Sources */,
 				F3A16AF11C5FE63300576F59 /* EntrySaver.swift in Sources */,
 				3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */,
@@ -527,12 +534,13 @@
 				F3C3A59D1C5CE522003FA1F3 /* Member.swift in Sources */,
 				F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
-				F3D257A61C712D1D002A70CC /* MemberEntry.swift in Sources */,
+				F34428CC1C78E6810033EA77 /* WelcomeCard.swift in Sources */,
 				F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */,
 				F337E3F71C221EB300557168 /* EntryData.swift in Sources */,
 				F3B667A01C17869000B05CF5 /* ProfileCell.swift in Sources */,
 				3CC2DA991BE2B7C000916FDD /* AppDelegate.swift in Sources */,
 				F32446EE1C6F5A6B005DF9FA /* SessionReqCard.swift in Sources */,
+				F35133561C7915140034E23A /* Log+CoreDataProperties.swift in Sources */,
 				F337E3FA1C2221F300557168 /* CommunityData.swift in Sources */,
 				F3C3A59B1C5CE510003FA1F3 /* MemberData.swift in Sources */,
 				F32446EA1C6F57A4005DF9FA /* Session.swift in Sources */,
@@ -540,7 +548,7 @@
 				3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */,
 				F32106801C1D672E00EFF9F3 /* NewsDir.swift in Sources */,
 				F3AC61941C6F8F02006476C2 /* Country.swift in Sources */,
-				F32446F01C6F5B6B005DF9FA /* WelcomeCard.swift in Sources */,
+				F32446F01C6F5B6B005DF9FA /* StartCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

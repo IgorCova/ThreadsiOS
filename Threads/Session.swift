@@ -18,6 +18,18 @@ class SessionReq {
     }
 }
 
+class SessionReqRes {
+    var id : Int
+    var code : String
+    var memberId : Int
+    
+    init (id : Int, code : String, memberId : Int) {
+        self.id = id
+        self.code = code
+        self.memberId = memberId
+    }
+}
+
 class Session {
     var dID : String
     var phone : String

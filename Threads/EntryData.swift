@@ -14,7 +14,8 @@ class EntryData {
     private var entries = [Entry]()
     
     func wsGetEntryReadByCommunityID(id: Int, completion : (entries:[Entry], successful: Bool) -> Void) {
-        let prms = ["Session": "1234567890", "DID": "CovaPhone", "Params": ["CommunityID": id]]
+        let prms : [String : AnyObject] = ["Session": "1234567890", "DID": MyDID, "Params": ["CommunityID": id]]
+        
         Alamofire.request(.POST, "\(Threads)/Entry_ReadByCommunityID", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)
@@ -45,7 +46,7 @@ class EntryData {
     }
     
     func wsEntrySave(wsEntry w: NewEntry, completion : (id :Int, successful: Bool) -> Void) {
-        let prms = ["Session": "1234567890", "DID": "CovaPhone", "Params": ["CommunityID": w.communityId, "ColumnID": w.columnId, "CreatorID": MyMemberID, "EntryText": w.text]]
+        let prms : [String : AnyObject] = ["Session": "1234567890", "DID": MyDID, "Params": ["CommunityID": w.communityId, "ColumnID": w.columnId, "CreatorID": MyMemberID, "EntryText": w.text]]
         Alamofire.request(.POST, "\(Threads)/Entry_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)

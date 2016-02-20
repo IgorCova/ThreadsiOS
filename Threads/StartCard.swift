@@ -2,13 +2,13 @@
 //  WelcomeCard.swift
 //  Threads
 //
-//  Created by Igor Cova on 20/02/16.
+//  Created by Igor Cova on 13/02/16.
 //  Copyright © 2016 Igor Cova. All rights reserved.
 //
 
 import UIKit
 
-class WelcomeCard: UIViewController {
+class StartCard: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

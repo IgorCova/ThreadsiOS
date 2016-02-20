@@ -84,13 +84,13 @@ class SessionReqCard: UIViewController, UITextFieldDelegate {
             if let vc = segue.destinationViewController as? SessionCard {
                 let phonetext = "\(self.txflCode.text!) \(self.txflPhone.text!)"
                 let phone = phonetext.removePunctMarks()
-                let did = MyDID
-                
-                let sessionreq = SessionReq(dID: did, phone: phone)
-                SessionData().wsSessionReqSave(sessionreq, completion: { (code, successful) -> Void in
+        
+                SessionData().wsSessionReqSave(phone, completion: { (reqres, successful) -> Void in
                     if successful {
                         vc.phone = phonetext
-                        vc.confirmCode = code
+                        vc.confirmCode = reqres.code
+                        vc.sessionReqId = reqres.id
+                        vc.memberId = reqres.memberId
                         //self.navigationController?.popViewControllerAnimated(true)// dismissViewControllerAnimated(true, completion: nil)
                     }
                 })

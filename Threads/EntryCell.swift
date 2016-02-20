@@ -35,6 +35,9 @@ class EntryCell: UITableViewCell {
         self.imgEditor.layer.borderWidth = 0.1
         self.txTitle.font = CommFontText
         
+        self.lblDate.sizeToFit()
+        //self.lblCreatorFullname.sizeToFit()
+        
         /*//При добавлениии теней начинает все тормозить нужно будет потом что-то придумать
         self.plView.layer.masksToBounds = false
         self.plView.layer.shadowOffset = CGSizeMake(-2, 2)
@@ -50,7 +53,7 @@ class EntryCell: UITableViewCell {
         
         self.imgCommunity.imageFromUrl(entry.communityImg)
         self.imgEditor.imageFromUrl(entry.creatorImg)
-        self.lblCreatorFullname.text = entry.creatorFullname
+        self.lblCreatorFullname.text = ("by \(entry.creatorFullname)")
 
         if entry.columnName == "Post" {
             self.btnBookmark.setImage(UIImage(named: "bookmarkSet.png"), forState: UIControlState.Normal)
