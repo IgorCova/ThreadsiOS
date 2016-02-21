@@ -198,9 +198,14 @@ internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
 internal let CommLogo = "http://95.84.164.113/Logos/Community"
 internal let MemberLogo = "http://95.84.164.113/Logos/Member"
 internal var MyDID = UIDevice.currentDevice().identifierForVendor!.UUIDString
+internal var MySessionID : String {
+    get {
+        return MemberData().getLogInfo().1
+    }
+}
 internal var MyMemberID : Int {
     get {
-        return MemberData().getMyMemberID()
+        return MemberData().getLogInfo().0
     }
 
 }

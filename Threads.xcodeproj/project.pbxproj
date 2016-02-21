@@ -189,6 +189,7 @@
 		3CC2DA971BE2B7C000916FDD /* Threads */ = {
 			isa = PBXGroup;
 			children = (
+				3CC2DA981BE2B7C000916FDD /* AppDelegate.swift */,
 				3CC2DA9C1BE2B7C000916FDD /* Main.storyboard */,
 				F3D102F51C6D0EFF001F0FA1 /* Card */,
 				F3B667A11C1788EB00B05CF5 /* Cells */,
@@ -270,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				3CC2DAD61BE2C2C700916FDD /* ComLogos */,
-				3CC2DA981BE2B7C000916FDD /* AppDelegate.swift */,
 				F3B667911C176ED600B05CF5 /* Comm-Bridging-Header.h */,
 				F3B667921C176ED600B05CF5 /* SWRevealViewController.h */,
 				F3B667931C176ED600B05CF5 /* SWRevealViewController.m */,

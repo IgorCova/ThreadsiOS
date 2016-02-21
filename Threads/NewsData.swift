@@ -14,7 +14,7 @@ class NewsData {
     
     func wsGetNewsReadByMemberID(id: Int, completion : (arNews:[Entry], successful: Bool) -> Void) {
         
-        let prms : [String : AnyObject] = ["Session": "1234567890", "DID": MyDID, "Params": ["MemberID": id]]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["MemberID": id]]
         Alamofire.request(.POST, "\(Threads)/News_ReadByMemberID", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)

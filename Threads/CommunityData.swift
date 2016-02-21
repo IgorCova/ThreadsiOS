@@ -14,7 +14,7 @@ class CommunityData {
     private var communities = [Community]()
     
     func wsGetCommunityDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": "1234567890", "DID" : MyDID, "Params": ["MemberID": memberID]]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID" : MyDID, "Params": ["MemberID": memberID]]
         Alamofire.request(.POST, "\(Threads)/Community_ReadDict", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)
@@ -36,7 +36,7 @@ class CommunityData {
     }
     
     func wsGetCommunityMyDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
-        let prms : [String : AnyObject]  = ["Session": "1234567890", "DID" : MyDID, "Params": ["MemberID": memberID]]
+        let prms : [String : AnyObject]  = ["Session": MySessionID, "DID" : MyDID, "Params": ["MemberID": memberID]]
         Alamofire.request(.POST, "\(Threads)/Community_ReadMyDict", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)
@@ -58,7 +58,7 @@ class CommunityData {
     }
     
     func wsGetCommunitySuggestDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": "1234567890", "DID" : MyDID, "Params": ["MemberID": memberID]]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID" : MyDID, "Params": ["MemberID": memberID]]
         Alamofire.request(.POST, "\(Threads)/Community_ReadSuggestDict", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)

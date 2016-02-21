@@ -13,7 +13,7 @@ import Alamofire
 class CountryData {
     
     func wsGetCountryReadDict(completion : (countryDict: [Country], successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": "1234567890", "DID": MyDID]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID]
         Alamofire.request(.POST, "\(Threads)/Country_ReadDict", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)

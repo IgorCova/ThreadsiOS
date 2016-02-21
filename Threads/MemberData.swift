@@ -11,7 +11,7 @@ import Alamofire
 
 class MemberData {
     func wsGetMemberInstance(id: Int, completion : (memberInstance: Member?, successful: Bool) -> Void) {
-        let prms : [String : AnyObject]  = ["Session": "1234567890", MyDID : "CovaPhone", "Params": ["MemberID": id]]
+        let prms : [String : AnyObject]  = ["Session": MySessionID,  "DID": MyDID, "Params": ["MemberID": id]]
         Alamofire.request(.POST, "\(Threads)/Member_ReadInstance", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)
@@ -37,8 +37,8 @@ class MemberData {
     
     func wsMemberSave(member: Member, completion : ( memberInstance: Member?, successful: Bool) -> Void) {
         let jcmem = ["ID": member.id, "Name": member.name, "Surname": member.surname, "UserName":member.userName, "About":member.about, "Phone": member.phone]
-        print(jcmem)
-        let prms : [String : AnyObject] = ["Session": "1234567890", "DID" : MyDID, "Params": ["Member": jcmem]]
+        //print(jcmem)
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["Member": jcmem]]
         Alamofire.request(.POST, "\(Threads)/Member_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)
@@ -62,8 +62,9 @@ class MemberData {
         }
     }
     
-    func getMyMemberID() -> Int {
+    func getLogInfo() -> (Int, String) {
         var myMemberID: Int = 0
+        var mySessionID: String = ""
         
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext
@@ -77,13 +78,14 @@ class MemberData {
                 
             } else {
                 myMemberID = (fetchResult[0].memberId as! Int)
+                mySessionID = (fetchResult[0].sessionId! as String)
             }
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
-        return myMemberID
+        return (myMemberID, mySessionID)
     }
     
     func deleteLog() {
