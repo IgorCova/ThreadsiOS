@@ -19,5 +19,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Threads/MenuDir.swift"
+            timestampString = "477750316.427579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "refresh(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Comm.MenuDir.refresh (Comm.MenuDir)(Swift.AnyObject) -&gt; ()"
+                  moduleName = "Comm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jinmac/SourceTree/ThreadsiOS/Threads/MenuDir.swift"
+                  timestampString = "477752089.400716"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Comm.MenuDir.(refresh (Comm.MenuDir) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "Comm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jinmac/SourceTree/ThreadsiOS/Threads/MenuDir.swift"
+                  timestampString = "477752089.400838"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

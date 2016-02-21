@@ -197,6 +197,11 @@ internal let CommFontText = UIFont(name: ".SFUIText-Regular", size: 16)
 internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
 internal let CommLogo = "http://95.84.164.113/Logos/Community"
 internal let MemberLogo = "http://95.84.164.113/Logos/Member"
-internal var MyMemberID = 1
 internal var MyDID = UIDevice.currentDevice().identifierForVendor!.UUIDString
+internal var MyMemberID : Int {
+    get {
+        return MemberData().getMyMemberID()
+    }
+
+}
 

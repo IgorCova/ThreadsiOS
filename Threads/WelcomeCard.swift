@@ -9,7 +9,8 @@
 import UIKit
 
 class WelcomeCard: UIViewController {
-
+    var memberId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

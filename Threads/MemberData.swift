@@ -37,6 +37,7 @@ class MemberData {
     
     func wsMemberSave(member: Member, completion : ( memberInstance: Member?, successful: Bool) -> Void) {
         let jcmem = ["ID": member.id, "Name": member.name, "Surname": member.surname, "UserName":member.userName, "About":member.about, "Phone": member.phone]
+        print(jcmem)
         let prms : [String : AnyObject] = ["Session": "1234567890", "DID" : MyDID, "Params": ["Member": jcmem]]
         Alamofire.request(.POST, "\(Threads)/Member_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
@@ -67,7 +68,7 @@ class MemberData {
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "MemberEntity")
+        let fetchRequest = NSFetchRequest(entityName: "Log")
         
         do {
             let fetchResult = try context.executeFetchRequest(fetchRequest) as! [Log]
@@ -85,6 +86,21 @@ class MemberData {
         return myMemberID
     }
     
+    func deleteLog() {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.managedObjectContext
+        let coord = appDelegate.persistentStoreCoordinator
+        
+        let fetchRequest = NSFetchRequest(entityName: "Log")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try coord.executeRequest(deleteRequest, withContext: context)
+        } catch let error as NSError {
+            debugPrint(error)
+        }
+    }
+    
     func saveMemberEntry (member: MemberEntryFields) {
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext
@@ -94,6 +110,7 @@ class MemberData {
         newMember.sessionId = member.sessionId
         
         do {
+            self.deleteLog()
             try context.save()
         } catch {
             

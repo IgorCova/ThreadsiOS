@@ -43,7 +43,6 @@ class SessionCard: UIViewController , UITextFieldDelegate {
         let wc = self.storyboard!.instantiateViewControllerWithIdentifier("Welcome") as! WelcomeCard
         self.presentViewController(wc, animated:true, completion:nil)
     }
-
     
     func textFieldDidChange(textField: UITextField) {
         if (textField.text == confirmCode) || (textField.text == "00001") {
@@ -62,7 +61,7 @@ class SessionCard: UIViewController , UITextFieldDelegate {
                         self.bbiDoneClick(self)
                     }
                 }
-                })
+            })
         }
     }
     
