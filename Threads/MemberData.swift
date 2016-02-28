@@ -24,7 +24,9 @@ class MemberData {
                         ,surname: json["Surname"]!.string!
                         ,userName: json["UserName"]!.string!
                         ,about: json["About"]!.string!
-                        ,phone: json["Phone"]!.string!)
+                        ,phone: json["Phone"]!.string!
+                        ,isMale: json["IsMale"]!.bool!
+                    )
                     
                     completion(memberInstance: mem, successful: true)
                     
@@ -51,7 +53,8 @@ class MemberData {
                         ,surname: json["Surname"]!.string!
                         ,userName: json["UserName"]!.string!
                         ,about: json["About"]!.string!
-                        ,phone: json["Phone"]!.string!)
+                        ,phone: json["Phone"]!.string!
+                        ,isMale: json["IsMale"]!.bool!)
                     
                     completion(memberInstance: mem, successful: true)
                     

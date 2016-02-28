@@ -43,7 +43,7 @@ class MenuDir: UITableViewController {
             ,(cell: "CommCell", name: "Bookmarks", img: "bookmarks.png", imgS: "bookmarksSet.png")
             ,(cell: "CommCell", name: "Popular", img: "popular.png", imgS: "popularSet.png")
             ,(cell: "CommCell", name: "Contacts", img: "contacts.png", imgS: "contactsSet.png")
-            ,(cell: "CommCell", name: "Settings", img: "settings.png", imgS: "settingsSet.png")
+            ,(cell: "SettingsCell", name: "Settings", img: "settings.png", imgS: "settingsSet.png")
             ]
     }
 
@@ -126,6 +126,4 @@ class MenuDir: UITableViewController {
             }
         }
     }
-    
-
 }

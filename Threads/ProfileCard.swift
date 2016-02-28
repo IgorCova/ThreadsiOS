@@ -27,10 +27,9 @@ class ProfileCard: UIViewController {
                 self.lblSurname.text = self.member?.surname
                 self.txtAbout.text = self.member?.about
                 self.imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
-                self.title = self.member?.userName
+                self.title = "\(self.member!.name) \(self.member!.surname)"
             }
         }
-        
         
         self.imgPhoto.layer.cornerRadius = self.imgPhoto.frame.size.height/2
         self.imgPhoto.layer.masksToBounds = true
@@ -50,13 +49,7 @@ class ProfileCard: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "editProfile" {
-            if let vc = segue.destinationViewController as? ProfileCardEdit {
-                vc.member = self.member
-            }
-        }
-    }
-    
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
+    //}
 }

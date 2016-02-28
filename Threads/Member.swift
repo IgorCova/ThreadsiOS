@@ -15,6 +15,7 @@ class Member {
     var userName : String
     var about : String
     var phone : String
+    var isMale: Bool
     
     var linkToLogo : String {
         return "\(MemberLogo)/\(id).png"
@@ -25,13 +26,14 @@ class Member {
     }
     
     
-    init (id: Int, name : String, surname : String, userName : String, about : String, phone : String) {
+    init (id: Int, name : String, surname : String, userName : String, about : String, phone : String, isMale: Bool) {
         self.id = id
         self.name = name
         self.surname = surname
         self.userName = userName
         self.about = about
         self.phone = phone
+        self.isMale = isMale
     }
 }
 
