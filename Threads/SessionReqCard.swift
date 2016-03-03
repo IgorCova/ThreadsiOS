@@ -17,10 +17,14 @@ class SessionReqCard: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.shadowImage = UIImage();
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        txflPhone.delegate = self
-        txflPhone.becomeFirstResponder()
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage();
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        
+        self.txflPhone.delegate = self
+        self.txflPhone.becomeFirstResponder()
+        
+        self.txflPhone.keyboardType = .NumberPad
     }
 
     override func didReceiveMemoryWarning() {

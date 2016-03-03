@@ -16,12 +16,13 @@ class CountryDict: UITableViewController {
     @IBOutlet var tvCountries: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        refresh(self)
+        self.navigationController!.navigationBar.tintColor = .whiteColor()
+        
         self.dirRefreshControl = UIRefreshControl()
-        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        self.dirRefreshControl?.beginRefreshing()
+        self.refresh(self)
     }
 
     override func didReceiveMemoryWarning() {

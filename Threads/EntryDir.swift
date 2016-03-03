@@ -19,20 +19,20 @@ class EntryDir: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refresh(self)
-        
         self.tvEntry.delegate = self
         self.tvEntry.dataSource = self
         self.tvEntry.separatorStyle = .None
+        
         self.title = community!.name
         
         self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         self.dirRefreshControl = UIRefreshControl()
-        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
+        self.dirRefreshControl?.beginRefreshing()
+        self.refresh(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +45,6 @@ class EntryDir: UITableViewController {
     }
     
     func refresh(sender:AnyObject) {
-        
         EntryData().wsGetEntryReadByCommunityID((community?.id)!) {entryDict, successful in
             if successful {
                 self.dirEntry = entryDict

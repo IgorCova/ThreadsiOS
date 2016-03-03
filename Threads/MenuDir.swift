@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Contacts
+import ContactsUI
 
-class MenuDir: UITableViewController {
+class MenuDir: UITableViewController, CNContactPickerDelegate {
     
     var menuItems = [(cell: String?, name: String?, img: String?, imgS: String?)]() //= [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
     var dirRefreshControl : UIRefreshControl!
@@ -21,30 +23,32 @@ class MenuDir: UITableViewController {
         case SugComm
     }
     
+    var contactStore = CNContactStore()
+    var updateContact = CNContact()
+    
     @IBOutlet var tvMenuItems: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.dirRefreshControl = UIRefreshControl()
-        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(dirRefreshControl)
-        
-        self.refresh(self)
-        
+ 
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
+        
         self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "", imgS: "")
             ,(cell: "NewsCell", name: "News", img: "news.png", imgS: "newsSet.png")
             ,(cell: "CommCell", name: "Communities", img: "communities.png", imgS: "communitiesSet.png")
-           // ,(cell: "CommCell", name: "My Communities", img: "communities.png", imgS: "communitiesSet.png")
+          //,(cell: "CommCell", name: "My Communities", img: "communities.png", imgS: "communitiesSet.png")
             ,(cell: "CommCell", name: "Suggested", img: "suggested.png", imgS: "suggestedSet.png")
             ,(cell: "CommCell", name: "Bookmarks", img: "bookmarks.png", imgS: "bookmarksSet.png")
             ,(cell: "CommCell", name: "Popular", img: "popular.png", imgS: "popularSet.png")
-            ,(cell: "CommCell", name: "Contacts", img: "contacts.png", imgS: "contactsSet.png")
+            ,(cell: "ContactsCell", name: "Contacts", img: "contacts.png", imgS: "contactsSet.png")
             ,(cell: "SettingsCell", name: "Settings", img: "settings.png", imgS: "settingsSet.png")
             ]
+        
+        self.dirRefreshControl = UIRefreshControl()
+        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(dirRefreshControl)
+        self.refresh(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,12 +107,16 @@ class MenuDir: UITableViewController {
         if indexPath.row == 0 {
             return 160
         }
-        
         return  42.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.revealViewController().setFrontViewPosition(FrontViewPosition.LeftSideMostRemoved, animated:  true)
+        if self.menuItems[indexPath.row].cell == "ContactsCell" {
+            let contactPickerViewController = CNContactPickerViewController()
+            presentViewController(contactPickerViewController, animated: true, completion: nil)
+        } else {
+            self.revealViewController().setFrontViewPosition(FrontViewPosition.LeftSideMostRemoved, animated:  true)
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -126,4 +134,33 @@ class MenuDir: UITableViewController {
             }
         }
     }
+    
+    func askForContactAccess() {
+        let authorizationStatus = CNContactStore.authorizationStatusForEntityType(CNEntityType.Contacts)
+        
+        switch authorizationStatus {
+        case .Denied, .NotDetermined:
+            self.contactStore.requestAccessForEntityType(CNEntityType.Contacts, completionHandler: { (access, accessError) -> Void in
+                if !access {
+                    if authorizationStatus == CNAuthorizationStatus.Denied {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            let message = "\(accessError!.localizedDescription)\n\nPlease allow the app to access your contacts through the Settings."
+                            let alertController = UIAlertController(title: "Contacts", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                            
+                            let dismissAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
+                            }
+                            
+                            alertController.addAction(dismissAction)
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    }
+                }
+            })
+            break
+        default:
+            break
+        }
+    }
+
 }

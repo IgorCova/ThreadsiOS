@@ -1,92 +1,41 @@
 //
-//  ProfileCardEdit.swift
+//  PhotoLoaderCard.swift
 //  Threads
 //
-//  Created by Igor Cova on 11/02/16.
+//  Created by Igor Cova on 28/02/16.
 //  Copyright © 2016 Igor Cova. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-class ProfileCardEdit: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate {
-
-    @IBOutlet weak var txflUsername: UITextField!
-    @IBOutlet weak var txflSurname: UITextField!
-    @IBOutlet weak var txflName: UITextField!
-    @IBOutlet weak var imgPhoto: UIImageView!
-    @IBOutlet weak var txtAbout: UITextView!
+class PhotoLoaderCard: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate  {
     
-    var member: Member?
-  
+    @IBOutlet weak var imgPhoto: UIImageView!
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.leftBarButtonItem?.title = " "
-       
-        self.txflName.text = self.member!.name
-        self.txflSurname.text = self.member!.surname
-        self.txflUsername.text = self.member!.userName
-        self.txtAbout.text = self.member!.about
-        
-        self.imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
-        self.imgPhoto.layer.cornerRadius = self.imgPhoto.frame.size.height/2
-        self.imgPhoto.layer.masksToBounds = true
-        self.imgPhoto.layer.borderWidth = 0.1
-        
-        self.txflName.delegate = self
-        self.txflName.becomeFirstResponder()
+        self.imgPhoto.imageFromUrl(memberLogoUrl(MyMemberID))
+        self.btmSetPhoto_Click(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func setPhoto(sender: AnyObject) {
+    @IBAction func btmSetPhoto_Click(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
             imagePicker.allowsEditing = false
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
-            
-            
-        }
-    }
-
-    @IBAction func doneEdit(sender: AnyObject) {
-        self.member?.name = txflName.text!
-        self.member?.surname = txflSurname.text!
-        self.member?.userName = txflUsername.text!
-        self.member?.about = txtAbout.text
-
-        MemberData().wsMemberSave(member!) {memberInstance, successful in
-            if successful {
-                self.member = memberInstance
-                let Core = self.storyboard!.instantiateViewControllerWithIdentifier("Core") as! SWRevealViewController
-                self.presentViewController(Core, animated:true, completion:nil)
-            }
-        }
-    }
-
-    @IBAction func saveMember(sender: AnyObject) {
-        self.member?.name = txflName.text!
-        self.member?.surname = txflSurname.text!
-        self.member?.userName = txflUsername.text!
-        self.member?.about = txtAbout.text
-
-        MemberData().wsMemberSave(member!) {memberInstance, successful in
-            if successful {
-                self.member = memberInstance
-                self.navigationController?.popViewControllerAnimated(true)
-            }
         }
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
         self.dismissViewControllerAnimated(false, completion: { () -> Void in
+            
             var imageCropVC : RSKImageCropViewController!
             imageCropVC = RSKImageCropViewController(image: image, cropMode: RSKImageCropMode.Circle)
             imageCropVC.rotationEnabled = true
@@ -134,7 +83,6 @@ class ProfileCardEdit: UIViewController, UITextFieldDelegate, UINavigationContro
     }
 
     /*
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -142,6 +90,6 @@ class ProfileCardEdit: UIViewController, UITextFieldDelegate, UINavigationContro
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    
-   */
+    */
+
 }

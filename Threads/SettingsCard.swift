@@ -11,18 +11,18 @@ import UIKit
 class SettingsCard: UIViewController {
 
     @IBOutlet weak var btnMenu: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         self.btnMenu.target = self.revealViewController()
         self.btnMenu.action = Selector("revealToggle:")
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnLogout_Click(sender: AnyObject) {

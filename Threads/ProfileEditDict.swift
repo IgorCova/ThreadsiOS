@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewDelegate {
+class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate {
     
     var member: Member?
     var dirRefreshControl: UIRefreshControl?
@@ -16,41 +16,38 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     var ages = [Int]()
     var age = 18
     var pickerView = UIPickerView()
+    var imgPhoto: UIImage?
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet var tvProfile: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tvProfile.delegate = self
         self.tvProfile.dataSource = self
         self.tvProfile.separatorStyle = .None
+        
         self.navItem.backBarButtonItem?.title = ""
         self.navItem.leftBarButtonItem?.title = ""
-        self.dirRefreshControl = UIRefreshControl()
-        //self.dirRefreshControl!.attributedTitle = NSAttributedString(string: "Get current info About You")
-        self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(dirRefreshControl!)
-        self.refresh(self)
         
         for i in 1...125 {
             ages.append(i)
         }
         
         self.pickerView.delegate = self
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.dirRefreshControl = UIRefreshControl()
+        self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(dirRefreshControl!)
+        self.dirRefreshControl?.beginRefreshing()
+        self.refresh(self)
     }
     
     func refresh(sender:AnyObject) {
         MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
             if successful {
                 self.member = memberInstance
-                self.profileItems = ["nameCell","telegramCell","usernameCell","phoneCell","ageCell","genderCell","aboutCell","countryCell","cityCell"]
+                self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","aboutCell","countryCell","cityCell"]
                 self.tvProfile.reloadData()
                 self.dirRefreshControl!.endRefreshing()
             } else {
@@ -61,22 +58,16 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return profileItems.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if self.profileItems[indexPath.row] == "nameCell" {
             let cell = tableView.dequeueReusableCellWithIdentifier(self.profileItems[indexPath.row], forIndexPath: indexPath) as! NameCell
@@ -114,7 +105,6 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
             //}
             return cell
         }
-
         
         let cell = tableView.dequeueReusableCellWithIdentifier(self.profileItems[indexPath.row], forIndexPath: indexPath)
         
@@ -123,47 +113,27 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if self.profileItems[indexPath.row] == "nameCell" {
-            return 170.0
+            return 122.0
+        } else if self.profileItems[indexPath.row] == "genderCell" {
+            return 44.0
+        } else if self.profileItems[indexPath.row] == "countryCell" {
+            return 44.0
+        } else if self.profileItems[indexPath.row] == "usernameCell" {
+            return 44.0
         } else {
-            return 43.0
+            return 48.0
         }
-        
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    @IBAction func btnSave_Click(sender: AnyObject) {
+        MemberData().wsMemberSave(member!) {memberInstance, successful in
+            if successful {
+                self.member = memberInstance
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.ages.count;
     }
@@ -177,10 +147,8 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         if self.profileItems[indexPath.row] == "ageCell" {
-            
-            let alertView = UIAlertController(title: "How old are you?", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet);
+            let alertView = UIAlertController(title: "How old are you?", message: "\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet);
             
             pickerView.frame = CGRectMake(15, 25, 270, 200)
             alertView.view.addSubview(self.pickerView)
@@ -193,48 +161,65 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
             pickerView.selectRow(age-1, inComponent: 0, animated: true)
             presentViewController(alertView, animated: true, completion: nil)
         }
+        //else if self.profileItems[indexPath.row] == "setPhotoCell" {
+        //  let wc = self.storyboard!.instantiateViewControllerWithIdentifier("PhotoLoaderCard") as! PhotoLoaderCard
+        // self.presentViewController(wc, animated:true, completion:nil)
+        // }
     }
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "changeUsername" {
             if let vc = segue.destinationViewController as? ChangeFieldCard {
                 vc.username = (self.member?.userName)!
+                vc.isComm = true
+            }
+        } else if segue.identifier == "changeTelegram" {
+            if let vc = segue.destinationViewController as? ChangeFieldCard {
+                vc.username = (self.member?.userName)!
+                vc.isComm = false
             }
         }
     }
 }
 
-class NameCell: UITableViewCell {
-    
+class NameCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var imgLogo: UIImageView!
-    @IBOutlet weak var lblFirstName: UITextField!
-    @IBOutlet weak var lblLastName: UITextField!
-    
+    @IBOutlet weak var txflFirstName: UITextField!
+    @IBOutlet weak var txflLastName: UITextField!
+    var member : Member?
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.imgLogo.layer.cornerRadius = self.imgLogo.frame.size.height/2
         self.imgLogo.layer.masksToBounds = true
         self.imgLogo.layer.borderWidth = 0.1
-        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func setCell(mem: Member) {
+        self.member = mem
         self.imgLogo.imageFromUrl(memberLogoUrl(mem.id))
-        self.lblFirstName.text = mem.name
-        self.lblLastName.text = mem.surname
+        self.txflFirstName.text = mem.name
+        self.txflLastName.text = mem.surname
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField == txflFirstName {
+            if let fn = self.txflFirstName.text {
+                member?.name = fn
+            }
+        } else if textField == txflLastName {
+            if let sn = self.txflLastName.text {
+                member?.surname = sn
+            }
+        }
     }
 }
 
 class UsernameCell: UITableViewCell {
-    
     @IBOutlet weak var lblUserName: UILabel!
     
     override func awakeFromNib() {
@@ -243,13 +228,11 @@ class UsernameCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func setCell(userName: String) {
         self.lblUserName.text = "@\(userName)"
     }
-
 }
 
 class PhoneNumberCell: UITableViewCell {
@@ -262,13 +245,11 @@ class PhoneNumberCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func setCell(phone: String) {
         self.lblPhone.text = "\(phone)"
     }
-    
 }
 
 class GenderCell: UITableViewCell {
@@ -281,7 +262,6 @@ class GenderCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func setCell(isMale: Bool) {
@@ -297,10 +277,8 @@ class GenderCell: UITableViewCell {
 class AgeCell: UITableViewCell {
     @IBOutlet weak var lblAges: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -310,5 +288,4 @@ class AgeCell: UITableViewCell {
     func setCell(age: Int) {
         self.lblAges.text = "\(age) years"
     }
-    
 }

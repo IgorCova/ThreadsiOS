@@ -16,10 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="welcomePage.png" translatesAutoresizingMaskIntoConstraints="NO" id="YxB-3e-44u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomePage.png" translatesAutoresizingMaskIntoConstraints="NO" id="YxB-3e-44u">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="YxB-3e-44u" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="7v1-tq-C8I"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YxB-3e-44u" secondAttribute="bottom" id="TUe-74-KgR"/>
+                            <constraint firstItem="YxB-3e-44u" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fRJ-th-duX"/>
+                            <constraint firstAttribute="trailing" secondItem="YxB-3e-44u" secondAttribute="trailing" id="laW-ir-421"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>

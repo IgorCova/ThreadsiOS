@@ -21,13 +21,17 @@ class SessionCard: UIViewController , UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblPhone.text = phone
-        navigationController?.navigationBar.shadowImage = UIImage();
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        txflCode.delegate = self
-        txflCode.becomeFirstResponder()
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-        txflCode.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        self.lblPhone.text = phone
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage();
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController!.navigationBar.tintColor = .whiteColor()
+        
+        self.txflCode.keyboardType = .NumberPad
+        self.txflCode.delegate = self
+        self.txflCode.becomeFirstResponder()
+        self.txflCode.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
     }
 
     override func didReceiveMemoryWarning() {

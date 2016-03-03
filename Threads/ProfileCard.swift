@@ -14,8 +14,10 @@ class ProfileCard: UIViewController {
     @IBOutlet weak var lblSurname: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnToMenu: UIBarButtonItem!
-    var member: Member?
     @IBOutlet weak var txtAbout: UITextView!
+    
+    var member: Member?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,9 +26,13 @@ class ProfileCard: UIViewController {
                 self.member = memberInstance
                 
                 self.lblName.text = self.member!.name
+                
                 self.lblSurname.text = self.member?.surname
+                
                 self.txtAbout.text = self.member?.about
+                
                 self.imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
+                
                 self.title = "\(self.member!.name) \(self.member!.surname)"
             }
         }
@@ -37,12 +43,10 @@ class ProfileCard: UIViewController {
         
         self.btnToMenu.target = self.revealViewController()
         self.btnToMenu.action = Selector("revealToggle:")
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     

@@ -36,11 +36,7 @@ class CommunityDir: UITableViewController {
 
         self.tvCommunity.delegate = self
         self.tvCommunity.dataSource = self
-        
-        self.refresh(self)
-        
         self.tvCommunity.separatorStyle = .None
-
         self.tvCommunity.backgroundColor = UIColor(netHex: 0xE8E8E8)
         self.tvCommunity.backgroundView = nil
         self.tvCommunity.backgroundView = UIView()
@@ -50,9 +46,10 @@ class CommunityDir: UITableViewController {
         self.btnToMenu.action = Selector("revealToggle:")
         
         self.dirRefreshControl = UIRefreshControl()
-        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
+        self.dirRefreshControl?.beginRefreshing()
+        self.refresh(self)
     }
     
     func refresh(sender:AnyObject) {

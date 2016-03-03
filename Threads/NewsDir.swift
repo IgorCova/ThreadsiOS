@@ -19,20 +19,21 @@ class NewsDir: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tvNews.delegate = self
         self.tvNews.dataSource = self
         self.tvNews.separatorStyle = .None
         
         self.btnToMenu.target = self.revealViewController()
         self.btnToMenu.action = Selector("revealToggle:")
+        
         self.view.addGestureRecognizer(
             self.revealViewController().panGestureRecognizer())
         
         self.dirRefreshControl = UIRefreshControl()
-        //self.dirRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl!)
-        
+        self.dirRefreshControl?.beginRefreshing()
         self.refresh(self)
     }
     
