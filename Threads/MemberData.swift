@@ -46,6 +46,7 @@ class MemberData {
         let jcmem = ["ID": member.id, "Name": member.name, "Surname": surname, "UserName": userName, "About": about, "Phone": member.phone, "IsMale": member.isMale]
         //print(jcmem)
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["Member": jcmem]]
+        //print(prms)
         Alamofire.request(.POST, "\(Threads)/Member_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)

@@ -46,15 +46,49 @@ class PhotoLoaderCard: UIViewController, UINavigationControllerDelegate, UIImage
     }
     
     func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
-        // saveImageToData(croppedImage)
+        saveImageToData(croppedImage)
         self.imgPhoto.image = croppedImage
         self.navigationController?.popToViewController(self, animated: true)
     }
     
     func imageCropViewController(controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
-        //saveImageToData(croppedImage)
+        saveImageToData(croppedImage)
         self.imgPhoto.image = croppedImage
         self.navigationController?.popToViewController(self, animated: true)
+    }
+    
+    func saveImageToData(image: UIImage)  {
+        ImageData().wsLogoSave(image) { (isOk, successful) -> Void in
+            if isOk == true {
+                print("Good")
+            } else {
+                print("Bad")
+                self.imgPhoto.image = nil
+                let pnlLab = UIView(frame: CGRect(x: 0, y: -60, width: 320, height: 60))
+                pnlLab.backgroundColor = CommColor.colorWithAlphaComponent(0.75)
+                
+                let labelInfo = UILabel(frame: CGRect(x: 0, y: 20, width: 320, height: 20))
+                labelInfo.text = "Image isn't black and white"
+                labelInfo.font = SFUIDisplayReg
+                labelInfo.textColor = .whiteColor()
+                labelInfo.textAlignment = .Center
+                
+                pnlLab.addSubview(labelInfo)
+                self.view.addSubview(pnlLab)
+                
+                UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+                    pnlLab.center.y = 30
+                    
+                    }, completion: nil)
+                
+                UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
+                    pnlLab.center.y = -30
+                    
+                    }, completion: {(value Bool) in
+                        pnlLab.hidden = true
+                })
+            }
+        }
     }
     
     func imageCropViewControllerDidCancelCrop(controller: RSKImageCropViewController) {
