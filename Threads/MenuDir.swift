@@ -67,7 +67,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        self.refresh(self)
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,7 +105,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 160
+            return 140
         }
         return  42.0
     }

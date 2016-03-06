@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate {
-    
+
     var member: Member?
     var dirRefreshControl: UIRefreshControl?
     var profileItems = [String]()
@@ -17,6 +17,7 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     var age = 18
     var pickerView = UIPickerView()
     var imgPhoto: UIImage?
+    var timer = NSTimer()
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet var tvProfile: UITableView!
@@ -27,7 +28,6 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         self.tvProfile.delegate = self
         self.tvProfile.dataSource = self
         self.tvProfile.separatorStyle = .None
-        
         self.navItem.backBarButtonItem?.title = ""
         self.navItem.leftBarButtonItem?.title = ""
         
@@ -39,9 +39,20 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         self.dirRefreshControl = UIRefreshControl()
         self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl!)
-        self.dirRefreshControl?.beginRefreshing()
-        self.refresh(self)
+        
+        self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","aboutCell","countryCell","cityCell"]
+        self.tvProfile.reloadData()
+        
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        //view.addGestureRecognizer(tap)
     }
+    
+    /*
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    */
     
     func refresh(sender:AnyObject) {
         MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
@@ -67,6 +78,10 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profileItems.count
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tvProfile.reloadData()
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if self.profileItems[indexPath.row] == "nameCell" {
@@ -80,7 +95,7 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
             let cell = tableView.dequeueReusableCellWithIdentifier(self.profileItems[indexPath.row], forIndexPath: indexPath) as! UsernameCell
             
             if let m = member {
-                cell.setCell(m.userName)
+                cell.setCell(m.userName ?? "username")
             }
             return cell
         } else if self.profileItems[indexPath.row] == "phoneCell" {
@@ -94,7 +109,7 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
             let cell = tableView.dequeueReusableCellWithIdentifier(self.profileItems[indexPath.row], forIndexPath: indexPath) as! GenderCell
             
             if let m = member {
-                cell.setCell(m.isMale)
+                cell.setCell(m)
             }
             return cell
         } else if self.profileItems[indexPath.row] == "ageCell" {
@@ -125,11 +140,72 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         }
     }
     
+    func scrollToFirstRow() {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+    }
+    
+    func checkFields() -> Bool {
+        var checked = false
+        var message = ""
+        
+        if (member?.name == "") {
+            message = "First Name is empty"
+        } else if (member?.surname ?? "" == "") {
+            message = "Last Name is empty"
+        }
+        
+        if message != "" {
+            self.scrollToFirstRow()
+            let pnlLab = UIView(frame: CGRect(x: 0, y: -60, width: 320, height: 60))
+            pnlLab.backgroundColor = CommColor.colorWithAlphaComponent(0.75)
+            
+            let labelInfo = UILabel(frame: CGRect(x: 0, y: 20, width: 320, height: 20))
+            labelInfo.text = message
+            labelInfo.font = SFUIDisplayReg
+            labelInfo.textColor = .whiteColor()
+            labelInfo.textAlignment = .Center
+            
+            pnlLab.addSubview(labelInfo)
+            view.addSubview(pnlLab)
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+                pnlLab.center.y = 30
+                
+                }, completion: nil)
+            
+            UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
+                pnlLab.center.y = -30
+                
+                }, completion: {(value Bool) in
+                    pnlLab.hidden = true
+            })
+        } else {
+            checked = true
+        }
+        
+        return checked
+    }
+    
     @IBAction func btnSave_Click(sender: AnyObject) {
-        MemberData().wsMemberSave(member!) {memberInstance, successful in
-            if successful {
-                self.member = memberInstance
-                self.navigationController?.popViewControllerAnimated(true)
+        if checkFields() == true {
+            MemberData().wsMemberSave(member!) {memberInstance, successful in
+                if successful {
+                    self.member = memberInstance
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            }
+        }
+    }
+    
+    @IBAction func btnDone_Click(sender: AnyObject) {
+        if checkFields() == true {
+            MemberData().wsMemberSave(member!) {memberInstance, successful in
+                if successful {
+                    self.member = memberInstance
+                    let Core = self.storyboard!.instantiateViewControllerWithIdentifier("Core") as! SWRevealViewController
+                    self.presentViewController(Core, animated:true, completion:nil)
+                }
             }
         }
     }
@@ -170,12 +246,12 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "changeUsername" {
             if let vc = segue.destinationViewController as? ChangeFieldCard {
-                vc.username = (self.member?.userName)!
+                vc.member = self.member
                 vc.isComm = true
             }
         } else if segue.identifier == "changeTelegram" {
             if let vc = segue.destinationViewController as? ChangeFieldCard {
-                vc.username = (self.member?.userName)!
+                vc.member = self.member
                 vc.isComm = false
             }
         }
@@ -193,6 +269,27 @@ class NameCell: UITableViewCell, UITextFieldDelegate {
         self.imgLogo.layer.cornerRadius = self.imgLogo.frame.size.height/2
         self.imgLogo.layer.masksToBounds = true
         self.imgLogo.layer.borderWidth = 0.1
+        
+        self.txflLastName.delegate = self
+        self.txflFirstName.delegate = self
+        
+        self.txflLastName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.txflFirstName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        switch textField {
+        case txflFirstName:
+            if let fn = textField.text {
+                member?.name = fn
+            }
+        case txflLastName:
+            if let sn = textField.text {
+                member?.surname = sn
+            }
+        default: break
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -203,19 +300,7 @@ class NameCell: UITableViewCell, UITextFieldDelegate {
         self.member = mem
         self.imgLogo.imageFromUrl(memberLogoUrl(mem.id))
         self.txflFirstName.text = mem.name
-        self.txflLastName.text = mem.surname
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField == txflFirstName {
-            if let fn = self.txflFirstName.text {
-                member?.name = fn
-            }
-        } else if textField == txflLastName {
-            if let sn = self.txflLastName.text {
-                member?.surname = sn
-            }
-        }
+        self.txflLastName.text = mem.surname ?? ""
     }
 }
 
@@ -253,19 +338,26 @@ class PhoneNumberCell: UITableViewCell {
 }
 
 class GenderCell: UITableViewCell {
-    
     @IBOutlet weak var scGender: UISegmentedControl!
-    
+    var member : Member?
     override func awakeFromNib() {
         super.awakeFromNib()
+        scGender.addTarget(self, action: "segmentedControlValueChanged:", forControlEvents: .TouchUpInside)
+        scGender.addTarget(self, action: "segmentedControlValueChanged:", forControlEvents: .ValueChanged)
+    }
+    
+    func segmentedControlValueChanged (segment: UISegmentedControl) {
+        member?.isMale = (segment.selectedSegmentIndex == 0)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCell(isMale: Bool) {
-        if isMale == true {
+    func setCell(mem: Member) {
+        self.member = mem
+        
+        if self.member!.isMale == true {
             self.scGender.selectedSegmentIndex = 0
         } else {
             self.scGender.selectedSegmentIndex = 1

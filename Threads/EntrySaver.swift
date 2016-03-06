@@ -18,9 +18,8 @@ class EntrySaver: UIViewController , UITextViewDelegate {
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem?.title = ""
-        
-        txtEntryText.delegate = self
-        txtEntryText.selectAll(self)
+        self.txtEntryText.delegate = self
+        self.txtEntryText.selectAll(self)
     }
 
     override func didReceiveMemoryWarning() {

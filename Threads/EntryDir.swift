@@ -41,7 +41,7 @@ class EntryDir: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        self.refresh(self)
     }
     
     func refresh(sender:AnyObject) {

@@ -20,22 +20,7 @@ class ProfileCard: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
-            if successful {
-                self.member = memberInstance
-                
-                self.lblName.text = self.member!.name
-                
-                self.lblSurname.text = self.member?.surname
-                
-                self.txtAbout.text = self.member?.about
-                
-                self.imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
-                
-                self.title = "\(self.member!.name) \(self.member!.surname)"
-            }
-        }
+        self.refresh()
         
         self.imgPhoto.layer.cornerRadius = self.imgPhoto.frame.size.height/2
         self.imgPhoto.layer.masksToBounds = true
@@ -49,11 +34,35 @@ class ProfileCard: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        refresh()
+    }
     
+    func refresh() {
+        MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
+            if successful {
+                self.member = memberInstance
+                self.lblName.text = self.member!.name
+                self.lblSurname.text = self.member?.surname ?? ""
+                self.txtAbout.text = self.member?.about ?? ""
+                self.imgPhoto.imageFromUrl("\(MemberLogo)/\(MyMemberID).png")
+                
+                if let username = self.member?.userName {
+                    self.title = "@\(username)"
+                } else {
+                    self.title = "\(self.member!.name) \(self.member!.surname ?? "")"
+                }
+            }
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-    //}
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "editProfile") {
+            let dvc = segue.destinationViewController as! ProfileEditDict
+            dvc.member = self.member            
+        }
+    }
 }

@@ -8,27 +8,31 @@
 
 import UIKit
 
-class ChangeFieldCard: UIViewController {
+class ChangeFieldCard: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var lblLink: UILabel!
     @IBOutlet weak var lblInstruction: UILabel!
-    var username: String?
+    var member: Member?
     var isComm = true
     
     @IBOutlet weak var txflUsername: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.txflUsername.text = self.username
-       
+        self.txflUsername.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
         if isComm == false {
-            self.lblLink.text = "https://telegram.me/\(self.username)"
             self.title = "Telegram"
+            let username =  self.member?.userName ?? ""
+            self.txflUsername.text = username
+            self.lblLink.text = "https://telegram.me/\(username ?? "username")"
             self.lblInstruction.text =
             "You can set a username from Telegram. If you do, other people will be able to contact with you at Comm. \n\n You must confirm your Telegram profile. \n On this link our bot:"
         } else {
-            self.lblLink.text = "https://commhub.org/\(self.username!)"
             self.title = "Comm"
+            let username =  self.member?.userName ?? ""
+            self.txflUsername.text = username
+            self.lblLink.text = "https://commhub.org/\(username ?? "username")"
             self.lblInstruction.text =
             "You can choose a username on Comm. If you do, other people will be able to find you by this username and contact you without knowing your phone number. \n\nYou can use a-z, 0-9 and underscores. Minimum length is 4 characters. \n\nThis link opens a chat with you in Comm:"
         }
@@ -45,6 +49,20 @@ class ChangeFieldCard: UIViewController {
 
     @IBAction func btnCansel_Click(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        if (textField == txflUsername) {
+            if let text = textField.text {
+                member?.userName = text
+                
+                if isComm == false {
+                    self.lblLink.text = "https://commhub.org/\(text ?? "username")"
+                } else {
+                    self.lblLink.text = "https://telegram.me/\(text ?? "username")"
+                }
+            }
+        }
     }
     
     /*

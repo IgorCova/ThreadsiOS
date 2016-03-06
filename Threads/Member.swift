@@ -11,9 +11,9 @@ import Foundation
 class Member {
     var id : Int
     var name : String
-    var surname : String
-    var userName : String
-    var about : String
+    var surname : String?
+    var userName : String?
+    var about : String?
     var phone : String
     var isMale: Bool
     
@@ -22,11 +22,11 @@ class Member {
     }
     
     var fullName : String {
-        return "\(name) \(surname)"
+        return "\(name) \(surname ?? "")"
     }
     
     
-    init (id: Int, name : String, surname : String, userName : String, about : String, phone : String, isMale: Bool) {
+    init (id: Int, name : String, surname : String?, userName : String?, about : String?, phone : String, isMale: Bool) {
         self.id = id
         self.name = name
         self.surname = surname

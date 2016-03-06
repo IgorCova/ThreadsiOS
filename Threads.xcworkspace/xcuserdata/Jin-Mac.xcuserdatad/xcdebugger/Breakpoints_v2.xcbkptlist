@@ -67,53 +67,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Threads/ProfileEditDict.swift"
-            timestampString = "478382471.980426"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "btnSave_Click(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Comm.ProfileEditDict.btnSave_Click (Comm.ProfileEditDict)(Swift.AnyObject) -&gt; ()"
-                  moduleName = "Comm"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jinmac/SourceTree/ThreadsiOS/Threads/ProfileEditDict.swift"
-                  timestampString = "478382472.007751"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Comm.ProfileEditDict.(btnSave_Click (Comm.ProfileEditDict) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "Comm"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jinmac/SourceTree/ThreadsiOS/Threads/ProfileEditDict.swift"
-                  timestampString = "478382472.008056"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

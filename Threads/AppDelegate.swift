@@ -213,6 +213,8 @@ func communityLogoUrl(id: Int) -> String {
 }
 
 internal let CommFontText = UIFont(name: ".SFUIText-Regular", size: 16)
+internal let SFUIDisplayReg = UIFont(name: ".SFUIDisplay-Regular", size: 19)
+internal let CommColor = UIColor(netHex: 0x2185C4)
 
 internal let Threads = "http://95.84.164.113:80/ThreadsService.svc"
 internal let CommLogo = "http://95.84.164.113/Logos/Community"

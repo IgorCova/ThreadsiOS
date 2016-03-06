@@ -43,8 +43,10 @@ class NewsDir: UITableViewController {
                 self.dirNews = arNews
                 self.tvNews.reloadData()
                 self.dirRefreshControl!.endRefreshing()
+                self.check()
             } else {
                 self.dirRefreshControl!.endRefreshing()
+                self.check()
             }
         }
     }
@@ -78,5 +80,45 @@ class NewsDir: UITableViewController {
         let height : CGFloat = entry.text.heightWithConstrainedWidth(310, font: CommFontText!)// calculateHeightForString(entry.text)
         return height + 80.0
     }
+    
+    func check() -> Bool {
+        var checked = false
+        var message = ""
+        
+        if (dirNews.count == 0) {
+            message = "You don't have any news"
+        }
+        
+        if message != "" {
+            let pnlLab = UIView(frame: CGRect(x: 0, y: -60, width: 320, height: 60))
+            pnlLab.backgroundColor = CommColor.colorWithAlphaComponent(0.75)
+            
+            let labelInfo = UILabel(frame: CGRect(x: 0, y: 20, width: 320, height: 20))
+            labelInfo.text = message
+            labelInfo.font = SFUIDisplayReg
+            labelInfo.textColor = .whiteColor()
+            labelInfo.textAlignment = .Center
+            
+            pnlLab.addSubview(labelInfo)
+            view.addSubview(pnlLab)
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: .CurveLinear, animations: {
+                pnlLab.center.y = 30
+                
+                }, completion: nil)
+            
+            UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
+                pnlLab.center.y = -30
+                
+                }, completion: {(value Bool) in
+                    pnlLab.hidden = true
+            })
+        } else {
+            checked = true
+        }
+        
+        return checked
+    }
+
 
 }

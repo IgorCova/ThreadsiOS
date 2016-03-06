@@ -21,9 +21,9 @@ class MemberData {
                     let mem = Member (
                          id: json["ID"]!.int!
                         ,name: json["Name"]!.string!
-                        ,surname: json["Surname"]!.string!
-                        ,userName: json["UserName"]!.string!
-                        ,about: json["About"]!.string!
+                        ,surname: json["Surname"]!.string
+                        ,userName: json["UserName"]!.string
+                        ,about: json["About"]!.string
                         ,phone: json["Phone"]!.string!
                         ,isMale: json["IsMale"]!.bool!
                     )
@@ -38,7 +38,12 @@ class MemberData {
     }
     
     func wsMemberSave(member: Member, completion : ( memberInstance: Member?, successful: Bool) -> Void) {
-        let jcmem = ["ID": member.id, "Name": member.name, "Surname": member.surname, "UserName":member.userName, "About":member.about, "Phone": member.phone]
+        
+        let surname = member.surname ?? ""
+        let userName = member.userName ?? ""
+        let about = member.about ?? ""
+        
+        let jcmem = ["ID": member.id, "Name": member.name, "Surname": surname, "UserName": userName, "About": about, "Phone": member.phone, "IsMale": member.isMale]
         //print(jcmem)
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["Member": jcmem]]
         Alamofire.request(.POST, "\(Threads)/Member_Save", parameters: prms, encoding: .JSON)

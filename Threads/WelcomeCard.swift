@@ -10,28 +10,32 @@ import UIKit
 
 class WelcomeCard: UIViewController {
     var member: Member?
+    var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
             if successful {
                 self.member = memberInstance
-                self.member?.name = ""
-                self.member?.about = ""
-                self.member?.userName = ""
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "goToEditProfile", userInfo: nil, repeats: true)
             }
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func goToEditProfile() {
+        self.timer.invalidate()
+        performSegueWithIdentifier("editProfile", sender: nil)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editProfile" {
-            if let vc = segue.destinationViewController as? ProfileCardEdit {
+            self.timer.invalidate()
+            let navController = segue.destinationViewController as! UINavigationController
+            if let vc = navController.viewControllers[0] as? ProfileEditDict {
                 vc.member = self.member
             }
         }

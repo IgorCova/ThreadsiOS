@@ -71,7 +71,6 @@
 		F3D102F41C6D0885001F0FA1 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D102F31C6D0885001F0FA1 /* ProfileCard.swift */; };
 		F3D102F81C6D1C85001F0FA1 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102F61C6D1C85001F0FA1 /* edit.png */; };
 		F3D102F91C6D1C85001F0FA1 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102F71C6D1C85001F0FA1 /* save.png */; };
-		F3D102FB1C6D28F8001F0FA1 /* ProfileCardEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */; };
 		F3D257A31C712CE2002A70CC /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3D257A11C712CE2002A70CC /* CoreDataModel.xcdatamodeld */; };
 		F3FEDB561C65EA2C00B09B97 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB551C65EA2C00B09B97 /* contacts.png */; };
 		F3FEDB581C65EA5000B09B97 /* bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = F3FEDB571C65EA5000B09B97 /* bookmarks.png */; };
@@ -155,7 +154,6 @@
 		F3D102F31C6D0885001F0FA1 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		F3D102F61C6D1C85001F0FA1 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		F3D102F71C6D1C85001F0FA1 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
-		F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardEdit.swift; sourceTree = "<group>"; };
 		F3D257A21C712CE2002A70CC /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		F3FEDB431C65E83000B09B97 /* SFUIDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Regular.otf"; sourceTree = "<group>"; };
 		F3FEDB441C65E83800B09B97 /* SFUIDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.otf"; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 				F3A80C261C81E69000D2FDD2 /* LaunchCard.swift */,
 				F32701841C83337B00BBFD56 /* PhotoLoaderCard.swift */,
 				F3D102F31C6D0885001F0FA1 /* ProfileCard.swift */,
-				F3D102FA1C6D28F8001F0FA1 /* ProfileCardEdit.swift */,
 				F3D03C3A1C6FD8670066610E /* SessionCard.swift */,
 				F32446ED1C6F5A6B005DF9FA /* SessionReqCard.swift */,
 				F3A80C281C81E99C00D2FDD2 /* SettingsCard.swift */,
@@ -562,7 +559,6 @@
 				F3AC61921C6F8BBF006476C2 /* CountryData.swift in Sources */,
 				F3D03C3B1C6FD8670066610E /* SessionCard.swift in Sources */,
 				F36A1F2E1C82614D006A0589 /* ChangeFieldCard.swift in Sources */,
-				F3D102FB1C6D28F8001F0FA1 /* ProfileCardEdit.swift in Sources */,
 				3CC2DAB61BE2B80E00916FDD /* EntryDir.swift in Sources */,
 				841045D01C065A760016F48A /* EntryHeaderCell.swift in Sources */,
 				F3AC61961C6F921A006476C2 /* CountryCell.swift in Sources */,
