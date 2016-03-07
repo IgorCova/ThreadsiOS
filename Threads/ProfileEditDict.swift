@@ -244,16 +244,22 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "changeUsername" {
+        switch segue.identifier ?? "" {
+        case "changeUsername":
             if let vc = segue.destinationViewController as? ChangeFieldCard {
                 vc.member = self.member
                 vc.isComm = true
             }
-        } else if segue.identifier == "changeTelegram" {
+        case "changeTelegram":
             if let vc = segue.destinationViewController as? ChangeFieldCard {
                 vc.member = self.member
                 vc.isComm = false
             }
+        case "toAbout":
+            if let vc = segue.destinationViewController as? AboutCard {
+                vc.member = self.member
+            }
+        default: break
         }
     }
 }

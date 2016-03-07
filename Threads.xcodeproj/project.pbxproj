@@ -32,6 +32,7 @@
 		F337E3F71C221EB300557168 /* EntryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F61C221EB300557168 /* EntryData.swift */; };
 		F337E3FA1C2221F300557168 /* CommunityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F337E3F91C2221F300557168 /* CommunityData.swift */; };
 		F34428CC1C78E6810033EA77 /* WelcomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34428CB1C78E6810033EA77 /* WelcomeCard.swift */; };
+		F34529C01C8CEF5000955E5D /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34529BF1C8CEF5000955E5D /* AboutCard.swift */; };
 		F35133561C7915140034E23A /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35133541C7915140034E23A /* Log+CoreDataProperties.swift */; };
 		F35133571C7915140034E23A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35133551C7915140034E23A /* Log.swift */; };
 		F36A1F2E1C82614D006A0589 /* ChangeFieldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A1F2D1C82614D006A0589 /* ChangeFieldCard.swift */; };
@@ -113,6 +114,7 @@
 		F337E3F61C221EB300557168 /* EntryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryData.swift; sourceTree = "<group>"; };
 		F337E3F91C2221F300557168 /* CommunityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityData.swift; sourceTree = "<group>"; };
 		F34428CB1C78E6810033EA77 /* WelcomeCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeCard.swift; sourceTree = "<group>"; };
+		F34529BF1C8CEF5000955E5D /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
 		F35133541C7915140034E23A /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F35133551C7915140034E23A /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F36A1F2D1C82614D006A0589 /* ChangeFieldCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFieldCard.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		F3D102F51C6D0EFF001F0FA1 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				F34529BF1C8CEF5000955E5D /* AboutCard.swift */,
 				F36A1F2D1C82614D006A0589 /* ChangeFieldCard.swift */,
 				F3A16AF01C5FE63300576F59 /* EntrySaver.swift */,
 				F3A80C261C81E69000D2FDD2 /* LaunchCard.swift */,
@@ -568,6 +571,7 @@
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				F3A80C291C81E99C00D2FDD2 /* SettingsCard.swift in Sources */,
 				F34428CC1C78E6810033EA77 /* WelcomeCard.swift in Sources */,
+				F34529C01C8CEF5000955E5D /* AboutCard.swift in Sources */,
 				F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */,
 				F337E3F71C221EB300557168 /* EntryData.swift in Sources */,
 				F3A80C251C81C11E00D2FDD2 /* ImageData.swift in Sources */,

@@ -28,11 +28,13 @@ class EntryCell: UITableViewCell {
 
         self.imgCommunity.layer.cornerRadius = self.imgCommunity.frame.size.height/2
         self.imgCommunity.layer.masksToBounds = true
-        self.imgCommunity.layer.borderWidth = 0.1
+        self.imgCommunity.layer.borderWidth = 0.7
+        self.imgCommunity.layer.borderColor = UIColor.blackColor().CGColor
         
         self.imgEditor.layer.cornerRadius = self.imgEditor.frame.size.height/2
         self.imgEditor.layer.masksToBounds = true
-        self.imgEditor.layer.borderWidth = 0.1
+        self.imgEditor.layer.borderWidth = 1.0
+        self.imgEditor.layer.borderColor = UIColor.whiteColor().CGColor
         self.txTitle.font = CommFontText
         
         self.lblDate.sizeToFit()
