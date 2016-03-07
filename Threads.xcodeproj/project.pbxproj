@@ -35,6 +35,14 @@
 		F34529C01C8CEF5000955E5D /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34529BF1C8CEF5000955E5D /* AboutCard.swift */; };
 		F35133561C7915140034E23A /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35133541C7915140034E23A /* Log+CoreDataProperties.swift */; };
 		F35133571C7915140034E23A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35133551C7915140034E23A /* Log.swift */; };
+		F36105701C8D9A680076CCF2 /* CommunityEditDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361056F1C8D9A680076CCF2 /* CommunityEditDict.swift */; };
+		F36105721C8D9D110076CCF2 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36105711C8D9D110076CCF2 /* NameCell.swift */; };
+		F36105751C8D9D6F0076CCF2 /* UsernameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36105741C8D9D6F0076CCF2 /* UsernameCell.swift */; };
+		F36105771C8D9D960076CCF2 /* PhoneNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36105761C8D9D960076CCF2 /* PhoneNumberCell.swift */; };
+		F36105791C8D9DB30076CCF2 /* GenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36105781C8D9DB30076CCF2 /* GenderCell.swift */; };
+		F361057B1C8D9DCE0076CCF2 /* AgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361057A1C8D9DCE0076CCF2 /* AgeCell.swift */; };
+		F36105801C8DA80B0076CCF2 /* CommNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361057F1C8DA80B0076CCF2 /* CommNameCell.swift */; };
+		F36105821C8DA8630076CCF2 /* CommItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36105811C8DA8630076CCF2 /* CommItemCell.swift */; };
 		F36A1F2E1C82614D006A0589 /* ChangeFieldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A1F2D1C82614D006A0589 /* ChangeFieldCard.swift */; };
 		F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36D1C651C5C180200D0CECD /* NewsData.swift */; };
 		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
@@ -117,6 +125,14 @@
 		F34529BF1C8CEF5000955E5D /* AboutCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
 		F35133541C7915140034E23A /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F35133551C7915140034E23A /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		F361056F1C8D9A680076CCF2 /* CommunityEditDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityEditDict.swift; sourceTree = "<group>"; };
+		F36105711C8D9D110076CCF2 /* NameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
+		F36105741C8D9D6F0076CCF2 /* UsernameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameCell.swift; sourceTree = "<group>"; };
+		F36105761C8D9D960076CCF2 /* PhoneNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberCell.swift; sourceTree = "<group>"; };
+		F36105781C8D9DB30076CCF2 /* GenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderCell.swift; sourceTree = "<group>"; };
+		F361057A1C8D9DCE0076CCF2 /* AgeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeCell.swift; sourceTree = "<group>"; };
+		F361057F1C8DA80B0076CCF2 /* CommNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommNameCell.swift; sourceTree = "<group>"; };
+		F36105811C8DA8630076CCF2 /* CommItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommItemCell.swift; sourceTree = "<group>"; };
 		F36A1F2D1C82614D006A0589 /* ChangeFieldCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFieldCard.swift; sourceTree = "<group>"; };
 		F36D1C651C5C180200D0CECD /* NewsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
@@ -284,6 +300,45 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		F36105731C8D9D280076CCF2 /* ProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				F361057A1C8D9DCE0076CCF2 /* AgeCell.swift */,
+				F36105781C8D9DB30076CCF2 /* GenderCell.swift */,
+				F36105711C8D9D110076CCF2 /* NameCell.swift */,
+				F36105761C8D9D960076CCF2 /* PhoneNumberCell.swift */,
+				F36105741C8D9D6F0076CCF2 /* UsernameCell.swift */,
+			);
+			name = ProfileEdit;
+			sourceTree = "<group>";
+		};
+		F361057C1C8D9EC50076CCF2 /* CommunityEdit */ = {
+			isa = PBXGroup;
+			children = (
+				F361057F1C8DA80B0076CCF2 /* CommNameCell.swift */,
+				F36105811C8DA8630076CCF2 /* CommItemCell.swift */,
+			);
+			name = CommunityEdit;
+			sourceTree = "<group>";
+		};
+		F361057D1C8D9EEC0076CCF2 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				3CC2DAB21BE2B80E00916FDD /* EntryCell.swift */,
+				841045CF1C065A760016F48A /* EntryHeaderCell.swift */,
+			);
+			name = Entry;
+			sourceTree = "<group>";
+		};
+		F361057E1C8D9F170076CCF2 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */,
+				F3B6679F1C17869000B05CF5 /* ProfileCell.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		F3B667951C176EDC00B05CF5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC2DAAC1BE2B7F600916FDD /* CommunityDir.swift */,
+				F361056F1C8D9A680076CCF2 /* CommunityEditDict.swift */,
 				F3AC618F1C6F8363006476C2 /* CountryDict.swift */,
 				3CC2DAB31BE2B80E00916FDD /* EntryDir.swift */,
 				F3B667961C1772C300B05CF5 /* MenuDir.swift */,
@@ -314,12 +370,12 @@
 		F3B667A11C1788EB00B05CF5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F361057C1C8D9EC50076CCF2 /* CommunityEdit */,
+				F361057D1C8D9EEC0076CCF2 /* Entry */,
+				F361057E1C8D9F170076CCF2 /* Menu */,
+				F36105731C8D9D280076CCF2 /* ProfileEdit */,
 				3CC2DAAB1BE2B7F600916FDD /* CommunityCell.swift */,
 				F3AC61951C6F921A006476C2 /* CountryCell.swift */,
-				3CC2DAB21BE2B80E00916FDD /* EntryCell.swift */,
-				841045CF1C065A760016F48A /* EntryHeaderCell.swift */,
-				F3B667A21C178DCB00B05CF5 /* MenuItemCell.swift */,
-				F3B6679F1C17869000B05CF5 /* ProfileCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -556,7 +612,9 @@
 				F3A16AF11C5FE63300576F59 /* EntrySaver.swift in Sources */,
 				3CC2DAB41BE2B80E00916FDD /* Entry.swift in Sources */,
 				3CC2DAAD1BE2B7F600916FDD /* Community.swift in Sources */,
+				F36105721C8D9D110076CCF2 /* NameCell.swift in Sources */,
 				F3D257A31C712CE2002A70CC /* CoreDataModel.xcdatamodeld in Sources */,
+				F36105801C8DA80B0076CCF2 /* CommNameCell.swift in Sources */,
 				F3B667A31C178DCB00B05CF5 /* MenuItemCell.swift in Sources */,
 				F3AC61901C6F8363006476C2 /* CountryDict.swift in Sources */,
 				F3AC61921C6F8BBF006476C2 /* CountryData.swift in Sources */,
@@ -568,10 +626,13 @@
 				3CC2DAAF1BE2B7F600916FDD /* CommunityDir.swift in Sources */,
 				F3C3A59D1C5CE522003FA1F3 /* Member.swift in Sources */,
 				F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */,
+				F36105751C8D9D6F0076CCF2 /* UsernameCell.swift in Sources */,
+				F36105821C8DA8630076CCF2 /* CommItemCell.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				F3A80C291C81E99C00D2FDD2 /* SettingsCard.swift in Sources */,
 				F34428CC1C78E6810033EA77 /* WelcomeCard.swift in Sources */,
 				F34529C01C8CEF5000955E5D /* AboutCard.swift in Sources */,
+				F36105791C8D9DB30076CCF2 /* GenderCell.swift in Sources */,
 				F3B667941C176ED600B05CF5 /* SWRevealViewController.m in Sources */,
 				F337E3F71C221EB300557168 /* EntryData.swift in Sources */,
 				F3A80C251C81C11E00D2FDD2 /* ImageData.swift in Sources */,
@@ -585,10 +646,13 @@
 				F3A80C331C82317E00D2FDD2 /* ProfileEditDict.swift in Sources */,
 				F33560571C3E7071002A127E /* SwiftyJSON.swift in Sources */,
 				3CC2DAAE1BE2B7F600916FDD /* CommunityCell.swift in Sources */,
+				F36105701C8D9A680076CCF2 /* CommunityEditDict.swift in Sources */,
 				F32106801C1D672E00EFF9F3 /* NewsDir.swift in Sources */,
 				F3AC61941C6F8F02006476C2 /* Country.swift in Sources */,
+				F36105771C8D9D960076CCF2 /* PhoneNumberCell.swift in Sources */,
 				F32446F01C6F5B6B005DF9FA /* StartCard.swift in Sources */,
 				F3A80C271C81E69000D2FDD2 /* LaunchCard.swift in Sources */,
+				F361057B1C8D9DCE0076CCF2 /* AgeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

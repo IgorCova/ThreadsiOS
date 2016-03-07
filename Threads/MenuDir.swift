@@ -47,7 +47,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
         
         self.dirRefreshControl = UIRefreshControl()
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(dirRefreshControl)
+        //self.tableView.addSubview(dirRefreshControl)
         self.refresh(self)
     }
 
@@ -107,7 +107,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
         if indexPath.row == 0 {
             return 140
         }
-        return  42.0
+        return  50.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

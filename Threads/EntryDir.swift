@@ -65,7 +65,7 @@ class EntryDir: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let header = (tableView.dequeueReusableCellWithIdentifier("EntryHeaderCell") as? EntryHeaderCell)!
-            header.userInteractionEnabled = false
+            header.userInteractionEnabled = true
             header.setCell(community!)
             
             return header
@@ -92,6 +92,10 @@ class EntryDir: UITableViewController {
             if let vc = segue.destinationViewController as? EntrySaver {
                 vc.communityId = (community?.id)!
                 vc.columnId = (community?.defaultColumnId)!
+            }
+        } else if segue.identifier == "toCommunityPage" {
+            if let vc = segue.destinationViewController as? CommunityEditDict {
+                vc.community = self.community
             }
         }
     }

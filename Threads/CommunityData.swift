@@ -24,7 +24,7 @@ class CommunityData {
                     
                     for comm in json {
                         let id = comm["ID"].int!
-                        let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
+                        let cm = Community(id: id, name: comm["Name"].string!, description: comm["Description"].string!, link: comm["Link"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
                         self.communities.append(cm)
                     }
                     completion(comms: self.communities, successful: true)
@@ -46,7 +46,7 @@ class CommunityData {
                     
                     for comm in json {
                         let id = comm["ID"].int!
-                        let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
+                        let cm = Community(id: id, name: comm["Name"].string!, description: comm["Description"].string!, link: comm["Link"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
                         self.communities.append(cm)
                     }
                     completion(comms: self.communities, successful: true)
@@ -68,7 +68,7 @@ class CommunityData {
                     
                     for comm in json {
                         let id = comm["ID"].int!
-                        let cm = Community(id: id, name: comm["Name"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
+                        let cm = Community(id: id, name: comm["Name"].string!, description: comm["Description"].string!, link: comm["Link"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
                         self.communities.append(cm)
                     }
                     completion(comms: self.communities, successful: true)
