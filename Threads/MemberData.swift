@@ -26,6 +26,7 @@ class MemberData {
                         ,about: json["About"]!.string
                         ,phone: json["Phone"]!.string!
                         ,isMale: json["IsMale"]!.bool!
+                        ,birthdayDateStr: json["BirthdayDate"]!.string
                     )
                     
                     completion(memberInstance: mem, successful: true)
@@ -43,7 +44,7 @@ class MemberData {
         let userName = member.userName ?? ""
         let about = member.about ?? ""
         
-        let jcmem = ["ID": member.id, "Name": member.name, "Surname": surname, "UserName": userName, "About": about, "Phone": member.phone, "IsMale": member.isMale]
+        let jcmem = ["ID": member.id, "Name": member.name, "Surname": surname, "UserName": userName, "About": about, "Phone": member.phone, "IsMale": member.isMale, "BirthdayDate": member.birthdayDateStr ?? ""]
         //print(jcmem)
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["Member": jcmem]]
         //print(prms)
@@ -60,7 +61,9 @@ class MemberData {
                         ,userName: json["UserName"]!.string!
                         ,about: json["About"]!.string!
                         ,phone: json["Phone"]!.string!
-                        ,isMale: json["IsMale"]!.bool!)
+                        ,isMale: json["IsMale"]!.bool!
+                        ,birthdayDateStr: json["BirthdayDate"]!.string
+                    )
                     
                     completion(memberInstance: mem, successful: true)
                     

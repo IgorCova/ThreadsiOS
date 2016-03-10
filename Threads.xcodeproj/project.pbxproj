@@ -48,6 +48,7 @@
 		F37EA2AC1C1441A000F522CA /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */; };
 		F3850DC71C7A090100679F68 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F3850DC61C7A090100679F68 /* bg.png */; };
 		F3850DC91C7A09BF00679F68 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F3850DC81C7A09BF00679F68 /* logo.png */; };
+		F39237A71C8F5F3E00BCC067 /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39237A61C8F5F3E00BCC067 /* BirthdayCell.swift */; };
 		F3A16AF11C5FE63300576F59 /* EntrySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A16AF01C5FE63300576F59 /* EntrySaver.swift */; };
 		F3A2420E1C6624D5006DF860 /* welcomePage.png in Resources */ = {isa = PBXBuildFile; fileRef = F3A2420D1C6624D5006DF860 /* welcomePage.png */; };
 		F3A80C251C81C11E00D2FDD2 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A80C241C81C11E00D2FDD2 /* ImageData.swift */; };
@@ -138,6 +139,7 @@
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		F3850DC61C7A090100679F68 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		F3850DC81C7A09BF00679F68 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		F39237A61C8F5F3E00BCC067 /* BirthdayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
 		F3A16AF01C5FE63300576F59 /* EntrySaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrySaver.swift; sourceTree = "<group>"; };
 		F3A2420D1C6624D5006DF860 /* welcomePage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomePage.png; sourceTree = "<group>"; };
 		F3A80C241C81C11E00D2FDD2 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				F361057A1C8D9DCE0076CCF2 /* AgeCell.swift */,
+				F39237A61C8F5F3E00BCC067 /* BirthdayCell.swift */,
 				F36105781C8D9DB30076CCF2 /* GenderCell.swift */,
 				F36105711C8D9D110076CCF2 /* NameCell.swift */,
 				F36105761C8D9D960076CCF2 /* PhoneNumberCell.swift */,
@@ -628,6 +631,7 @@
 				F36D1C661C5C180200D0CECD /* NewsData.swift in Sources */,
 				F36105751C8D9D6F0076CCF2 /* UsernameCell.swift in Sources */,
 				F36105821C8DA8630076CCF2 /* CommItemCell.swift in Sources */,
+				F39237A71C8F5F3E00BCC067 /* BirthdayCell.swift in Sources */,
 				3CC2DAB51BE2B80E00916FDD /* EntryCell.swift in Sources */,
 				F3A80C291C81E99C00D2FDD2 /* SettingsCard.swift in Sources */,
 				F34428CC1C78E6810033EA77 /* WelcomeCard.swift in Sources */,

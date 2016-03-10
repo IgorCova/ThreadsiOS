@@ -16,6 +16,14 @@ class Member {
     var about : String?
     var phone : String
     var isMale: Bool
+    var birthdayDateStr: String?
+    var birthdayDate: NSDate? {
+        if let dstr = birthdayDateStr {
+            return dstr.getDate()
+        } else {
+            return nil
+        }
+    }
     
     var linkToLogo : String {
         return "\(MemberLogo)/\(id).png"
@@ -25,8 +33,7 @@ class Member {
         return "\(name) \(surname ?? "")"
     }
     
-    
-    init (id: Int, name : String, surname : String?, userName : String?, about : String?, phone : String, isMale: Bool) {
+    init (id: Int, name : String, surname : String?, userName : String?, about : String?, phone : String, isMale: Bool, birthdayDateStr: String?) {
         self.id = id
         self.name = name
         self.surname = surname
@@ -34,6 +41,7 @@ class Member {
         self.about = about
         self.phone = phone
         self.isMale = isMale
+        self.birthdayDateStr = birthdayDateStr
     }
 }
 

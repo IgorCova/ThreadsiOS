@@ -1352,11 +1352,11 @@
                                     <outlet property="lblPhone" destination="WAi-2y-9Ys" id="e6g-CA-PP8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ageCell" rowHeight="48" id="6Cu-1k-5zk" userLabel="ageCell" customClass="AgeCell" customModule="Comm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="355" width="320" height="48"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ageCell" rowHeight="43" id="6Cu-1k-5zk" userLabel="ageCell" customClass="AgeCell" customModule="Comm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="355" width="320" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Cu-1k-5zk" id="9RL-CK-5kA">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3c-eg-N4Q">
@@ -1400,7 +1400,7 @@
                                         <constraint firstAttribute="trailing" secondItem="K3c-eg-N4Q" secondAttribute="trailing" id="YD1-t6-l5l"/>
                                         <constraint firstItem="K3c-eg-N4Q" firstAttribute="leading" secondItem="9RL-CK-5kA" secondAttribute="leading" id="cF2-d9-iA0"/>
                                         <constraint firstItem="K3c-eg-N4Q" firstAttribute="top" secondItem="9RL-CK-5kA" secondAttribute="top" id="dMX-Ci-esa"/>
-                                        <constraint firstAttribute="bottom" secondItem="K3c-eg-N4Q" secondAttribute="bottom" constant="5" id="vuP-Vb-qHn"/>
+                                        <constraint firstAttribute="bottom" secondItem="K3c-eg-N4Q" secondAttribute="bottom" id="vuP-Vb-qHn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1408,15 +1408,41 @@
                                     <outlet property="lblAges" destination="dSk-wY-a01" id="1ys-Ww-VEC"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="aboutCell" rowHeight="48" id="m2M-eK-9mb" userLabel="aboutCell">
-                                <rect key="frame" x="0.0" y="403" width="320" height="48"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCell" rowHeight="0.0" id="Qi7-8R-Cdu" customClass="BirthdayCell" customModule="Comm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="398" width="320" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qi7-8R-Cdu" id="WaJ-cA-wpw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qvp-ci-aj3">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="479157877.32421201">
+                                                <!--2016-03-08 7:24:37 PM +0000-->
+                                            </date>
+                                            <connections>
+                                                <action selector="datePickerValue:" destination="Qi7-8R-Cdu" eventType="valueChanged" id="yrp-Gw-TF7"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qvp-ci-aj3" firstAttribute="leading" secondItem="WaJ-cA-wpw" secondAttribute="leading" id="Za2-hG-KTE"/>
+                                        <constraint firstItem="qvp-ci-aj3" firstAttribute="top" secondItem="WaJ-cA-wpw" secondAttribute="top" id="cuY-Bp-gad"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dpBirthday" destination="qvp-ci-aj3" id="LYy-bd-B3q"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="aboutCell" rowHeight="53" id="m2M-eK-9mb" userLabel="aboutCell">
+                                <rect key="frame" x="0.0" y="398" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m2M-eK-9mb" id="r59-dJ-LjL">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFR-ee-FoB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="5" width="320" height="43"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4d-4D-f2C">
                                                     <rect key="frame" x="15" y="11" width="150" height="22"/>
@@ -1445,7 +1471,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="WFR-ee-FoB" firstAttribute="leading" secondItem="r59-dJ-LjL" secondAttribute="leading" id="8qI-G3-cF0"/>
-                                        <constraint firstItem="WFR-ee-FoB" firstAttribute="top" secondItem="r59-dJ-LjL" secondAttribute="top" id="T4Y-Wp-ToF"/>
+                                        <constraint firstItem="WFR-ee-FoB" firstAttribute="top" secondItem="r59-dJ-LjL" secondAttribute="top" constant="5" id="T4Y-Wp-ToF"/>
                                         <constraint firstAttribute="trailing" secondItem="WFR-ee-FoB" secondAttribute="trailing" id="l71-gV-5jo"/>
                                         <constraint firstAttribute="bottom" secondItem="WFR-ee-FoB" secondAttribute="bottom" constant="5" id="ovj-KX-3e7"/>
                                     </constraints>
@@ -3406,6 +3432,32 @@
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="lblAges" destination="AJ7-rq-nVn" id="z5T-6N-tcN"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCell" rowHeight="0.0" id="NYR-0p-xOy" customClass="BirthdayCell" customModule="Comm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="403" width="320" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYR-0p-xOy" id="bay-pI-eUZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hcb-S8-eR9">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="479157877.32421201">
+                                                <!--2016-03-08 7:24:37 PM +0000-->
+                                            </date>
+                                            <connections>
+                                                <action selector="datePickerValue:" destination="NYR-0p-xOy" eventType="valueChanged" id="HbZ-wf-ePZ"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hcb-S8-eR9" firstAttribute="top" secondItem="bay-pI-eUZ" secondAttribute="top" id="A8Z-Ze-QuG"/>
+                                        <constraint firstItem="hcb-S8-eR9" firstAttribute="leading" secondItem="bay-pI-eUZ" secondAttribute="leading" id="TxA-p6-kN1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dpBirthday" destination="hcb-S8-eR9" id="o5a-C3-DIx"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="aboutCell" rowHeight="48" id="nse-DJ-3eF" userLabel="aboutCell">

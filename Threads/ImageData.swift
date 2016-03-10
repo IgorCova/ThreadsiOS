@@ -8,13 +8,15 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class ImageData {
     func wsLogoSave(logo: UIImage, completion : (isOk: Bool, successful: Bool) -> Void) {
         let imageData : NSData = UIImagePNGRepresentation(imageWithSize(logo, size: CGSizeMake(75, 75)))!
-        let base64String : NSString = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["isMember": true, "id": MyMemberID, "logoData": base64String]]
-        //print (logo.size)
+        let base64String = imageData.base64EncodedStringWithOptions([])
+        
+        let prms : [String : AnyObject]? = ["Session": MySessionID, "DID": MyDID, "Params": ["isMember": true, "id": MyMemberID, "logoData": base64String]]
+        print(base64String)
         Alamofire.request(.POST, "\(Threads)/LogoSave", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 print(response.result.value)

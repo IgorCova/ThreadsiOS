@@ -18,6 +18,7 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
     var pickerView = UIPickerView()
     var imgPhoto: UIImage?
     var timer = NSTimer()
+    var datePickerHidden = true
     
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet var tvProfile: UITableView!
@@ -40,7 +41,7 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl!)
         
-        self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","aboutCell","countryCell","cityCell"]
+        self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","birthdayCell","aboutCell","countryCell","cityCell"]
         self.tvProfile.reloadData()
         
         //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -58,7 +59,7 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
             if successful {
                 self.member = memberInstance
-                self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","aboutCell","countryCell","cityCell"]
+                self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","birthdayCell","aboutCell","countryCell","cityCell"]
                 self.tvProfile.reloadData()
                 self.dirRefreshControl!.endRefreshing()
             } else {
@@ -115,9 +116,18 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         } else if self.profileItems[indexPath.row] == "ageCell" {
             let cell = tableView.dequeueReusableCellWithIdentifier(self.profileItems[indexPath.row], forIndexPath: indexPath) as! AgeCell
             
-            // if let m = member {
-                cell.setCell(24)
-            //}
+             if let m = member {
+                if let md = m.birthdayDate {
+                    let age = NSDate().yearsFrom(md)
+                    cell.setCell(age)
+                }
+            }
+            return cell
+        } else if self.profileItems[indexPath.row] == "birthdayCell" {
+            let cell = tableView.dequeueReusableCellWithIdentifier(self.profileItems[indexPath.row], forIndexPath: indexPath) as! BirthdayCell
+            if let m = member {
+                cell.setCell(m)
+            }
             return cell
         }
         
@@ -135,6 +145,12 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
             return 44.0
         } else if self.profileItems[indexPath.row] == "usernameCell" {
             return 44.0
+        } else if self.profileItems[indexPath.row] == "birthdayCell" {
+            return self.datePickerHidden == false ? 216 : 0
+        } else if self.profileItems[indexPath.row] == "aboutCell" {
+            return 53.0
+        } else if self.profileItems[indexPath.row] == "ageCell" {
+            return 43.0
         } else {
             return 48.0
         }
@@ -224,23 +240,19 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if self.profileItems[indexPath.row] == "ageCell" {
-            let alertView = UIAlertController(title: "How old are you?", message: "\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: UIAlertControllerStyle.ActionSheet);
-            
-            pickerView.frame = CGRectMake(15, 25, 270, 200)
-            alertView.view.addSubview(self.pickerView)
-            var action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-            alertView.addAction(action)
-            
-            action = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            alertView.addAction(action)
-            
-            pickerView.selectRow(age-1, inComponent: 0, animated: true)
-            presentViewController(alertView, animated: true, completion: nil)
+            self.toggleDatepicker()
         }
-        //else if self.profileItems[indexPath.row] == "setPhotoCell" {
-        //  let wc = self.storyboard!.instantiateViewControllerWithIdentifier("PhotoLoaderCard") as! PhotoLoaderCard
-        // self.presentViewController(wc, animated:true, completion:nil)
-        // }
+    }
+    
+    func toggleDatepicker() {
+        self.datePickerHidden = !datePickerHidden
+        let indexPath = NSIndexPath(forRow: 6, inSection: 0)
+        self.tvProfile.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+        
+        self.tvProfile.beginUpdates()
+        self.tvProfile.endUpdates()
+        
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
