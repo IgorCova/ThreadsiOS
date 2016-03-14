@@ -12,16 +12,10 @@ import ContactsUI
 
 class MenuDir: UITableViewController, CNContactPickerDelegate {
     
-    var menuItems = [(cell: String?, name: String?, img: String?, imgS: String?)]() //= [(cell: "", name: "", img: ""), (cell: "", name: "", img: "")]
+    var menuItems = [(cell: String?, name: String?, img: String?)]()
     var dirRefreshControl : UIRefreshControl!
     
     var member : Member?
-    
-    enum CommDictType {
-        case MyComm
-        case AllComm
-        case SugComm
-    }
     
     var contactStore = CNContactStore()
     var updateContact = CNContact()
@@ -34,15 +28,14 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
         
-        self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "", imgS: "")
-            ,(cell: "NewsCell", name: "News", img: "news.png", imgS: "newsSet.png")
-            ,(cell: "CommCell", name: "Communities", img: "communities.png", imgS: "communitiesSet.png")
-          //,(cell: "CommCell", name: "My Communities", img: "communities.png", imgS: "communitiesSet.png")
-            ,(cell: "CommCell", name: "Suggested", img: "suggested.png", imgS: "suggestedSet.png")
-            ,(cell: "CommCell", name: "Bookmarks", img: "bookmarks.png", imgS: "bookmarksSet.png")
-            ,(cell: "CommCell", name: "Popular", img: "popular.png", imgS: "popularSet.png")
-            ,(cell: "ContactsCell", name: "Contacts", img: "contacts.png", imgS: "contactsSet.png")
-            ,(cell: "SettingsCell", name: "Settings", img: "settings.png", imgS: "settingsSet.png")
+        self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
+            ,(cell: "NewsCell", name: "News", img: "news")
+            ,(cell: "CommCell", name: "Communities", img: "communities")
+            ,(cell: "CommCell", name: "Suggested", img: "suggested")
+            ,(cell: "NewsCell", name: "Bookmarks", img: "bookmarks")
+            ,(cell: "CommCell", name: "Popular", img: "popular.png")
+            ,(cell: "ContactsCell", name: "Contacts", img: "contacts")
+            ,(cell: "SettingsCell", name: "Settings", img: "settings")
             ]
         
         self.dirRefreshControl = UIRefreshControl()
@@ -88,17 +81,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
         let cellName = menuItems[indexPath.row].cell!
         let itemCell = (tableView.dequeueReusableCellWithIdentifier(cellName) as? MenuItemCell)!
         itemCell.imageView?.image = UIImage(named: menuItems[indexPath.row].img!)
-        itemCell.imageView?.highlightedImage = UIImage(named: menuItems[indexPath.row].imgS!)
-        
         itemCell.textLabel?.text = menuItems[indexPath.row].name
-        
-        if menuItems[indexPath.row].name == "All Communities" {
-            itemCell.tag = 0
-        } else if menuItems[indexPath.row].name == "My Communities" {
-            itemCell.tag = 1
-        } else if menuItems[indexPath.row].name == "Suggested" {
-            itemCell.tag = 2
-        }
         
         return itemCell
     }
@@ -123,15 +106,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
         if segue.identifier == "toComms" {
             let navController = segue.destinationViewController as! UINavigationController
             let comm = navController.viewControllers[0] as! CommunityDir
-            let cell : UITableViewCell = sender as! UITableViewCell
-            
-            if (cell.tag == 0) {
-                comm.commDictType = .AllComm
-            } else if (cell.tag == 1) {
-                comm.commDictType = .MyComm
-            } else if (cell.tag == 2) {
-                comm.commDictType = .SugComm
-            }
+           comm.commDictType = .MyComm
         }
     }
     

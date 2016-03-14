@@ -23,10 +23,10 @@ class EntryDir: UITableViewController {
         self.tvEntry.dataSource = self
         self.tvEntry.separatorStyle = .None
         
-        self.title = community!.name
-        
         self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        
         
         self.dirRefreshControl = UIRefreshControl()
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
@@ -51,6 +51,10 @@ class EntryDir: UITableViewController {
                 self.tvEntry.reloadData()
                 self.dirRefreshControl.endRefreshing()
             }
+        }
+        
+        if let comm = self.community {
+            self.title = comm.name ?? ""
         }
     }
     

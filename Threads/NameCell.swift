@@ -42,6 +42,11 @@ class NameCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return true
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

@@ -11,8 +11,9 @@ import Foundation
 class Community {
     var id : Int
     var name : String
-    var description : String
-    var link: String
+    var description : String?
+    var tagline: String?
+    var link: String?
     var linkToImage : String {
         return "\(CommLogo)/\(id).png"
     }
@@ -20,10 +21,11 @@ class Community {
     var countMembers : String
     var defaultColumnId : Int
     
-    init (id: Int, name : String, description : String, link: String, isMember : Bool, countMembers : String, defaultColumnId: Int) {
+    init (id: Int, name : String, description : String?, tagline: String?, link: String?, isMember : Bool, countMembers : String, defaultColumnId: Int) {
         self.id = id
         self.name = name
         self.description = description
+        self.tagline = tagline
         self.link = link
         self.isMember = isMember
         self.countMembers = countMembers

@@ -52,8 +52,22 @@ class CommunityDir: UITableViewController {
         self.refresh(self)
     }
     
+    @IBAction func refreshDict(sender: AnyObject) {
+        switch commDictType {
+        case .AllComm:
+          commDictType = .MyComm
+        case .MyComm:
+            commDictType = .SugComm
+        case .SugComm:
+            commDictType = .AllComm
+        }
+        
+        refresh(self)
+    }
+    
     func refresh(sender:AnyObject) {
         if commDictType == .AllComm {
+            self.title = "All comm's"
             CommunityData().wsGetCommunityDict(MyMemberID) {communityDict, successful in
                 if successful {
                     self.dirCommunity = communityDict
@@ -62,6 +76,7 @@ class CommunityDir: UITableViewController {
                 }
             }
         } else if commDictType == .MyComm {
+            self.title = "My comm's"
             CommunityData().wsGetCommunityMyDict(MyMemberID) {communityDict, successful in
                 if successful {
                     self.dirCommunity = communityDict
@@ -71,6 +86,7 @@ class CommunityDir: UITableViewController {
             }
             
         } else if commDictType == .SugComm {
+            self.title = "Suggested comm's"
             CommunityData().wsGetCommunitySuggestDict(MyMemberID) {communityDict, successful in
                 if successful {
                     self.dirCommunity = communityDict
@@ -87,6 +103,7 @@ class CommunityDir: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        refresh(self)
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -58,9 +58,9 @@ class EntryCell: UITableViewCell {
         self.lblCreatorFullname.text = ("by \(entry.creatorFullname)")
 
         if entry.columnName == "Post" {
-            self.btnBookmark.setImage(UIImage(named: "bookmarkSet.png"), forState: UIControlState.Normal)
+            self.btnBookmark.setImage( UIImage(named: "bookmarkSet"), forState: UIControlState.Normal)
         } else {
-            self.btnBookmark.setImage(UIImage(named: "bookmark.png"), forState: UIControlState.Normal)
+            self.btnBookmark.setImage(UIImage(named: "bookmark"), forState: UIControlState.Normal)
         }
     }
 

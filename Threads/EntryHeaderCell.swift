@@ -10,7 +10,7 @@ import UIKit
 
 class EntryHeaderCell: UITableViewCell {
     @IBOutlet weak var imgCommunity: UIImageView!
-    @IBOutlet weak var lblRoleInCommunity: UILabel!
+    @IBOutlet weak var lblTagLine: UILabel!
     @IBOutlet weak var lblCommunityName: UILabel!
     @IBOutlet weak var btnLeave: UIButton!
     @IBOutlet weak var plView: UIView!
@@ -37,8 +37,9 @@ class EntryHeaderCell: UITableViewCell {
     
     func setCell(com: Community) {
         self.lblCommunityName.text = com.name
-        self.lblRoleInCommunity.text = "I'm owner"
+        self.lblTagLine.text = com.tagline ?? ""
         self.imgCommunity.imageFromUrl(com.linkToImage)
+        self.btnLeave.titleLabel?.text = "I'm member"
     }
 
 }

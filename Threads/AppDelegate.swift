@@ -282,7 +282,12 @@ internal var MyMemberID : Int {
     get {
         return MemberData().getLogInfo().0
     }
+}
 
+enum TypeLink: String {
+    case Comm = "Comm"
+    case Telegram = "Telegram"
+    case Community = "Comm link"
 }
 
 enum UIUserInterfaceIdiom : Int

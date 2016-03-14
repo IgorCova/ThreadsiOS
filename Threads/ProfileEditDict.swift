@@ -260,12 +260,12 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         case "changeUsername":
             if let vc = segue.destinationViewController as? ChangeFieldCard {
                 vc.member = self.member
-                vc.isComm = true
+                vc.typeL = .Comm
             }
         case "changeTelegram":
             if let vc = segue.destinationViewController as? ChangeFieldCard {
                 vc.member = self.member
-                vc.isComm = false
+                vc.typeL = .Telegram
             }
         case "toAbout":
             if let vc = segue.destinationViewController as? AboutCard {

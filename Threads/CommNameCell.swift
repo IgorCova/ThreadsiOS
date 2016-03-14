@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommNameCell: UITableViewCell {
+class CommNameCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var txflCommName: UITextField!
     @IBOutlet weak var imgLogo: UIImageView!
@@ -21,6 +21,9 @@ class CommNameCell: UITableViewCell {
         self.imgLogo.layer.masksToBounds = true
         self.imgLogo.layer.borderWidth = 0.7
         self.imgLogo.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        self.txflCommName.delegate = self
+        self.txflCommName.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -34,5 +37,20 @@ class CommNameCell: UITableViewCell {
             self.imgLogo.imageFromUrl(cm.linkToImage)
         }
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.endEditing(true)
+        return true
+    }
 
+    func textFieldDidChange(textField: UITextField) {
+        switch textField {
+        case txflCommName:
+            if let fn = textField.text {
+                community?.name = fn
+            }
+        default: break
+        }
+    }
+    
 }

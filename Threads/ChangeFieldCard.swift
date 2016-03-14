@@ -13,7 +13,8 @@ class ChangeFieldCard: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblLink: UILabel!
     @IBOutlet weak var lblInstruction: UILabel!
     var member: Member?
-    var isComm = true
+    var comm: Community?
+    var typeL = TypeLink.Comm
     
     @IBOutlet weak var txflUsername: UITextField!
     override func viewDidLoad() {
@@ -21,14 +22,14 @@ class ChangeFieldCard: UIViewController, UITextFieldDelegate {
         
         self.txflUsername.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
-        if isComm == false {
+        if typeL == .Telegram {
             self.title = "Telegram"
             let username =  self.member?.userName ?? ""
             self.txflUsername.text = username
             self.lblLink.text = "https://telegram.me/\(username ?? "username")"
             self.lblInstruction.text =
             "You can set a username from Telegram. If you do, other people will be able to contact with you at Comm. \n\n You must confirm your Telegram profile. \n On this link our bot:"
-        } else {
+        } else if typeL == .Comm {
             self.title = "Comm"
             let username =  self.member?.userName ?? ""
             self.txflUsername.text = username
@@ -55,11 +56,12 @@ class ChangeFieldCard: UIViewController, UITextFieldDelegate {
         if (textField == txflUsername) {
             if let text = textField.text {
                 member?.userName = text
-                
-                if isComm == false {
+                if typeL == .Comm {
                     self.lblLink.text = "https://commhub.org/\(text ?? "username")"
-                } else {
+                } else if typeL == .Telegram {
                     self.lblLink.text = "https://telegram.me/\(text ?? "username")"
+                } else if typeL == .Community {
+                    self.lblLink.text = "https://commhub.org/com_\(text ?? "commname")"
                 }
             }
         }

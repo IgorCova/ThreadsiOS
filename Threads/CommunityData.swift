@@ -21,11 +21,8 @@ class CommunityData {
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].arrayValue
-                    
                     for comm in json {
-                        let id = comm["ID"].int!
-                        let cm = Community(id: id, name: comm["Name"].string!, description: comm["Description"].string!, link: comm["Link"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
-                        self.communities.append(cm)
+                        self.communities.append(self.getComm(comm))
                     }
                     completion(comms: self.communities, successful: true)
                 case .Failure(let error):
@@ -43,11 +40,8 @@ class CommunityData {
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].arrayValue
-                    
                     for comm in json {
-                        let id = comm["ID"].int!
-                        let cm = Community(id: id, name: comm["Name"].string!, description: comm["Description"].string!, link: comm["Link"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
-                        self.communities.append(cm)
+                        self.communities.append(self.getComm(comm))
                     }
                     completion(comms: self.communities, successful: true)
                 case .Failure(let error):
@@ -65,11 +59,8 @@ class CommunityData {
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].arrayValue
-                    
                     for comm in json {
-                        let id = comm["ID"].int!
-                        let cm = Community(id: id, name: comm["Name"].string!, description: comm["Description"].string!, link: comm["Link"].string!, isMember: comm["IsMember"].bool!, countMembers: comm["CountMembers"].string!, defaultColumnId : comm["DefaultColumnID"].int!)
-                        self.communities.append(cm)
+                        self.communities.append(self.getComm(comm))
                     }
                     completion(comms: self.communities, successful: true)
                 case .Failure(let error):
@@ -77,5 +68,36 @@ class CommunityData {
                     completion(comms: self.communities, successful: false)
                 }
         }
+    }
+    
+    func wsCommunitySave(community: Community, completion : (id: Int, successful: Bool) -> Void) {
+        let comm : [String : AnyObject] = ["ID": community.id, "Name": community.name, "Link": community.link ?? "", "Description": community.description ?? "", "Tagline": community.tagline ?? "", "OwnerID": MyMemberID]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID" : MyDID, "Params": ["Community": comm]]
+        Alamofire.request(.POST, "\(Threads)/Community_Save", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].dictionaryValue
+                    let id = json["ID"]!.int ?? 0
+                    completion(id: id, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(id: 0, successful: false)
+                }
+        }
+    }
+    
+    private func getComm(comm: JSON) -> Community {
+        let comm = Community(
+             id: comm["ID"].int!
+            ,name: comm["Name"].string!
+            ,description: comm["Description"].string
+            ,tagline: comm["Tagline"].string
+            ,link: comm["Link"].string
+            ,isMember: comm["IsMember"].bool!
+            ,countMembers: comm["CountMembers"].string!
+            ,defaultColumnId : comm["DefaultColumnID"].int!)
+        return comm
     }
 }
