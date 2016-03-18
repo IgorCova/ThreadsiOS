@@ -27,6 +27,7 @@ class Entry {
         return "\(MemberLogo)/\(creatorId).png"
     }
 
+    var isPin: Bool
     
     init (   id: Int
             ,communityId : Int
@@ -37,6 +38,7 @@ class Entry {
             ,text : String
             ,creatorId : Int
             ,creatorFullname : String
+            ,isPin: Bool
         ) {
         self.id = id
         self.communityId = communityId
@@ -47,6 +49,7 @@ class Entry {
         self.text = text
         self.creatorId = creatorId
         self.creatorFullname = creatorFullname
+        self.isPin = isPin
     }
 }
 

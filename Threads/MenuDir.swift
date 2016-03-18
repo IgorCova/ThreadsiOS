@@ -32,7 +32,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
             ,(cell: "NewsCell", name: "News", img: "news")
             ,(cell: "CommCell", name: "Communities", img: "communities")
             ,(cell: "CommCell", name: "Suggested", img: "suggested")
-            ,(cell: "NewsCell", name: "Bookmarks", img: "bookmarks")
+            ,(cell: "BookmarkCell", name: "Bookmarks", img: "bookmarks")
             ,(cell: "CommCell", name: "Popular", img: "popular.png")
             ,(cell: "ContactsCell", name: "Contacts", img: "contacts")
             ,(cell: "SettingsCell", name: "Settings", img: "settings")
@@ -107,6 +107,14 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
             let navController = segue.destinationViewController as! UINavigationController
             let comm = navController.viewControllers[0] as! CommunityDir
            comm.commDictType = .MyComm
+        } else if segue.identifier == "toNews" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let vc = navController.viewControllers[0] as! NewsDir
+            vc.isNews = true
+        }  else if segue.identifier == "toBookmarks" {
+            let navController = segue.destinationViewController as! UINavigationController
+            let vc = navController.viewControllers[0] as! NewsDir
+            vc.isNews = false
         }
     }
     

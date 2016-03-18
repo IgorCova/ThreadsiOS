@@ -33,7 +33,8 @@ class EntryData {
                             ,date:          comm["Entry_CreateDateEst"].string!
                             ,text:          comm["Entry_Text"].string!
                             ,creatorId:     comm["CreatorID"].int!
-                            ,creatorFullname: comm["CreatorID_Fullname"].string!)
+                            ,creatorFullname: comm["CreatorID_Fullname"].string!
+                            ,isPin:         comm["IsPin"].bool!)
                         self.entries.append(ent)
                     }
                     completion(entries: self.entries, successful: true)
@@ -65,4 +66,23 @@ class EntryData {
                 }
         }
     }
+    
+    func wsBookmarkSave(entryId: Int, completion : (isPin: Bool, successful: Bool) -> Void) {
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["EntryID": entryId, "MemberID": MyMemberID]]
+        Alamofire.request(.POST, "\(Threads)/Bookmark_Save", parameters: prms, encoding: .JSON)
+        .responseJSON { response in
+            //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].dictionaryValue
+                    completion(isPin: json["IsPin"]!.bool ?? false, successful: true)
+                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(isPin: false, successful: false)
+                }
+        }
+    }
+    
+    
 }

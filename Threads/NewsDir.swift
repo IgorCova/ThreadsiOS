@@ -14,7 +14,7 @@ class NewsDir: UITableViewController {
     
     @IBOutlet weak var btnToMenu: UIBarButtonItem!
     @IBOutlet weak var tvNews: UITableView!
-    
+    var isNews: Bool = true
     var dirRefreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
@@ -34,20 +34,41 @@ class NewsDir: UITableViewController {
         self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl!)
         self.dirRefreshControl?.beginRefreshing()
+        if isNews == true {
+            self.title = "News"
+        } else {
+            self.title = "Bookmarks"
+        }
+        
         self.refresh(self)
     }
     
     func refresh(sender:AnyObject) {
-        NewsData().wsGetNewsReadByMemberID(MyMemberID) { arNews, successful in
-            if successful {
-                self.dirNews = arNews
-                self.tvNews.reloadData()
-                self.dirRefreshControl!.endRefreshing()
-                self.check()
-            } else {
-                self.dirRefreshControl!.endRefreshing()
-                self.check()
+        if self.isNews == true {
+            NewsData().wsGetNewsReadByMemberID(MyMemberID) { arNews, successful in
+                if successful {
+                    self.dirNews = arNews
+                    self.tvNews.reloadData()
+                    self.dirRefreshControl!.endRefreshing()
+                    self.check()
+                } else {
+                    self.dirRefreshControl!.endRefreshing()
+                    self.check()
+                }
             }
+        } else {
+            NewsData().wsGetBookmarkReadByMemberID(MyMemberID) { arNews, successful in
+                if successful {
+                    self.dirNews = arNews
+                    self.tvNews.reloadData()
+                    self.dirRefreshControl!.endRefreshing()
+                    self.check()
+                } else {
+                    self.dirRefreshControl!.endRefreshing()
+                    self.check()
+                }
+            }
+
         }
     }
     
@@ -86,7 +107,7 @@ class NewsDir: UITableViewController {
         var message = ""
         
         if (dirNews.count == 0) {
-            message = "You don't have any news"
+            message = "You don't have any \(self.title ?? "")"
         }
         
         if message != "" {

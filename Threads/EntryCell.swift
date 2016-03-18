@@ -19,8 +19,26 @@ class EntryCell: UITableViewCell {
     @IBOutlet weak var imgEditor: UIImageView!
     @IBOutlet weak var lblCreatorFullname: UILabel!
     
+    var entryInst : Entry?
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+
+    @IBAction func btnBookmarkClick() {
+        EntryData().wsBookmarkSave(entryInst?.id ?? 0, completion: { (isPin, successful) -> Void in
+            if successful {
+                self.entryInst!.isPin = isPin
+                self.showPins()
+             }
+        })
+    }
+    
+    func showPins() {
+        if entryInst!.isPin == true {
+            self.btnBookmark.setImage( UIImage(named: "bookmarkSet"), forState: .Normal)
+        } else {
+            self.btnBookmark.setImage(UIImage(named: "bookmark"), forState: .Normal)
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -48,6 +66,8 @@ class EntryCell: UITableViewCell {
     }
     
     func setCell(entry: Entry) {
+        self.entryInst = entry
+    
         self.lblCommunityName.text = entry.communityName
         self.lblDate.text = entry.date
         self.lblColumnName.text = entry.columnName
@@ -56,12 +76,8 @@ class EntryCell: UITableViewCell {
         self.imgCommunity.imageFromUrl(entry.communityImg)
         self.imgEditor.imageFromUrl(entry.creatorImg)
         self.lblCreatorFullname.text = ("by \(entry.creatorFullname)")
-
-        if entry.columnName == "Post" {
-            self.btnBookmark.setImage( UIImage(named: "bookmarkSet"), forState: UIControlState.Normal)
-        } else {
-            self.btnBookmark.setImage(UIImage(named: "bookmark"), forState: UIControlState.Normal)
-        }
+        
+        self.showPins()
+        
     }
-
 }

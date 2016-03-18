@@ -26,8 +26,6 @@ class EntryDir: UITableViewController {
         self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        
-        
         self.dirRefreshControl = UIRefreshControl()
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
@@ -73,7 +71,13 @@ class EntryDir: UITableViewController {
             header.setCell(community!)
             
             return header
-        }
+        } /*else if indexPath.row == 1 {
+            let columns = (tableView.dequeueReusableCellWithIdentifier("columnsCell") as? ColumnsCell)!
+            columns.userInteractionEnabled = true
+            columns.setCell(community!)
+            
+            return columns
+        }*/
         
         let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("EntryCell") as? EntryCell)!        
         cell.setCell(dirEntry[indexPath.row])

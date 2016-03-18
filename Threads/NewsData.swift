@@ -32,7 +32,8 @@ class NewsData {
                             ,date:          post["Entry_CreateDateEst"].string!
                             ,text:          post["Entry_Text"].string!
                             ,creatorId:     post["CreatorID"].int!
-                            ,creatorFullname: post["CreatorID_Fullname"].string!)
+                            ,creatorFullname: post["CreatorID_Fullname"].string!
+                            ,isPin:         post["IsPin"].bool ?? false)
                         entries.append(ent)
                     }
                     completion(arNews: entries, successful: true)
@@ -43,5 +44,39 @@ class NewsData {
                 }
         }
     }
+    
+    func wsGetBookmarkReadByMemberID(id: Int, completion : (arNews:[Entry], successful: Bool) -> Void) {
+        
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["MemberID": id]]
+        Alamofire.request(.POST, "\(Threads)/Bookmark_ReadByMemberID", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].arrayValue
+                    var entries = [Entry]()
+                    for post in json {
+                        let ent = Entry(
+                            id:             post["Entry_ID"].int!
+                            ,communityId:   post["Community_ID"].int!
+                            ,communityName: post["Community_Name"].string!
+                            ,columnId:      post["ColumnCommunity_ID"].int!
+                            ,columnName:    post["ColumnCommunity_Name"].string!
+                            ,date:          post["Entry_CreateDateEst"].string!
+                            ,text:          post["Entry_Text"].string!
+                            ,creatorId:     post["CreatorID"].int!
+                            ,creatorFullname: post["CreatorID_Fullname"].string!
+                            ,isPin:         post["IsPin"].bool ?? false)
+                        entries.append(ent)
+                    }
+                    completion(arNews: entries, successful: true)
+                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(arNews: [], successful: false)
+                }
+        }
+    }
+
     
 }
