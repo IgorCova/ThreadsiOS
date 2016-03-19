@@ -13,8 +13,11 @@ class EntryData {
     
     private var entries = [Entry]()
     
-    func wsGetEntryReadByCommunityID(id: Int, completion : (entries:[Entry], successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["CommunityID": id]]
+    func wsGetEntryReadByCommunityID(id: Int, columnId: Int, completion : (entries:[Entry], successful: Bool) -> Void) {
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["CommunityID": id, "ColumnID": columnId]]
+        
+        self.entries.append(Entry(id: 0, communityId: id, communityName: "", columnId: columnId, columnName: "", date: "", text: "", creatorId: 0, creatorFullname: "", isPin: false))
+        self.entries.append(Entry(id: 0, communityId: id, communityName: "", columnId: columnId, columnName: "", date: "", text: "", creatorId: 0, creatorFullname: "", isPin: false))
         
         Alamofire.request(.POST, "\(Threads)/Entry_ReadByCommunityID", parameters: prms, encoding: .JSON)
             .responseJSON { response in
@@ -47,7 +50,11 @@ class EntryData {
     }
     
     func wsEntrySave(wsEntry w: NewEntry, completion : (id :Int, successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["CommunityID": w.communityId, "ColumnID": w.columnId, "CreatorID": MyMemberID, "EntryText": w.text]]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID,
+             "Params": ["CommunityID": w.communityId
+                       ,"ColumnID": w.columnId
+                       ,"CreatorID": MyMemberID
+                       ,"EntryText": w.text]]
         Alamofire.request(.POST, "\(Threads)/Entry_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)

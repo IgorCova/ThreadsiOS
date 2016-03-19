@@ -30,11 +30,19 @@ class EntryDir: UITableViewController {
         self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
         self.dirRefreshControl?.beginRefreshing()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
+        
         self.refresh(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func loadList(notification: NSNotification){
+        //load data here
+        self.refresh(self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,7 +51,7 @@ class EntryDir: UITableViewController {
     }
     
     func refresh(sender:AnyObject) {
-        EntryData().wsGetEntryReadByCommunityID((community?.id)!) {entryDict, successful in
+        EntryData().wsGetEntryReadByCommunityID((community?.id)!, columnId: (community?.defaultColumnId)!) {entryDict, successful in
             if successful {
                 self.dirEntry = entryDict
                 self.tvEntry.reloadData()
@@ -71,13 +79,13 @@ class EntryDir: UITableViewController {
             header.setCell(community!)
             
             return header
-        } /*else if indexPath.row == 1 {
+        } else if indexPath.row == 1 {
             let columns = (tableView.dequeueReusableCellWithIdentifier("columnsCell") as? ColumnsCell)!
             columns.userInteractionEnabled = true
             columns.setCell(community!)
             
             return columns
-        }*/
+        }
         
         let cell : EntryCell = (tableView.dequeueReusableCellWithIdentifier("EntryCell") as? EntryCell)!        
         cell.setCell(dirEntry[indexPath.row])
@@ -88,6 +96,8 @@ class EntryDir: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 101
+        } else if indexPath.row == 1 {
+            return 38
         }
         
         let entry = dirEntry[indexPath.row]

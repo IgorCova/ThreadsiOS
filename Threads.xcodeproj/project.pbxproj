@@ -104,6 +104,9 @@
 		F361057A1C8D9DCE0076CCF2 /* AgeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeCell.swift; sourceTree = "<group>"; };
 		F361057F1C8DA80B0076CCF2 /* CommNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommNameCell.swift; sourceTree = "<group>"; };
 		F36105811C8DA8630076CCF2 /* CommItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommItemCell.swift; sourceTree = "<group>"; };
+		F369D4BA1C9D7257007CB567 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		F369D4BC1C9D725D007CB567 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RSKImageCropper.framework; path = "Pods/../build/Debug-iphoneos/RSKImageCropper.framework"; sourceTree = "<group>"; };
+		F369D4BE1C9D7265007CB567 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		F36A1F2D1C82614D006A0589 /* ChangeFieldCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFieldCard.swift; sourceTree = "<group>"; };
 		F36D1C651C5C180200D0CECD /* NewsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		F37EA2AB1C1441A000F522CA /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
@@ -222,6 +225,9 @@
 		85DE13500CEFD0B4D5D1B2F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F369D4BE1C9D7265007CB567 /* SwiftyJSON.framework */,
+				F369D4BC1C9D725D007CB567 /* RSKImageCropper.framework */,
+				F369D4BA1C9D7257007CB567 /* Alamofire.framework */,
 				A40B2CD6BB6C75F7AB60935C /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -655,7 +661,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Threads/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.Threads;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -674,7 +682,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Threads/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.Threads;
 				PRODUCT_NAME = "$(TARGET_NAME)";

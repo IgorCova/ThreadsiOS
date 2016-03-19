@@ -28,7 +28,7 @@ class EntrySaver: UIViewController , UITextViewDelegate {
     
     @IBAction func saveNewEntry(sender: AnyObject) {
         let entrytext = txtEntryText.text
-        let newEntry = NewEntry(communityId: communityId!, columnId: columnId!, text: entrytext)
+        let newEntry = NewEntry(communityId: communityId!, columnId: columnId ?? 0, text: entrytext)
         
         EntryData().wsEntrySave(wsEntry: newEntry) {id, successful in
             if successful {

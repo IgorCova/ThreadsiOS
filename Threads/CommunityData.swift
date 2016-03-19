@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class CommunityData {
-    var dataj: NSData?
+    //var dataj: NSData?
     private var communities = [Community]()
     
     func wsGetCommunityDict(memberID : Int, completion : (comms:[Community], successful: Bool) -> Void) {
@@ -36,7 +36,7 @@ class CommunityData {
         let prms : [String : AnyObject]  = ["Session": MySessionID, "DID" : MyDID, "Params": ["MemberID": memberID]]
         Alamofire.request(.POST, "\(Threads)/Community_ReadMyDict", parameters: prms, encoding: .JSON)
             .responseJSON { response in
-                //print(response.result.value)
+                // print(response.result.value)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].arrayValue
@@ -55,7 +55,7 @@ class CommunityData {
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID" : MyDID, "Params": ["MemberID": memberID]]
         Alamofire.request(.POST, "\(Threads)/Community_ReadSuggestDict", parameters: prms, encoding: .JSON)
             .responseJSON { response in
-                //print(response.result.value)
+                // print(response.result.value)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].arrayValue
@@ -71,11 +71,18 @@ class CommunityData {
     }
     
     func wsCommunitySave(community: Community, completion : (id: Int, successful: Bool) -> Void) {
-        let comm : [String : AnyObject] = ["ID": community.id, "Name": community.name, "Link": community.link ?? "", "Description": community.description ?? "", "Tagline": community.tagline ?? "", "OwnerID": MyMemberID]
+        let comm : [String : AnyObject] = [
+             "ID": community.id
+             ,"Name": community.name
+            ,"Link": community.link ?? ""
+            ,"Description": community.description ?? ""
+            ,"Tagline": community.tagline ?? ""
+            ,"OwnerID": MyMemberID]
+        
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID" : MyDID, "Params": ["Community": comm]]
         Alamofire.request(.POST, "\(Threads)/Community_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
-                print(response.result.value)
+                // print(response.result.value)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].dictionaryValue
@@ -99,5 +106,32 @@ class CommunityData {
             ,countMembers: comm["CountMembers"].string!
             ,defaultColumnId : comm["DefaultColumnID"].int!)
         return comm
+    }
+    
+    func wsGetColumnCommunity(commuityId: Int, completion : (columns: [ColumnCommunity], successful: Bool) -> Void) {
+        var columns = [ColumnCommunity]()
+        columns.append(ColumnCommunity(id: 0, name: "All posts"))
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID" : MyDID, "Params": ["CommunityID": commuityId]]
+        Alamofire.request(.POST, "\(Threads)/ColumnCommunity_ReadDict", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                //print(response.result.value)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data)["Data"].arrayValue
+                    
+                    for clmn in json {
+                        let column = ColumnCommunity(
+                             id: clmn["ID"].int!
+                            ,name: clmn["Name"].string!)
+                        columns.append(column)
+                    }
+                    
+                    completion(columns: columns, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(columns: [], successful: false)
+                }
+        }
+
     }
 }

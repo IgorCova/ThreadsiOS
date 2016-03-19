@@ -642,7 +642,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75r-Ma-OWB">
                                                     <rect key="frame" x="10" y="67" width="150" height="23"/>
-                                                    <color key="backgroundColor" red="0.12941176469999999" green="0.52156862749999999" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Njf-yx-TEE"/>
                                                         <constraint firstAttribute="height" constant="23" id="awM-KS-wKj"/>
@@ -697,8 +697,30 @@
                                     <segue destination="510-eM-wQZ" kind="show" identifier="toCommunityPage" id="Q56-ab-AZF"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="columnsCell" rowHeight="38" id="PLz-i7-BgM" customClass="ColumnsCell" customModule="Comm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="133" width="320" height="38"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PLz-i7-BgM" id="gKE-JL-Fag">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ko-eg-yPH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                                        </scrollView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="7Ko-eg-yPH" secondAttribute="bottom" id="E0d-xI-HXS"/>
+                                        <constraint firstItem="7Ko-eg-yPH" firstAttribute="leading" secondItem="gKE-JL-Fag" secondAttribute="leading" id="UOj-F1-oj0"/>
+                                        <constraint firstAttribute="trailing" secondItem="7Ko-eg-yPH" secondAttribute="trailing" id="VuP-Ih-Zft"/>
+                                        <constraint firstItem="7Ko-eg-yPH" firstAttribute="top" secondItem="gKE-JL-Fag" secondAttribute="top" id="oKh-kK-W1O"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="scrollView" destination="7Ko-eg-yPH" id="h3q-Zh-kb4"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="100" id="KwB-6c-os3" customClass="EntryCell" customModule="Comm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="133" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="171" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwB-6c-os3" id="VtF-Jm-Ek9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -1977,7 +1999,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEe-oI-xJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="1662"/>
+            <point key="canvasLocation" x="1633" y="1715"/>
         </scene>
         <!--Profile photo-->
         <scene sceneID="iSf-5k-DRn">
@@ -2073,7 +2095,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZh-f8-Z4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2507" y="423"/>
+            <point key="canvasLocation" x="2507" y="339"/>
         </scene>
         <!--Comm edit-->
         <scene sceneID="yod-tY-zE4">
@@ -2499,7 +2521,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeH-7L-d0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2069" y="1130"/>
+            <point key="canvasLocation" x="2069" y="1054"/>
         </scene>
         <!--About-->
         <scene sceneID="wxI-Xz-cRu">
@@ -2756,7 +2778,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIP-ar-z1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="1662"/>
+            <point key="canvasLocation" x="1167" y="1715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q1t-QZ-Aub">
