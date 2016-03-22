@@ -131,11 +131,11 @@ extension UIColor {
     }
 }
 
-func calculateHeightForString(inString : String) -> CGFloat{
+func calculateHeightForString(inString : String) -> CGFloat {
     let messageString = inString
     let attributes = [NSFontAttributeName: CommFontText!]
     let attrString: NSAttributedString? = NSAttributedString(string: messageString, attributes: attributes)
-    let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(300.0,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
+    let rect:CGRect = attrString!.boundingRectWithSize(CGSizeMake(310.0, CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context:nil )
     let requredSize:CGRect = rect
     return requredSize.height
 }
@@ -220,7 +220,24 @@ extension String {
         
         return RFC3339DateFormatter.dateFromString(self ?? "")
     }
+    
+    subscript (i: Int) -> Character {
+        return self[self.startIndex.advancedBy(i)]
+    }
+    
+    subscript (i: Int) -> String {
+        return String(self[i] as Character)
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let start = startIndex.advancedBy(r.startIndex)
+        let end = start.advancedBy(r.endIndex - r.startIndex)
+        return self[Range(start: start, end: end)]
+    }
+
 }
+
+
 
 extension NSAttributedString {
     func heightWithConstrainedWidth(width: CGFloat) -> CGFloat {

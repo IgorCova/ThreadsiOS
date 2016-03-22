@@ -61,8 +61,10 @@ class CommunityDir: UITableViewController {
         case .SugComm:
             commDictType = .AllComm
         }
-        
-        refresh(self)
+        self.dirCommunity.removeAll()
+        self.tvCommunity.reloadData()
+        self.dirRefreshControl?.beginRefreshing()
+        self.refresh(self)
     }
     
     func refresh(sender:AnyObject) {

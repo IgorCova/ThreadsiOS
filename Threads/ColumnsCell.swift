@@ -16,7 +16,6 @@ class ColumnsCell: UITableViewCell, UIScrollViewDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     func refresh() {

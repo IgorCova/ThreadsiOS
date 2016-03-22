@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryCell: UITableViewCell {
+class EntryCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet weak var btnBookmark: UIButton!
     @IBOutlet weak var lblCommunityName: UILabel!
     @IBOutlet weak var imgCommunity: UIImageView!
@@ -22,6 +22,7 @@ class EntryCell: UITableViewCell {
     var entryInst : Entry?
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.txTitle.delegate = self
     }
 
     @IBAction func btnBookmarkClick() {
@@ -78,6 +79,5 @@ class EntryCell: UITableViewCell {
         self.lblCreatorFullname.text = ("by \(entry.creatorFullname)")
         
         self.showPins()
-        
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileCard: UIViewController {
+class ProfilePage: UIViewController {
 
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var lblSurname: UILabel!
@@ -61,7 +61,7 @@ class ProfileCard: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "editProfile") {
-            let dvc = segue.destinationViewController as! ProfileEditDict
+            let dvc = segue.destinationViewController as! ProfileEdit
             dvc.member = self.member            
         }
     }

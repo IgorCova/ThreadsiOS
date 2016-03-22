@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommunityEditDict: UITableViewController {
+class CommunityEdit: UITableViewController {
     
     var commItems = [String]()
     var community: Community?
@@ -16,11 +16,15 @@ class CommunityEditDict: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.commItems = ["commNameCell","commViewCell",/*"commLinkCell",*/"commTaglineCell","commDescCell", "commTeamCell"]
+        
+        self.navigationController!.navigationBar.topItem!.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,8 +54,7 @@ class CommunityEditDict: UITableViewController {
             cell.setCell(self.community!)
             
             return cell
-        } 
-        
+        }
         
         let cell = tableView.dequeueReusableCellWithIdentifier(commItems[indexPath.row], forIndexPath: indexPath) as! CommItemCell
         

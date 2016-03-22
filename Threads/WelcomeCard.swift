@@ -35,7 +35,7 @@ class WelcomeCard: UIViewController {
         if segue.identifier == "editProfile" {
             self.timer.invalidate()
             let navController = segue.destinationViewController as! UINavigationController
-            if let vc = navController.viewControllers[0] as? ProfileEditDict {
+            if let vc = navController.viewControllers[0] as? ProfileEdit {
                 vc.member = self.member
             }
         }

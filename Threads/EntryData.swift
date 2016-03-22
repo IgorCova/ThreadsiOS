@@ -30,16 +30,18 @@ class EntryData {
                         let ent = Entry(
                              id:            comm["Entry_ID"].int!
                             ,communityId:   comm["Community_ID"].int!
-                            ,communityName: comm["Community_Name"].string!
+                            ,communityName: comm["Community_Name"].stringValue
                             ,columnId:      comm["ColumnCommunity_ID"].int!
-                            ,columnName:    comm["ColumnCommunity_Name"].string!
-                            ,date:          comm["Entry_CreateDateEst"].string!
-                            ,text:          comm["Entry_Text"].string!
+                            ,columnName:    comm["ColumnCommunity_Name"].stringValue
+                            ,date:          comm["Entry_CreateDateEst"].stringValue
+                            ,text:          comm["Entry_Text"].stringValue
                             ,creatorId:     comm["CreatorID"].int!
-                            ,creatorFullname: comm["CreatorID_Fullname"].string!
+                            ,creatorFullname: comm["CreatorID_Fullname"].stringValue
                             ,isPin:         comm["IsPin"].bool!)
                         self.entries.append(ent)
+                        //print(comm["Entry_Text"].stringValue)
                     }
+                    
                     completion(entries: self.entries, successful: true)
                     
                 case .Failure(let error):

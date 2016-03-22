@@ -50,7 +50,7 @@ class EntryDir: UITableViewController {
         self.refresh(self)
     }
     
-    func refresh(sender:AnyObject) {
+    func refresh(sender: AnyObject) {
         EntryData().wsGetEntryReadByCommunityID((community?.id)!, columnId: (community?.defaultColumnId)!) {entryDict, successful in
             if successful {
                 self.dirEntry = entryDict
@@ -58,7 +58,6 @@ class EntryDir: UITableViewController {
                 self.dirRefreshControl.endRefreshing()
             }
         }
-        
         if let comm = self.community {
             self.title = comm.name ?? ""
         }
@@ -112,7 +111,7 @@ class EntryDir: UITableViewController {
                 vc.columnId = (community?.defaultColumnId)!
             }
         } else if segue.identifier == "toCommunityPage" {
-            if let vc = segue.destinationViewController as? CommunityEditDict {
+            if let vc = segue.destinationViewController as? CommunityPage {
                 vc.community = self.community
             }
         }

@@ -28,7 +28,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
         self.tvMenuItems.delegate = self
         self.tvMenuItems.dataSource = self
         
-        self.menuItems = [(cell: "ProfileCell", name: "Профиль", img: "")
+        self.menuItems = [(cell: "menuHeaderCell", name: "Профиль", img: "")
             ,(cell: "NewsCell", name: "News", img: "news")
             ,(cell: "CommCell", name: "Communities", img: "communities")
             ,(cell: "CommCell", name: "Suggested", img: "suggested")
@@ -69,7 +69,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let profileCell = (tableView.dequeueReusableCellWithIdentifier("ProfileCell") as? ProfileCell)!
+            let profileCell = (tableView.dequeueReusableCellWithIdentifier("menuHeaderCell") as? MenuHeaderCell)!
             
             if self.member != nil {
                 profileCell.setCell(self.member!)
@@ -91,15 +91,6 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
             return 140
         }
         return  50.0
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if self.menuItems[indexPath.row].cell == "ContactsCell" {
-            let contactPickerViewController = CNContactPickerViewController()
-            presentViewController(contactPickerViewController, animated: true, completion: nil)
-        } else {
-            self.revealViewController().setFrontViewPosition(FrontViewPosition.LeftSideMostRemoved, animated:  true)
-        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

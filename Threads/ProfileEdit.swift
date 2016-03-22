@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate {
+class ProfileEdit: UITableViewController, UIPickerViewDelegate, UIAlertViewDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate {
 
     var member: Member?
     var dirRefreshControl: UIRefreshControl?
@@ -44,16 +44,9 @@ class ProfileEditDict: UITableViewController, UIPickerViewDelegate, UIAlertViewD
         self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","birthdayCell","aboutCell","countryCell","cityCell"]
         self.tvProfile.reloadData()
         
-        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        //view.addGestureRecognizer(tap)
+        self.navigationController!.navigationBar.topItem!.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
-    
-    /*
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    */
     
     func refresh(sender:AnyObject) {
         MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
