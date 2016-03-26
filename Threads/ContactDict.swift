@@ -19,7 +19,7 @@ class ContactDict: UITableViewController {
         super.viewDidLoad()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.btnToMenu.target = self.revealViewController()
-        self.btnToMenu.action = Selector("revealToggle:")
+        self.btnToMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.contacts = mContact.contactsByAlphabetDrawing()
     }

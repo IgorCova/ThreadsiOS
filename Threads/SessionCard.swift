@@ -31,7 +31,7 @@ class SessionCard: UIViewController , UITextFieldDelegate {
         self.txflCode.keyboardType = .NumberPad
         self.txflCode.delegate = self
         self.txflCode.becomeFirstResponder()
-        self.txflCode.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.txflCode.addTarget(self, action: #selector(SessionCard.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
     }
 
     override func didReceiveMemoryWarning() {

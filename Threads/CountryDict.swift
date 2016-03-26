@@ -19,7 +19,7 @@ class CountryDict: UITableViewController {
         self.navigationController!.navigationBar.tintColor = .whiteColor()
         
         self.dirRefreshControl = UIRefreshControl()
-        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.dirRefreshControl.addTarget(self, action: #selector(CountryDict.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
         self.dirRefreshControl?.beginRefreshing()
         self.refresh(self)

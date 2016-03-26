@@ -35,7 +35,7 @@ class ImageData {
     }
     
     func imageWithSize(image: UIImage,size: CGSize) -> UIImage {
-        if UIScreen.mainScreen().respondsToSelector("scale") {
+        if UIScreen.mainScreen().respondsToSelector(#selector(NSDecimalNumberBehaviors.scale)) {
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)
         }
         else {

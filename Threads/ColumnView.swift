@@ -34,7 +34,7 @@ class ColumnView: UIViewController, UIScrollViewDelegate {
                 button.setTitleColor(UIColor.blackColor().colorWithAlphaComponent(0.7), forState: .Normal)
             }
             
-            button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(ColumnView.buttonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             lastButtonWidth = button.frame.width + 15
             
             self.scrollView.addSubview(button)

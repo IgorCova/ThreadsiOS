@@ -23,8 +23,8 @@ class NameCell: UITableViewCell, UITextFieldDelegate {
         self.txflLastName.delegate = self
         self.txflFirstName.delegate = self
         
-        self.txflLastName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-        self.txflFirstName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.txflLastName.addTarget(self, action: #selector(NameCell.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        self.txflFirstName.addTarget(self, action: #selector(NameCell.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         
     }
     

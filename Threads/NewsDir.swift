@@ -25,13 +25,13 @@ class NewsDir: UITableViewController {
         self.tvNews.separatorStyle = .None
         
         self.btnToMenu.target = self.revealViewController()
-        self.btnToMenu.action = Selector("revealToggle:")
+        self.btnToMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.view.addGestureRecognizer(
             self.revealViewController().panGestureRecognizer())
         
         self.dirRefreshControl = UIRefreshControl()
-        self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.dirRefreshControl!.addTarget(self, action: #selector(NewsDir.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl!)
         self.dirRefreshControl?.beginRefreshing()
         if isNews == true {
@@ -131,7 +131,7 @@ class NewsDir: UITableViewController {
             UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
                 pnlLab.center.y = -30
                 
-                }, completion: {(value Bool) in
+                }, completion: {(Bool) in
                     pnlLab.hidden = true
             })
         } else {

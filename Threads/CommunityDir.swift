@@ -43,10 +43,10 @@ class CommunityDir: UITableViewController {
         self.tvCommunity.backgroundView?.backgroundColor = UIColor(netHex: 0xE8E8E8)
         
         self.btnToMenu.target = self.revealViewController()
-        self.btnToMenu.action = Selector("revealToggle:")
+        self.btnToMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         
         self.dirRefreshControl = UIRefreshControl()
-        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.dirRefreshControl.addTarget(self, action: #selector(CommunityDir.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
         self.dirRefreshControl?.beginRefreshing()
         self.refresh(self)

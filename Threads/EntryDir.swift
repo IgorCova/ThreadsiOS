@@ -27,11 +27,11 @@ class EntryDir: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         self.dirRefreshControl = UIRefreshControl()
-        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.dirRefreshControl.addTarget(self, action: #selector(EntryDir.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl)
         self.dirRefreshControl?.beginRefreshing()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EntryDir.loadList(_:)),name:"load", object: nil)
         
         self.refresh(self)
     }

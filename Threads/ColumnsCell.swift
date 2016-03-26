@@ -46,7 +46,7 @@ class ColumnsCell: UITableViewCell, UIScrollViewDelegate {
                 button.setTitleColor(UIColor.blackColor().colorWithAlphaComponent(0.7), forState: .Normal)
             }
             
-            button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: #selector(ColumnsCell.buttonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             self.scrollView.addSubview(button)
         }
         

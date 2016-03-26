@@ -17,7 +17,7 @@ class WelcomeCard: UIViewController {
         MemberData().wsGetMemberInstance(MyMemberID) {memberInstance, successful in
             if successful {
                 self.member = memberInstance
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "goToEditProfile", userInfo: nil, repeats: true)
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WelcomeCard.goToEditProfile), userInfo: nil, repeats: true)
             }
         }
     }

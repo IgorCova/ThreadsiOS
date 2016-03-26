@@ -20,7 +20,7 @@ class ChangeFieldCard: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.txflUsername.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.txflUsername.addTarget(self, action: #selector(ChangeFieldCard.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         
         if typeL == .Telegram {
             self.title = "Telegram"

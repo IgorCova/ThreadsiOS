@@ -13,8 +13,8 @@ class GenderCell: UITableViewCell {
     var member : Member?
     override func awakeFromNib() {
         super.awakeFromNib()
-        scGender.addTarget(self, action: "segmentedControlValueChanged:", forControlEvents: .TouchUpInside)
-        scGender.addTarget(self, action: "segmentedControlValueChanged:", forControlEvents: .ValueChanged)
+        scGender.addTarget(self, action: #selector(GenderCell.segmentedControlValueChanged(_:)), forControlEvents: .TouchUpInside)
+        scGender.addTarget(self, action: #selector(GenderCell.segmentedControlValueChanged(_:)), forControlEvents: .ValueChanged)
     }
     
     func segmentedControlValueChanged (segment: UISegmentedControl) {

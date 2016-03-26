@@ -18,7 +18,7 @@ class SettingsCard: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         self.btnMenu.target = self.revealViewController()
-        self.btnMenu.action = Selector("revealToggle:")
+        self.btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
     }
 
     override func didReceiveMemoryWarning() {

@@ -24,35 +24,31 @@ class MemberContact {
         //Крнтакты лежат в массиве по алфивиту, теперь нужно составить AlphabetDrawing
         // сontactsByAlphabet.append(ContactsByAlphabet(letter: "TOP", contacts: []))
         for contact in allConacts {
-            if let nameContact : String = contact.givenName ?? "#" {
-                var isHave = false
+            let nameContact : String = contact.givenName ?? "#"
+            var isHave = false
                 
-                for var index = 0; index < сontactsByAlphabet.count; ++index {
-                    
-                    var nc = "#"
-                    if !nameContact.isEmpty {
-                        nc = nameContact[0]
-                    }
-                    
-                    if сontactsByAlphabet[index].letter == nc {
-                        isHave = true
-                        break
-                    }
+            for index in 0 ..< сontactsByAlphabet.count {
+                var nc = "#"
+                if !nameContact.isEmpty {
+                    nc = nameContact[0]
                 }
-                
-                if isHave == false {
-                    сontactsByAlphabet.append(stContact(letter: nameContact[0], contacts: []))
+                    
+                if сontactsByAlphabet[index].letter == nc {
+                    isHave = true
+                    break
                 }
-                
             }
-            
+                
+            if isHave == false {
+                сontactsByAlphabet.append(stContact(letter: nameContact[0], contacts: []))
+            }
         }
     }
     
     private func topSection() {
         сontactsByAlphabet.insert(stContact(letter: "TOP", contacts: []), atIndex: 0)
-        for var index = 1; index < сontactsByAlphabet.count; index++ {
-            for var y = 0; y < сontactsByAlphabet[index].contacts.count; y++ {
+        for index in 1 ..< сontactsByAlphabet.count {
+            for var y in 0...сontactsByAlphabet[index].contacts.count {
                 let contact = сontactsByAlphabet[index].contacts[y]
                 
                 for number in exceptionNumber {
@@ -60,7 +56,7 @@ class MemberContact {
                         if number == stringNumber((lableNumber.value as! CNPhoneNumber).stringValue)  {
                             сontactsByAlphabet[0].contacts.append(contact)
                             сontactsByAlphabet[index].contacts.removeAtIndex(y)
-                            y--
+                            y -= 1
                             //print("Успешно")
                         }
                     }
@@ -72,10 +68,10 @@ class MemberContact {
     }
     
     private func cleaner() {
-        for var index = 0; index < сontactsByAlphabet.count; index++ {
+        for var index in 0...сontactsByAlphabet.count {
             if сontactsByAlphabet[index].contacts.isEmpty {
                 сontactsByAlphabet.removeAtIndex(index)
-                index--
+                index -= 1
             }
         }
     }
@@ -91,15 +87,14 @@ class MemberContact {
     func contactsByAlphabetDrawing() -> [stContact] {
         AlphabetDrawing()
         for contact in allConacts {
-            if let nameContact = contact.givenName ?? "#"  {
-                for var index = 0; index < сontactsByAlphabet.count; ++index {
-                    if nameContact[0] == сontactsByAlphabet[index].letter {
-                        сontactsByAlphabet[index].contacts.append(contact as! CNContact)
-                    }
+            let nameContact = contact.givenName as String
+            for index in 0 ..< сontactsByAlphabet.count {
+                if nameContact[0] == сontactsByAlphabet[index].letter {
+                    сontactsByAlphabet[index].contacts.append(contact as! CNContact)
                 }
             }
         }
-        
+    
         self.topSection()
         
         return сontactsByAlphabet

@@ -23,7 +23,7 @@ class CommNameCell: UITableViewCell, UITextFieldDelegate {
         self.imgLogo.layer.borderColor = UIColor.whiteColor().CGColor
         
         self.txflCommName.delegate = self
-        self.txflCommName.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)
+        self.txflCommName.addTarget(self, action: #selector(CommNameCell.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

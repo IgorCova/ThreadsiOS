@@ -84,7 +84,7 @@ class PhotoLoaderCard: UIViewController, UINavigationControllerDelegate, UIImage
                 UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
                     pnlLab.center.y = -30
                     
-                    }, completion: {(value Bool) in
+                    }, completion: {(Bool) in
                         pnlLab.hidden = true
                 })
             }
@@ -96,7 +96,7 @@ class PhotoLoaderCard: UIViewController, UINavigationControllerDelegate, UIImage
     }
     
     func imageWithSize(image: UIImage,size: CGSize)->UIImage{
-        if UIScreen.mainScreen().respondsToSelector("scale") {
+        if UIScreen.mainScreen().respondsToSelector(#selector(NSDecimalNumberBehaviors.scale)) {
             UIGraphicsBeginImageContextWithOptions(size,false,UIScreen.mainScreen().scale);
         }
         else {

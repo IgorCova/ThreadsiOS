@@ -38,7 +38,7 @@ class ProfileEdit: UITableViewController, UIPickerViewDelegate, UIAlertViewDeleg
         
         self.pickerView.delegate = self
         self.dirRefreshControl = UIRefreshControl()
-        self.dirRefreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.dirRefreshControl!.addTarget(self, action: #selector(ProfileEdit.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(dirRefreshControl!)
         
         self.profileItems = ["nameCell","setPhotoCell","telegramCell","usernameCell","phoneCell","genderCell","ageCell","birthdayCell","aboutCell","countryCell","cityCell"]
@@ -186,7 +186,7 @@ class ProfileEdit: UITableViewController, UIPickerViewDelegate, UIAlertViewDeleg
             UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
                 pnlLab.center.y = -30
                 
-                }, completion: {(value Bool) in
+                }, completion: {(value: Bool) in
                     pnlLab.hidden = true
             })
         } else {

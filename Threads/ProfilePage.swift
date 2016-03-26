@@ -27,7 +27,7 @@ class ProfilePage: UIViewController {
         self.imgPhoto.layer.borderWidth = 0.1
         
         self.btnToMenu.target = self.revealViewController()
-        self.btnToMenu.action = Selector("revealToggle:")
+        self.btnToMenu.action = #selector(SWRevealViewController.revealToggle(_:))
     }
 
     override func didReceiveMemoryWarning() {

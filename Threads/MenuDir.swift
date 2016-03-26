@@ -39,7 +39,7 @@ class MenuDir: UITableViewController, CNContactPickerDelegate {
             ]
         
         self.dirRefreshControl = UIRefreshControl()
-        self.dirRefreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.dirRefreshControl.addTarget(self, action: #selector(MenuDir.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         //self.tableView.addSubview(dirRefreshControl)
         self.refresh(self)
     }

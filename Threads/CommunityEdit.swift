@@ -112,7 +112,7 @@ class CommunityEdit: UITableViewController {
             UIView.animateWithDuration(0.2, delay: 3, options: .CurveLinear, animations: {
                 pnlLab.center.y = -30
                 
-                }, completion: {(value Bool) in
+                }, completion: {(Bool) in
                     pnlLab.hidden = true
             })
         } else {
